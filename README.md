@@ -80,7 +80,7 @@
     nixos-generate-config --root /mnt
     ```
 
-    1. Copy configuration
+    1. Copy configuration ToDo: Cannot download whole dir - need alternative
 
     ```shell
     curl https://raw.githubusercontent.com/thled/nixos-setup/master/configuration.nix --output /mnt/etc/nixos/configuration.nix
