@@ -76,9 +76,4 @@ cursor:
   unfocused_hollow: true
 mouse:
   hide_when_typing: true
-shell:
-  program: /bin/fish
-  args:
-    - --login
-    - --command
-    - "tmux attach || tmux"
+

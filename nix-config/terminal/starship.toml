@@ -1,0 +1,55 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$golang\
+$helm\
+$java\
+$nodejs\
+$php\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$character
+"""
+
+scan_timeout = 30
+
+[directory]
+fish_style_pwd_dir_length = 1
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+
+[time]
+disabled = false
+use_12hr = true
+format = '[$time]($style) '
+time_format = "%I:%M"
+style = "bold white dimmed"
