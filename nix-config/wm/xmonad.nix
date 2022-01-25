@@ -9,10 +9,9 @@
     displayManager.defaultSession = "none+xmonad";
   };
 
-  environment.systemPackages = [ pkgs.haskellPackages.xmobar ];
-
-  environment.etc = {
-    "xmobarrc".source = ./xmobarrc;
-  };
+  environment.systemPackages = [ 
+    pkgs.haskellPackages.xmobar 
+    pkgs.dmenu
+  ];
 }
 
