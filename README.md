@@ -132,5 +132,11 @@
         reboot
         ```
 
+    1. Change initial password (`123`)
+
+        ```shell
+        passwd
+        ```
+
 [nixos]: https://nixos.org/download.html#nixos-iso
 

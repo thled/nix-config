@@ -6,7 +6,14 @@
       enableContribAndExtras = true;
       config = ./xmonad.hs;
     };
-    displayManager.defaultSession = "none+xmonad";
+    displayManager = {
+      defaultSession = "none+xmonad";
+      lightdm.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "thled";
+      };
+    };
   };
 
   environment.systemPackages = [ 
