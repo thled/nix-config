@@ -8,6 +8,7 @@
     ./editor/vim.nix
     ./wm/xmonad.nix
     ./programs/utils.nix
+    ./programs/git.nix
   ];
 }
 
