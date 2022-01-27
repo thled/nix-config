@@ -11,7 +11,7 @@ import XMonad.Util.EZConfig
 main :: IO()
 main = launch 
     . ewmh
-  =<< statusBar "xmobar /etc/xmobarrc" myXmobarPP toggleStrutsKey myConfig
+  =<< statusBar "xmobar /etc/config/xmobarrc" myXmobarPP toggleStrutsKey myConfig
   where
     toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
     toggleStrutsKey XConfig{ modMask = m } = (m, xK_b)
