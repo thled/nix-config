@@ -1,6 +1,9 @@
 { pkgs, ... }: {
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware = {
+    pulseaudio.enable = true;
+    bluetooth.enable = true;
+  };
   nixpkgs.config.pulseaudio = true;
 
   systemd.tmpfiles.rules = [
