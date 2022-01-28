@@ -1,0 +1,16 @@
+# Cut long lines
+--max-columns=150
+--max-columns-preview
+
+# Use case-insensitive search
+--smart-case
+
+# Include hidden files
+--hidden
+
+# Disable .gitignore handling
+#--no-ignore
+
+# Follow symlinks
+--follow
+

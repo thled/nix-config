@@ -11,6 +11,7 @@
     ./audio/pulseaudio.nix
     ./programs/utils.nix
     ./programs/git.nix
+    ./programs/ripgrep.nix
   ];
 }
 
