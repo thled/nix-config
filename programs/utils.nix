@@ -5,6 +5,7 @@
     dunst
     exa
     fd
+    feh
     ffmpeg
     fzf
     imagemagick
