@@ -21,11 +21,6 @@
     pkgs.dmenu
   ];
 
-  environment.etc.xmobar = {
-    target = "config/xmobarrc";
-    source = ./xmobarrc;
-    mode = "0755";
-    user = "thled";
-  };
+  environment.etc."config/xmobarrc".source = ./xmobarrc;
 }
 
