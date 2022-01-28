@@ -3,7 +3,13 @@
 
   users.users.thled = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "audio"
+      "docker"
+      "libvirt"
+      "video"
+      "wheel"
+    ];
     initialPassword = "123";
   };
 }
