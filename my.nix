@@ -3,6 +3,7 @@
     ./system/user.nix
     ./system/common.nix
     ./terminal/alacritty.nix
+    ./terminal/tmux.nix
     ./terminal/fish.nix
     ./terminal/starship.nix
     ./editor/vim.nix
