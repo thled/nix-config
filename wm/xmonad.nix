@@ -16,9 +16,9 @@
     };
   };
 
-  environment.systemPackages = [ 
-    pkgs.haskellPackages.xmobar 
-    pkgs.dmenu
+  environment.systemPackages = with pkgs; [
+    haskellPackages.xmobar
+    dmenu
   ];
 
   environment.etc."config/xmobarrc".source = ./xmobarrc;

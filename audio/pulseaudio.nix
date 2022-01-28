@@ -6,8 +6,6 @@
     "d /etc/config/pulse 0755 thled root -"
   ];
 
-  environment.systemPackages = with pkgs; [
-    pavucontrol
-  ];
+  environment.systemPackages = [ pkgs.pavucontrol ];
 }
 
