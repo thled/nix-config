@@ -6,6 +6,9 @@
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
   ];
 
+  systemd.tmpfiles.rules = [
+    "d /etc/config 0755 thled root -"
+  ];
   environment.variables = {
     XDG_CONFIG_HOME = "/etc/config";
   };
