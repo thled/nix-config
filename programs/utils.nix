@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     bat
     clipit
+    dunst
     exa
     fd
     ffmpeg

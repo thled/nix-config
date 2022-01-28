@@ -3,8 +3,16 @@
     enable = true;
     shellAbbrs = {
       dc = "docker compose";
-      l = "exa -la --git -I .git";
-      t = "exa --tree --git-ignore";
+      gc = "git commit";
+      gf = "git fetch";
+      gm = "git merge";
+      gp = "git push";
+      gs = "git status";
+      k = "kubectl";
+      ks = "kubens";
+      kx = "kubectx";
+      l = "exa -la --git";
+      t = "exa -T --git-ignore";
     };
   };
 
