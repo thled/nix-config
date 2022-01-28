@@ -7,6 +7,7 @@
     ./terminal/starship.nix
     ./editor/vim.nix
     ./wm/xmonad.nix
+    ./audio/pulseaudio.nix
     ./programs/utils.nix
     ./programs/git.nix
   ];
