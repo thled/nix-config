@@ -16,6 +16,7 @@
     tldr
     tree
     unzip
+    xsel
   ];
 }
 
