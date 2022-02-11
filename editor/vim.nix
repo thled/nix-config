@@ -11,7 +11,8 @@
       customRC = builtins.readFile ./init.vim;
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
-          gruvbox-material
+          gruvbox-material  # theme
+          lualine-nvim      # statusline
         ];
       };
     };

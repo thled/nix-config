@@ -27,6 +27,7 @@ highlight ColorColumn ctermbg=238 guibg=lightgrey
 " keymap for no highlighting
 nnoremap <nowait><silent> <C-C> :nohlsearch<CR>
 
+
 """""""""
 """ theme
 """""""""
@@ -34,4 +35,13 @@ nnoremap <nowait><silent> <C-C> :nohlsearch<CR>
 set background=dark
 let g:gruvbox_material_background = 'hard'
 autocmd VimEnter * colorscheme gruvbox-material
+
+
+""""""""""""""
+""" statusline
+""""""""""""""
+
+lua << END
+require('lualine').setup()
+END
 
