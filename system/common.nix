@@ -1,4 +1,6 @@
 { config, pkgs, ... }: {
+  boot.loader.systemd-boot.configurationLimit = 8;
+
   time.timeZone = "Europe/Berlin";
   networking.hostName = "NB61";
 

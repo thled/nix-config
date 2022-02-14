@@ -8,6 +8,7 @@
     feh
     ffmpeg
     fzf
+    gcc
     imagemagick
     jq
     kubectl

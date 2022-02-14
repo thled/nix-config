@@ -41,7 +41,52 @@ autocmd VimEnter * colorscheme gruvbox-material
 """ statusline
 """"""""""""""
 
-lua << END
+lua <<END
 require('lualine').setup()
+END
+
+
+"""""""""""""""""""""""
+""" syntax highlighting
+"""""""""""""""""""""""
+
+lua <<END
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "bash",
+    "css",
+    "dockerfile",
+    "fish",
+    "go",
+    "gomod",
+    "graphql",
+    "haskell",
+    "html",
+    "java",
+    "javascript",
+    "json",
+    "json5",
+    "jsonc",
+    "kotlin",
+    "lua",
+    "nix",
+    "php",
+    "python",
+    "regex",
+    "rust",
+    "scss",
+    "svelte",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "vue",
+    "yaml",
+  },
+  sync_install = false,
+  highlight = {
+    enable = true,
+  }
+}
 END
 
