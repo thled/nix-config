@@ -46,6 +46,15 @@ require('lualine').setup()
 END
 
 
+"""""""""""
+""" comment
+"""""""""""
+
+lua <<END
+require('Comment').setup()
+END
+
+
 """""""""""""""""""""""
 """ syntax highlighting
 """""""""""""""""""""""

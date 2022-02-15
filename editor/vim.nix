@@ -13,6 +13,7 @@
         start = [
           gruvbox-material  # theme
           lualine-nvim      # statusline
+          comment-nvim      # comment
           nvim-treesitter   # syntax highlighting
         ];
       };
