@@ -99,3 +99,18 @@ require('nvim-treesitter.configs').setup {
 }
 END
 
+
+""""""""""
+""" search
+""""""""""
+
+lua <<END
+require('telescope').load_extension('fzf')
+END
+
+" Mappings
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<CR>
+nnoremap <C-f> <cmd>lua require('telescope.builtin').live_grep()<CR>
+nnoremap <C-e> <cmd>lua require('telescope.builtin').buffers()<CR>
+nnoremap <C-_> <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>
+

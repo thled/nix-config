@@ -11,10 +11,13 @@
       customRC = builtins.readFile ./init.vim;
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
-          gruvbox-material  # theme
-          lualine-nvim      # statusline
-          comment-nvim      # comment
-          nvim-treesitter   # syntax highlighting
+          gruvbox-material          # theme
+          lualine-nvim              # statusline
+          comment-nvim              # comment
+          nvim-treesitter           # syntax highlighting
+          plenary-nvim              # search
+          telescope-fzf-native-nvim # search
+          telescope-nvim            # search
         ];
       };
     };
