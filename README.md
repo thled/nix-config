@@ -114,10 +114,17 @@
         nix-shell -p git --run "git clone https://github.com/thled/nix-config.git /etc/nixos/nix-config"
         ```
 
-    1. Add own configuration (`/etc/nixos/my.nix` in imports list)
+    1. Add own configuration (`./nix-config/my.nix` in imports list)
 
         ```shell
         sudoedit /etc/nixos/configuration.nix
+        ```
+
+    1. Add unstable channel
+
+        ```shell
+        nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+        nix-channel --update
         ```
 
     1. Switch to own configuration
