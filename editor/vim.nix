@@ -44,8 +44,10 @@ in
     };
   };
 
+  # LSPs
   environment.systemPackages = with pkgs; [
-    nodePackages.vim-language-server
+    sumneko-lua-language-server       # lua
+    nodePackages.vim-language-server  # vim
   ];
 }
 

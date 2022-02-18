@@ -153,12 +153,12 @@ local on_attach = function(client, bufnr)
     vim.lsp.handlers['textDocument/references'] = require('telescope.builtin').lsp_references
 end
 
--- autocomplete capability
+-- Autocomplete capability
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Install language servers
+-- Install language servers w/o special config
 local servers = {
-    "vimls", -- vim
+    "vimls",        -- vim
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { 
@@ -166,6 +166,20 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+
+-- Install lua lsp
+nvim_lsp.sumneko_lua.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "lua-language-server" },
+    settings = {
+        Lua = {
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
+}
 EOF
 
 
