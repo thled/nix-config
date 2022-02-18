@@ -50,6 +50,7 @@ in
     go                                      # go
     gopls                                   # go
     sumneko-lua-language-server             # lua
+    rnix-lsp                                # nix
     nodePackages.intelephense               # php
     nodePackages.typescript                 # typescript
     nodePackages.typescript-language-server # typescript

@@ -159,6 +159,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- Install language servers w/o special config
 local servers = {
     "gopls",        -- go
+    "rnix",         -- nix
     "intelephense", -- php
     "tsserver",     -- typescript
     "vimls",        -- vim
