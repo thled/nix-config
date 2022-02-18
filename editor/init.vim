@@ -158,6 +158,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Install language servers w/o special config
 local servers = {
+    "intelephense", -- php
     "vimls",        -- vim
 }
 for _, lsp in ipairs(servers) do
