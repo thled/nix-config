@@ -33,6 +33,12 @@ in
           telescope-fzf-native-nvim # search
           telescope-nvim            # search
           nvim-lspconfig            # lsp
+          cmp-nvim-lsp              # autocomplete
+          cmp-buffer                # autocomplete
+          cmp-path                  # autocomplete
+          luasnip                   # autocomplete
+          cmp_luasnip               # autocomplete
+          nvim-cmp                  # autocomplete
         ];
       };
     };
