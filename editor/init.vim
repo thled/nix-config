@@ -160,6 +160,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local servers = {
     "gopls",        -- go
     "intelephense", -- php
+    "tsserver",     -- typescript
     "vimls",        -- vim
 }
 for _, lsp in ipairs(servers) do
