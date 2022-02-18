@@ -47,6 +47,8 @@ in
   # LSPs
   nixpkgs.config.allowUnfree = true; # for intelephense
   environment.systemPackages = with pkgs; [
+    go                                # go
+    gopls                             # go
     sumneko-lua-language-server       # lua
     nodePackages.intelephense         # php
     nodePackages.vim-language-server  # vim
