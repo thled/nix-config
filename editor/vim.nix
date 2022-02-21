@@ -40,6 +40,7 @@ in
           cmp_luasnip               # autocomplete
           nvim-cmp                  # autocomplete
           gitsigns-nvim             # git
+          vim-surround              # surround
         ];
       };
     };
