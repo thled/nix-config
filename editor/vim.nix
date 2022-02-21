@@ -26,21 +26,21 @@ in
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
           gruvbox-material          # theme
-          lualine-nvim              # statusline
+          vim-surround              # surround
+          gitsigns-nvim             # git
           comment-nvim              # comment
-          nvim-treesitter           # syntax highlighting
+          lualine-nvim              # statusline
           plenary-nvim              # search
           telescope-fzf-native-nvim # search
           telescope-nvim            # search
-          nvim-lspconfig            # lsp
+          nvim-treesitter           # syntax highlighting
           cmp-nvim-lsp              # autocomplete
           cmp-buffer                # autocomplete
           cmp-path                  # autocomplete
           luasnip                   # autocomplete
           cmp_luasnip               # autocomplete
           nvim-cmp                  # autocomplete
-          gitsigns-nvim             # git
-          vim-surround              # surround
+          nvim-lspconfig            # lsp
         ];
       };
     };

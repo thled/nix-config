@@ -40,6 +40,24 @@ let g:gruvbox_material_background = 'hard'
 autocmd VimEnter * colorscheme gruvbox-material
 
 
+"""""""
+""" git
+"""""""
+
+lua <<EOF
+require('gitsigns').setup()
+EOF
+
+
+"""""""""""
+""" comment
+"""""""""""
+
+lua <<EOF
+require('Comment').setup()
+EOF
+
+
 """"""""""""""
 """ statusline
 """"""""""""""
@@ -53,13 +71,19 @@ require('lualine').setup {
 EOF
 
 
-"""""""""""
-""" comment
-"""""""""""
+""""""""""
+""" search
+""""""""""
 
 lua <<EOF
-require('Comment').setup()
+require('telescope').load_extension('fzf')
 EOF
+
+" Mappings
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<CR>
+nnoremap <C-f> <cmd>lua require('telescope.builtin').live_grep()<CR>
+nnoremap <C-e> <cmd>lua require('telescope.builtin').buffers()<CR>
+nnoremap <C-_> <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>
 
 
 """""""""""""""""""""""
@@ -107,19 +131,55 @@ require('nvim-treesitter.configs').setup {
 EOF
 
 
-""""""""""
-""" search
-""""""""""
+""""""""""""""""
+""" autocomplete
+""""""""""""""""
+
+set completeopt=menu,menuone,noselect
 
 lua <<EOF
-require('telescope').load_extension('fzf')
-EOF
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
-" Mappings
-nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<CR>
-nnoremap <C-f> <cmd>lua require('telescope.builtin').live_grep()<CR>
-nnoremap <C-e> <cmd>lua require('telescope.builtin').buffers()<CR>
-nnoremap <C-_> <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
+    },
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.menu = ({
+                nvim_lsp = '[LSP]',
+                buffer = '[Buf]',
+                luasnip = '[Snp]',
+                path = '[Pth]',
+            })[entry.source.name]
+            return vim_item
+        end,
+    },
+    mapping = {
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.close(),
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
+        ['<Tab>'] = cmp.mapping.select_next_item({behavior=cmp.SelectBehavior.Insert}),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior=cmp.SelectBehavior.Insert}),
+    },
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'luasnip' },
+        { name = 'path' },
+    },
+})
+EOF
 
 
 """""""
@@ -191,65 +251,5 @@ nvim_lsp.sumneko_lua.setup {
         },
     },
 }
-EOF
-
-
-""""""""""""""""
-""" autocomplete
-""""""""""""""""
-
-set completeopt=menu,menuone,noselect
-
-lua <<EOF
-local cmp = require('cmp')
-local luasnip = require('luasnip')
-
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
-    formatting = {
-        format = function(entry, vim_item)
-            vim_item.menu = ({
-                nvim_lsp = '[LSP]',
-                buffer = '[Buf]',
-                luasnip = '[Snp]',
-                path = '[Pth]',
-            })[entry.source.name]
-            return vim_item
-        end,
-    },
-    mapping = {
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
-        ['<Tab>'] = cmp.mapping.select_next_item({behavior=cmp.SelectBehavior.Insert}),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior=cmp.SelectBehavior.Insert}),
-    },
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'luasnip' },
-        { name = 'path' },
-    },
-})
-EOF
-
-
-"""""""
-""" git
-"""""""
-
-lua <<EOF
-require('gitsigns').setup()
 EOF
 
