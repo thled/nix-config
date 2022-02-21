@@ -39,6 +39,7 @@ in
           luasnip                   # autocomplete
           cmp_luasnip               # autocomplete
           nvim-cmp                  # autocomplete
+          gitsigns-nvim             # git
         ];
       };
     };

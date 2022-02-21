@@ -244,3 +244,12 @@ cmp.setup({
 })
 EOF
 
+
+"""""""
+""" git
+"""""""
+
+lua <<EOF
+require('gitsigns').setup()
+EOF
+
