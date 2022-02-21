@@ -158,12 +158,18 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Install language servers w/o special config
 local servers = {
-    "dockerls",     -- docker
-    "gopls",        -- go
-    "rnix",         -- nix
-    "intelephense", -- php
-    "tsserver",     -- typescript
-    "vimls",        -- vim
+    "bashls",           -- bash
+    "cssls",            -- css
+    "dockerls",         -- docker
+    "gopls",            -- go
+    "html",             -- html
+    "jsonls",           -- json
+    "rnix",             -- nix
+    "intelephense",     -- php
+    "pyright",          -- python
+    "rust_analyzer",    -- rust
+    "tsserver",         -- typescript
+    "vimls",            -- vim
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { 

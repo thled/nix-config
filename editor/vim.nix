@@ -47,12 +47,16 @@ in
   # LSPs
   nixpkgs.config.allowUnfree = true; # for intelephense
   environment.systemPackages = with pkgs; [
+    nodePackages.bash-language-server               # bash
+    nodePackages.vscode-langservers-extracted       # css/html/json
     nodePackages.dockerfile-language-server-nodejs  # docker
     go                                              # go
     gopls                                           # go
     sumneko-lua-language-server                     # lua
     rnix-lsp                                        # nix
     nodePackages.intelephense                       # php
+    nodePackages.pyright                            # python
+    rust-analyzer                                   # rust
     nodePackages.typescript                         # typescript
     nodePackages.typescript-language-server         # typescript
     nodePackages.vim-language-server                # vim
