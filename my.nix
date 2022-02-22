@@ -12,6 +12,7 @@
     ./virtualisation/docker.nix
     ./programs/utils.nix
     ./programs/git.nix
+    ./programs/kubernetes.nix
     ./programs/ripgrep.nix
     ./programs/apps.nix
   ];

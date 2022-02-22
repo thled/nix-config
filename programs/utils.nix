@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     bat
-    clipit
     dunst
     exa
     fd
@@ -11,7 +10,6 @@
     gcc
     imagemagick
     jq
-    kubectl
     nmap
     nodejs
     tldr
