@@ -10,6 +10,7 @@
     ./terminal/starship.nix
     ./editor/vim.nix
     ./virtualisation/docker.nix
+    ./network/vpn.nix
     ./programs/utils.nix
     ./programs/git.nix
     ./programs/kubernetes.nix
