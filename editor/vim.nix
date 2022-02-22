@@ -1,13 +1,13 @@
 { pkgs, ... }: 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  nvim-lsp-installer = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-lsp-installer";
+  copilot = pkgs.vimUtils.buildVimPlugin {
+    name = "copilot";
     src = pkgs.fetchFromGitHub {
-      owner = "thled";
-      repo = "nvim-lsp-installer";
-      rev = "181a0c5ce1a28c29e74a1d824312ba42325b9d8b";
-      sha256 = "0ldv72h9bgnl0ww9ysf9hipz6ggczy2fr62cm8hyspmgdj1f5v89";
+      owner = "github";
+      repo = "copilot.vim";
+      rev = "47eb231463d3654de1a205c4e30567fbd006965d";
+      sha256 = "06znz1869h7cdh9xc0b54mysslgpf3qdwsj5zvnzrzk6fnfin03q";
     };
   };
 in
@@ -41,6 +41,7 @@ in
           cmp_luasnip               # autocomplete
           nvim-cmp                  # autocomplete
           nvim-lspconfig            # lsp
+          copilot                   # ai
         ];
       };
     };
