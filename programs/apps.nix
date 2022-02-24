@@ -3,6 +3,7 @@
     chromium
     firefox
     gimp
+    meld
     obs-studio
     vlc
   ];
