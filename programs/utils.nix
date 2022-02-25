@@ -9,6 +9,7 @@
     fzf
     gcc
     imagemagick
+    jless
     jq
     nmap
     nodejs
