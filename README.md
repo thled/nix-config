@@ -1,8 +1,33 @@
 # NixOS Setup
 
-## NixOS Installation
+## Requirements
 
-1. Download [NixOS ISO][nixos].
+- Download [NixOS ISO][nixos]
+
+## NixOS Installation (Script)
+
+1. Change to root user
+
+    ```shell
+    sudo -i
+    ```
+
+1. Copy own configuration
+
+    ```shell
+    nix-shell -p git --run "git clone https://github.com/thled/nix-config.git /etc/nixos/nix-config"
+    ```
+
+1. Run install script
+
+    ```shell
+    /etc/nixos/nix-config/nixos-install.sh
+    ```
+
+1. TODO
+
+## NixOS Installation (Manually)
+
 1. Change to root user
 
     ```shell
@@ -21,7 +46,6 @@
     ping -c3 google.com
     ```
 
-    - If no internet: ToDo
 1. Partitioning
     1. Create a GPT partition table
 
