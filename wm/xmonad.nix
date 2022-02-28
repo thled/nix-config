@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   services.xserver = {
     enable = true;
+    xkbOptions = "compose:rwin";
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
