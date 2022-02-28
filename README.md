@@ -12,19 +12,42 @@
     sudo -i
     ```
 
-1. Copy own configuration
+1. Download nixos install script
+
+    ```shell
+    curl -LO https://raw.githubusercontent.com/thled/nix-config/master/nixos-install.sh
+    ```
+
+1. Run nixos install script
+
+    ```shell
+    bash nixos-install.sh
+    ```
+
+1. Reboot and login as root
+1. Clone own configuration
 
     ```shell
     nix-shell -p git --run "git clone https://github.com/thled/nix-config.git /etc/nixos/nix-config"
     ```
 
-1. Run install script
+1. Switch to own configuration
 
     ```shell
-    /etc/nixos/nix-config/nixos-install.sh
+    bash /etc/nixos/nix-config/switch-own-config.sh
     ```
 
-1. TODO
+1. Reboot
+
+    ```shell
+    reboot
+    ```
+
+1. Change initial password (`123`)
+
+    ```shell
+    passwd
+    ```
 
 ## NixOS Installation (Manually)
 
