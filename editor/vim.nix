@@ -19,7 +19,7 @@ in
     viAlias = true;
     vimAlias = true;
     withNodeJs = false;
-    withPython3 = true;
+    withPython3 = false;
     withRuby = false;
     configure = {
       customRC = builtins.readFile ./init.vim;
