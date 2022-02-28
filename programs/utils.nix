@@ -17,6 +17,7 @@
     tree
     unzip
     xsel
+    zoxide
   ];
 }
 
