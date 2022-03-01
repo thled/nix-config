@@ -1,5 +1,13 @@
 # NixOS Setup
 
+## Table of Contents
+
+1. [Requirements](#requirements)
+1. [NixOS Installation (Script)](#nixos-installation-script)
+1. [NixOS Installation (Manually)](#nixos-installation-manually)
+1. [After installation (optional)](#after-installation-optional)
+1. [Usage](#usage)
+
 ## Requirements
 
 - Download [NixOS ISO][nixos]
@@ -191,6 +199,21 @@
         ```shell
         passwd
         ```
+
+## After installation (optional)
+
+- Sync Firefox config and addons by logging in.
+- Add SSH keys to `~/.ssh/`.
+- Create `~/projects` and `~/work` folder for private and work related projects, respectivly.
+- Connect bluetooth headset with `bluetoothctl`.
+
+## Usage
+
+- Start terminal with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd>.
+- Start any application with <kbd>Win</kbd>+<kbd>p</kbd>.
+- Use VPN with `systemctl start openvpn-protonVPN.service`.
+- Use office VPN with `nmcli connection up office --ask`.
+- Manage NixOS configuration in `/etc/nixos/nix-config`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
 
