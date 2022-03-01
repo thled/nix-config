@@ -15,7 +15,7 @@ set number relativenumber
 set ignorecase smartcase
 
 " indentation
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent smartindent
 
 " incremental substitute
 set inccommand=nosplit
