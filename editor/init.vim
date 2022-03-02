@@ -196,24 +196,28 @@ local on_attach = function(client, bufnr)
     -- Mappings
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local opts = { noremap=true, silent=true }
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('v', '<space>ca', ':<C-U>lua vim.lsp.buf.range_code_action()<CR>', opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>', opts)
-    buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
+    buf_set_keymap('n', 'gd',           '<cmd>lua vim.lsp.buf.definition()<CR>',                opts)
+    buf_set_keymap('n', 'gD',           '<cmd>lua vim.lsp.buf.declaration()<CR>',               opts)
+    buf_set_keymap('n', 'gI',           '<cmd>lua vim.lsp.buf.implementation()<CR>',            opts)
+    buf_set_keymap('n', 'gr',           '<cmd>lua vim.lsp.buf.references()<CR>',                opts)
+    buf_set_keymap('n', '<space>D',     '<cmd>lua vim.lsp.buf.type_definition()<CR>',           opts)
+    buf_set_keymap('n', 'K',            '<cmd>lua vim.lsp.buf.hover()<CR>',                     opts)
+    buf_set_keymap('n', '<C-k>',        '<cmd>lua vim.lsp.buf.signature_help()<CR>',            opts)
+    buf_set_keymap('n', '<space>f',     '<cmd>lua vim.lsp.buf.formatting()<CR>',                opts)
+    buf_set_keymap('n', '<space>rn',    '<cmd>lua vim.lsp.buf.rename()<CR>',                    opts)
+    buf_set_keymap('n', '<space>ca',    '<cmd>lua vim.lsp.buf.code_action()<CR>',               opts)
+    buf_set_keymap('v', '<space>ca',    ':<C-U>lua vim.lsp.buf.range_code_action()<CR>',        opts)
+    buf_set_keymap('n', '[d',           '<cmd>lua vim.diagnostic.goto_prev()<CR>',              opts)
+    buf_set_keymap('n', ']d',           '<cmd>lua vim.diagnostic.goto_next()<CR>',              opts)
+    buf_set_keymap('n', '<space>e',     '<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>',  opts)
+    buf_set_keymap('n', '<space>q',     '<cmd>lua vim.diagnostic.set_loclist()<CR>',            opts)
 
     -- Config
-    vim.lsp.handlers['textDocument/references'] = require('telescope.builtin').lsp_references
+    vim.lsp.handlers['textDocument/references']     = require('telescope.builtin').lsp_references
+    vim.lsp.handlers['textDocument/implementation'] = require('telescope.builtin').lsp_implementations
+    vim.lsp.handlers['textDocument/definition']     = require('telescope.builtin').lsp_definitions
+    vim.api.nvim_command [[autocmd CursorHold   <buffer> lua vim.lsp.buf.document_highlight()]]
+    vim.api.nvim_command [[autocmd CursorMoved  <buffer> lua vim.lsp.buf.clear_references()]]
 end
 
 -- Autocomplete capability
