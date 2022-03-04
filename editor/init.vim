@@ -3,7 +3,7 @@
 """""""""""
 
 " leader key
-let mapleader = "\<Space>"
+let mapleader = '\<Space>'
 
 " allow unsaved buffer switch
 set hidden
@@ -67,8 +67,31 @@ EOF
 
 lua <<EOF
 require('lualine').setup {
+    options = {
+        theme                   = 'gruvbox-material',
+        component_separators    = { left = '', right = '' },
+        section_separators      = { left = '', right = '' },
+    },
     sections = {
-        lualine_b = {'branch'},
+        lualine_a = { 'mode' },
+        lualine_b = {},
+        lualine_c = {{ 'filename', path = 1 }},
+        lualine_x = {
+            {
+                'diagnostics',
+                sources = { 'nvim' },
+                symbols = {
+                    error   = '',
+                    warn    = '',
+                    info    = '',
+                    hint    = '',
+                },
+            },
+            'filetype',
+            'encoding',
+        },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' },
     },
 }
 EOF
@@ -96,35 +119,35 @@ nnoremap <C-_> <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()
 lua <<EOF
 require('nvim-treesitter.configs').setup {
     ensure_installed = {
-        "bash",
-        "css",
-        "dockerfile",
-        "fish",
-        "go",
-        "gomod",
-        "graphql",
-        "haskell",
-        "html",
-        "java",
-        "javascript",
-        "json",
-        "json5",
-        "jsonc",
-        "kotlin",
-        "lua",
-        "nix",
-        "php",
-        "python",
-        "regex",
-        "rust",
-        "scss",
-        "svelte",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vue",
-        "yaml",
+        'bash',
+        'css',
+        'dockerfile',
+        'fish',
+        'go',
+        'gomod',
+        'graphql',
+        'haskell',
+        'html',
+        'java',
+        'javascript',
+        'json',
+        'json5',
+        'jsonc',
+        'kotlin',
+        'lua',
+        'nix',
+        'php',
+        'python',
+        'regex',
+        'rust',
+        'scss',
+        'svelte',
+        'toml',
+        'tsx',
+        'typescript',
+        'vim',
+        'vue',
+        'yaml',
     },
     sync_install = false,
     highlight = {
@@ -228,18 +251,18 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Install language servers w/o special config
 local servers = {
-    "bashls",           -- bash
-    "cssls",            -- css
-    "dockerls",         -- docker
-    "gopls",            -- go
-    "html",             -- html
-    "jsonls",           -- json
-    "rnix",             -- nix
-    "intelephense",     -- php
-    "pyright",          -- python
-    "rust_analyzer",    -- rust
-    "tsserver",         -- typescript
-    "vimls",            -- vim
+    'bashls',           -- bash
+    'cssls',            -- css
+    'dockerls',         -- docker
+    'gopls',            -- go
+    'html',             -- html
+    'jsonls',           -- json
+    'rnix',             -- nix
+    'intelephense',     -- php
+    'pyright',          -- python
+    'rust_analyzer',    -- rust
+    'tsserver',         -- typescript
+    'vimls',            -- vim
 }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup { 
@@ -252,7 +275,7 @@ end
 nvim_lsp.sumneko_lua.setup {
     on_attach       = on_attach,
     capabilities    = capabilities,
-    cmd             = { "lua-language-server" },
+    cmd             = { 'lua-language-server' },
     settings        = {
         Lua = {
             telemetry = {
@@ -269,6 +292,6 @@ EOF
 """"""
 
 " map to CTRL-J
-imap <silent><script><expr> <C-J> copilot#Accept("")
+imap <silent><script><expr> <C-J> copilot#Accept('')
 let g:copilot_no_tab_map = v:true
 
