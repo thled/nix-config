@@ -242,8 +242,10 @@ local on_attach = function(client, bufnr)
     vim.lsp.handlers['textDocument/references']     = require('telescope.builtin').lsp_references
     vim.lsp.handlers['textDocument/implementation'] = require('telescope.builtin').lsp_implementations
     vim.lsp.handlers['textDocument/definition']     = require('telescope.builtin').lsp_definitions
-    vim.api.nvim_command [[autocmd CursorHold   <buffer> lua vim.lsp.buf.document_highlight()]]
-    vim.api.nvim_command [[autocmd CursorMoved  <buffer> lua vim.lsp.buf.clear_references()]]
+    if client.supports_method('textDocument/documentHighlight') then
+        vim.api.nvim_command [[autocmd CursorHold   <buffer> lua vim.lsp.buf.document_highlight()]]
+        vim.api.nvim_command [[autocmd CursorMoved  <buffer> lua vim.lsp.buf.clear_references()]]
+    end
 end
 
 -- Autocomplete capability
