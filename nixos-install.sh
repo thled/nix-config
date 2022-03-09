@@ -13,38 +13,50 @@ function ask {
   eval "export $2=\$REPLY"
 }
 
-log "Setup questions:"
-ask 'Device' __DEVICE__
-ask 'Encryption password' __ENCRYPTION__
-
 log "Verify UEFI"
 ls /sys/firmware/efi/efivars
 
 log "Verify internet"
 ping -c 3 google.com
 
+log "List devices"
+lsblk
+
+log "Setup questions:"
+ask 'Device' __DEVICE__
+ask 'Partition Prefix' __PARTITION__
+ask 'Encryption password' __ENCRYPTION__
+
 log "Partitioning"
 parted /dev/${__DEVICE__} -- mklabel gpt
-parted /dev/${__DEVICE__} -- mkpart primary 512MiB -8GiB
-parted /dev/${__DEVICE__} -- mkpart primary linux-swap -8GiB 100%
-parted /dev/${__DEVICE__} -- mkpart ESP fat32 1MiB 512MiB
+parted /dev/${__DEVICE__} -- mkpart primary 512MB -8GB
+parted /dev/${__DEVICE__} -- mkpart primary linux-swap -8GB 100%
+parted /dev/${__DEVICE__} -- mkpart ESP fat32 1MB 512MB
 parted /dev/${__DEVICE__} -- set 3 esp on
 
 log "Formatting"
-echo -n "${__ENCRYPTION__}" | cryptsetup luksFormat /dev/${__DEVICE__}1 -
-echo -n "${__ENCRYPTION__}" | cryptsetup luksOpen /dev/${__DEVICE__}1 cryptroot -
+echo -n "${__ENCRYPTION__}" | cryptsetup luksFormat /dev/${__DEVICE__}${__PARTITION__}1 -
+echo -n "${__ENCRYPTION__}" | cryptsetup luksOpen /dev/${__DEVICE__}${__PARTITION__}1 cryptroot -
 mkfs.ext4 -L nixos /dev/mapper/cryptroot
-mkswap -L swap /dev/${__DEVICE__}2
-mkfs.fat -F 32 -n boot /dev/${__DEVICE__}3
+mkswap -L swap /dev/${__DEVICE__}${__PARTITION__}2
+mkfs.fat -F 32 -n boot /dev/${__DEVICE__}${__PARTITION__}3
 
 log "Mounting"
 mount /dev/disk/by-label/nixos /mnt
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
-swapon /dev/${__DEVICE__}2
+swapon /dev/${__DEVICE__}${__PARTITION__}2
+
+log "Add unstable channel"
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+nix-channel --update
+
+log "Add own configuration"
+nixos-generate-config --root /mnt
+sed -i '/hardware-configuration/a \.\/nix-config\/my\.nix' /mnt/etc/nixos/configuration.nix
+nix-shell -p git --run "git clone https://github.com/thled/nix-config.git /mnt/etc/nixos/nix-config"
 
 log "Installing"
-nixos-generate-config --root /mnt
 nixos-install
 
 log "Finished"
