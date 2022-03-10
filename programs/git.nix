@@ -15,6 +15,8 @@
     };
   };
 
+  environment.etc."config/git/ignore".source = ./gitignore_global;
+
   environment.etc."gitconfig.private".text =
     "[user]
     email = dev@tleduc.de";
