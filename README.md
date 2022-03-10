@@ -66,7 +66,7 @@
 
 - Sync Firefox config and addons by logging in.
 - Add SSH keys to `~/.ssh/`.
-- Create `~/projects` and `~/work` folder for private and work related projects, respectivly.
+- Create `~/projects` and `~/work` folder for private and work related projects, respectively.
 - Connect bluetooth headset with `bluetoothctl`.
 
 ## Usage
