@@ -13,7 +13,6 @@
     jq
     nmap
     nodejs
-    slock
     tldr
     tree
     unzip

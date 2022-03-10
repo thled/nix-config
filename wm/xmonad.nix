@@ -17,6 +17,8 @@
     };
   };
 
+  programs.slock.enable = true;
+
   environment.systemPackages = with pkgs; [
     haskellPackages.xmobar
     dmenu
