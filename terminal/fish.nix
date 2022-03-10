@@ -4,6 +4,7 @@
     shellAbbrs = {
       dc = "docker compose";
       gc = "git commit";
+      gd = "git diff";
       gf = "git fetch";
       gm = "git merge";
       gp = "git push";
