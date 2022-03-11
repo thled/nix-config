@@ -5,8 +5,7 @@ window:
   dynamic_title: false
   gtk_theme_variant: dark
 scrolling:
-  history: 10000
-  multiplier: 3
+  history: 0
 font:
   normal:
     family: "SauceCodePro Nerd Font Mono"

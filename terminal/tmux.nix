@@ -20,6 +20,7 @@
       set-option -g window-status-current-style bg=black,fg=white,bold
       set-option -g status-right '%m/%d %H:%M'
       set-option -g focus-events on
+      set-option -g mouse on
     '';
   };
 }
