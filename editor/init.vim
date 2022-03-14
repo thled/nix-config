@@ -18,7 +18,7 @@ set ignorecase smartcase
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent
 
 " show trailing spaces
-set list listchars=trail:~
+set list listchars=tab:▸\ ,extends:›,precedes:‹,nbsp:␣,trail:· showbreak=↪\ 
 
 " incremental substitute
 set inccommand=nosplit
