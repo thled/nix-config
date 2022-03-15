@@ -5,6 +5,7 @@
     firefox
     gimp
     meld
+    noisetorch
     obs-studio
     vlc
   ];
