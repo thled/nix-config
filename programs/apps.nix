@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     arandr
     chromium
+    cmus
     firefox
     gimp
     meld
