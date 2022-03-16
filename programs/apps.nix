@@ -6,7 +6,6 @@
     firefox
     gimp
     meld
-    noisetorch
     obs-studio
     vlc
   ];
@@ -25,6 +24,10 @@
       "BrowserSignin" = 0;
       "SyncDisabled" = true;
     };
+  };
+
+  programs.noisetorch = {
+      enable = true;
   };
 }
 
