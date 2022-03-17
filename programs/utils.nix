@@ -14,6 +14,7 @@
     jq
     nmap
     nodejs
+    ntfs3g
     tldr
     tree
     unzip
