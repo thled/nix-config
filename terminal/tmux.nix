@@ -12,6 +12,7 @@
 
     extraConfig = ''
       bind-key C-a send-prefix
+      bind-key l last-window
       bind-key Escape copy-mode
       bind-key \\ split-window -h -c '#{pane_current_path}'
       bind-key - split-window -v -c '#{pane_current_path}'
