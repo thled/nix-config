@@ -9,6 +9,7 @@
     ffmpeg
     fzf
     gcc
+    gnumake
     imagemagick
     jless
     jq
