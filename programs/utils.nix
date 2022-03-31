@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     bat
+    difftastic
     direnv
     dunst
     exa
