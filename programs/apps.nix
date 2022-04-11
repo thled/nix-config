@@ -29,5 +29,10 @@
   programs.noisetorch = {
       enable = true;
   };
+
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
 }
 
