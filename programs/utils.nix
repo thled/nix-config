@@ -19,6 +19,7 @@
     ntfs3g
     tldr
     tree
+    unar
     unzip
     xsel
     zoxide
