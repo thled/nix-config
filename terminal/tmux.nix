@@ -14,6 +14,8 @@
       bind-key a send-prefix
       bind-key C-a last-window
       bind-key Escape copy-mode
+      bind-key \\ split-window -h -c '#{pane_current_path}'
+      bind-key - split-window -v -c '#{pane_current_path}'
       set-option -g status-style bg=black,fg=white
       set-option -g window-status-style bg=black,fg=colour8
       set-option -g window-status-current-style bg=black,fg=white,bold
