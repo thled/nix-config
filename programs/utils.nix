@@ -14,6 +14,7 @@
     imagemagick
     jless
     jq
+    libnotify
     nmap
     nodejs
     ntfs3g
