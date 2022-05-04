@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   services.xserver = {
     enable = true;
+    libinput.enable = true;
     xkbOptions = "compose:menu";
     windowManager.xmonad = {
       enable = true;
