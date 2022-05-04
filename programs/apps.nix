@@ -34,5 +34,7 @@
     enable = true;
     package = pkgs.wireshark;
   };
+
+  # services.teamviewer.enable = true;
 }
 
