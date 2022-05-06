@@ -22,6 +22,7 @@
     tree
     unar
     unzip
+    watchexec
     xsel
     zoxide
   ];
