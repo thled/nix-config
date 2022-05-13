@@ -88,6 +88,7 @@ require('lualine').setup {
                 },
             },
             'filetype',
+            'bo:tabstop',
             'encoding',
         },
         lualine_y = { 'progress' },
