@@ -8,6 +8,7 @@
     meld
     obs-studio
     vlc
+    zoom-us
   ];
 
   programs.chromium = {
