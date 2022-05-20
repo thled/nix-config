@@ -1,5 +1,3 @@
-scan_timeout = 30
-
 [directory]
 fish_style_pwd_dir_length = 1
 
@@ -13,3 +11,8 @@ use_12hr = true
 format = '[$time]($style) '
 time_format = "%I:%M"
 style = "bold white dimmed"
+
+[nix_shell]
+symbol = ' '
+format = 'via [$symbol$state]($style) '
+
