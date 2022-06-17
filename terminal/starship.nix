@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
-  environment.systemPackages = [ pkgs.starship ];
-  environment.etc."config/starship.toml".source = ./starship.toml;
-  environment.variables = {
-    STARSHIP_CONFIG = "/etc/config/starship.toml";
+{ lib, pkgs, ... }: {
+  programs.starship = {
+    enable = true;
+    settings = lib.importTOML ./starship.toml;
   };
 }
 
