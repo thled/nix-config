@@ -39,8 +39,8 @@ nnoremap <nowait><silent> <C-C> :nohlsearch<CR>
 """""""""
 
 set background=dark
-let g:gruvbox_material_background = 'hard'
-autocmd VimEnter * colorscheme gruvbox-material
+let g:catppuccin_flavour = "mocha"
+autocmd VimEnter * colorscheme catppuccin
 
 
 """""""
@@ -68,7 +68,6 @@ EOF
 lua <<EOF
 require('lualine').setup {
     options = {
-        theme                   = 'gruvbox-material',
         component_separators    = { left = '', right = '' },
         section_separators      = { left = '', right = '' },
     },

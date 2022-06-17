@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   networking.networkmanager = {
     enable = true;
-    packages = [
+    plugins = [
       pkgs.networkmanager-fortisslvpn
     ];
   };

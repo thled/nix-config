@@ -1,20 +1,6 @@
-{ pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  copilot = pkgs.vimUtils.buildVimPlugin {
-    name = "copilot";
-    src = pkgs.fetchFromGitHub {
-      owner = "github";
-      repo = "copilot.vim";
-      rev = "47eb231463d3654de1a205c4e30567fbd006965d";
-      sha256 = "06znz1869h7cdh9xc0b54mysslgpf3qdwsj5zvnzrzk6fnfin03q";
-    };
-  };
-in
-{
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
-    package = unstable.neovim-unwrapped;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -25,7 +11,7 @@ in
       customRC = builtins.readFile ./init.vim;
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
-          gruvbox-material          # theme
+          catppuccin-nvim           # theme
           vim-surround              # surround
           gitsigns-nvim             # git
           comment-nvim              # comment
@@ -41,9 +27,13 @@ in
           cmp_luasnip               # autocomplete
           nvim-cmp                  # autocomplete
           nvim-lspconfig            # lsp
-          copilot                   # ai
+          copilot-vim               # ai
+          refactoring-nvim          # refactoring
         ];
       };
+    };
+    runtime = {
+      "after/ftplugin/typescript.vim".text = "setlocal tabstop=2 softtabstop=2 shiftwidth=2";
     };
   };
 

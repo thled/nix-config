@@ -47,10 +47,6 @@ mkdir /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon /dev/${__DEVICE__}${__PARTITION__}2
 
-log "Add unstable channel"
-nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-nix-channel --update
-
 log "Add own configuration"
 nixos-generate-config --root /mnt
 sed -i '/hardware-configuration/a \.\/nix-config\/my\.nix' /mnt/etc/nixos/configuration.nix

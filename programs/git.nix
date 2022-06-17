@@ -7,7 +7,7 @@
       diff.tool = "difftastic";
       difftool.prompt = "false";
       difftool.meld.cmd = "meld \"$LOCAL\" \"$REMOTE\"";
-      difftool.difftastic.cmd = "difftastic \"$LOCAL\" \"$REMOTE\"";
+      difftool.difftastic.cmd = "difft \"$LOCAL\" \"$REMOTE\"";
       merge.tool = "meld";
       mergetool.meld.cmd = "meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"";
       pager.difftool = "true";

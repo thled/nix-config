@@ -1,29 +1,28 @@
 import XMonad
+
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.SetWMName
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
+
 import XMonad.Layout.MultiColumns
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ThreeColumns
+
 import XMonad.Util.EZConfig
 
 main :: IO()
-main = launch 
+main = xmonad
+    . ewmhFullscreen
     . ewmh
-  =<< statusBar "xmobar /etc/config/xmobarrc" myXmobarPP toggleStrutsKey myConfig
-  where
-    toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
-    toggleStrutsKey XConfig{ modMask = m } = (m, xK_b)
+    . withEasySB (statusBarProp "xmobar /etc/config/xmobarrc" (pure myXmobarPP)) defToggleStrutsKey
+    $ myConfig
 
 myConfig = def
-        { startupHook = setWMName "LG3D"
-        , manageHook = manageDocks
-        , handleEventHook = docksEventHook
-        , modMask = mod4Mask
+        { modMask = mod4Mask
         , terminal = "alacritty"
         , focusedBorderColor = "#0066FF"
-        , layoutHook = avoidStruts $ smartBorders $ myLayouts
+        , layoutHook = smartBorders $ myLayouts
         }
         `additionalKeysP`
         [ ("M-x", spawn "slock")

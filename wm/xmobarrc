@@ -37,9 +37,9 @@ Config { font = "xft:SauceCodePro Nerd Font:pixelsize=12:antialiase=true:autohin
                                , "-O"	, "Charging"
                                , "-i"	, "Charged"
                                ] 50
-                 , Run UnsafeStdinReader
+                 , Run XMonadLog
     ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = "%UnsafeStdinReader% }{ %date% | %multicpu% | %memory% * %swap% | %eno1% * %wi% | %battery% | %ETNN%"
+    , template = "%XMonadLog% }{ %date% | %multicpu% | %memory% * %swap% | %eno1% * %wi% | %battery% | %ETNN%"
 }
