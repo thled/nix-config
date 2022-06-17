@@ -15,7 +15,7 @@
           vim-surround              # surround
           gitsigns-nvim             # git
           comment-nvim              # comment
-          lualine-nvim              # statusline
+          feline-nvim               # statusline
           plenary-nvim              # search
           telescope-fzf-native-nvim # search
           telescope-nvim            # search

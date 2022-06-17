@@ -65,35 +65,10 @@ EOF
 """ statusline
 """"""""""""""
 
+set termguicolors
+
 lua <<EOF
-require('lualine').setup {
-    options = {
-        component_separators    = { left = '', right = '' },
-        section_separators      = { left = '', right = '' },
-    },
-    sections = {
-        lualine_a = { 'mode' },
-        lualine_b = {},
-        lualine_c = {{ 'filename', path = 1 }},
-        lualine_x = {
-            {
-                'diagnostics',
-                sources = { 'nvim' },
-                symbols = {
-                    error   = '',
-                    warn    = '',
-                    info    = '',
-                    hint    = '',
-                },
-            },
-            'filetype',
-            'bo:tabstop',
-            'encoding',
-        },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' },
-    },
-}
+require('feline').setup()
 EOF
 
 
