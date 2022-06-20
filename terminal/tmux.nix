@@ -22,6 +22,7 @@
       set-option -g status-right '%m/%d %H:%M'
       set-option -g focus-events on
       set-option -g mouse on
+      set-option -ag terminal-overrides ",xterm-256color:RGB"
     '';
   };
 }

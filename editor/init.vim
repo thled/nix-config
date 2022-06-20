@@ -38,9 +38,10 @@ nnoremap <nowait><silent> <C-C> :nohlsearch<CR>
 """ theme
 """""""""
 
-set background=dark
+set termguicolors
+
 let g:catppuccin_flavour = "mocha"
-autocmd VimEnter * colorscheme catppuccin
+colorscheme catppuccin
 
 
 """""""
@@ -64,8 +65,6 @@ EOF
 """"""""""""""
 """ statusline
 """"""""""""""
-
-set termguicolors
 
 lua <<EOF
 require("feline").setup({
