@@ -16,6 +16,7 @@
           gitsigns-nvim             # git
           comment-nvim              # comment
           feline-nvim               # statusline
+          nvim-web-devicons         # statusline
           plenary-nvim              # search
           telescope-fzf-native-nvim # search
           telescope-nvim            # search
