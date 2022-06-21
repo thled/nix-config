@@ -16,6 +16,7 @@
       bind-key Escape copy-mode
       bind-key \\ split-window -h -c '#{pane_current_path}'
       bind-key - split-window -v -c '#{pane_current_path}'
+      bind-key c new-window -c '#{pane_current_path}'
       set-option -g status-style bg=black,fg=white
       set-option -g window-status-style bg=black,fg=colour8
       set-option -g window-status-current-style bg=black,fg=white,bold
