@@ -1,4 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+  copilot = pkgs.vimUtils.buildVimPlugin {
+        name = "copilot-vim";
+        src = pkgs.fetchFromGitHub {
+          owner = "github";
+          repo = "copilot.vim";
+          rev = "c2e75a3a7519c126c6fdb35984976df9ae13f564";
+          sha256 = "V13La54aIb3hQNDE7BmOIIZWy7In5cG6kE0fti/wxVQ=";
+        };
+      };
+in {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -28,7 +39,7 @@
           cmp_luasnip               # autocomplete
           nvim-cmp                  # autocomplete
           nvim-lspconfig            # lsp
-          copilot-vim               # ai
+          copilot                   # ai
           refactoring-nvim          # refactoring
         ];
       };
