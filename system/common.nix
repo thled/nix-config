@@ -5,7 +5,7 @@
   networking.hostName = "NB61";
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
+    nerdfonts
   ];
 
   systemd.tmpfiles.rules = [
