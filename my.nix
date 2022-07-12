@@ -3,7 +3,7 @@
     ./system/user.nix
     ./system/common.nix
     ./network/networkmanager.nix
-    ./wm/xmonad.nix
+    ./wm/leftwm.nix
     ./audio/pulseaudio.nix
     ./terminal/alacritty.nix
     ./terminal/tmux.nix

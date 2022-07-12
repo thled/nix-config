@@ -3,13 +3,11 @@
     enable = true;
     libinput.enable = true;
     xkbOptions = "compose:menu";
-    windowManager.xmonad = {
+    windowManager.leftwm = {
       enable = true;
-      enableContribAndExtras = true;
-      config = ./xmonad.hs;
     };
     displayManager = {
-      defaultSession = "none+xmonad";
+      defaultSession = "none+leftwm";
       lightdm.enable = true;
       autoLogin = {
         enable = true;
@@ -18,13 +16,12 @@
     };
   };
 
+  environment.etc."config/leftwm/config.toml".source = ./config.toml;
+
   programs.slock.enable = true;
 
   environment.systemPackages = with pkgs; [
-    haskellPackages.xmobar
     dmenu
   ];
-
-  environment.etc."config/xmobarrc".source = ./xmobarrc;
 }
 
