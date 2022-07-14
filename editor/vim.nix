@@ -1,14 +1,23 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 let
   copilot = pkgs.vimUtils.buildVimPlugin {
-        name = "copilot-vim";
-        src = pkgs.fetchFromGitHub {
-          owner = "github";
-          repo = "copilot.vim";
-          rev = "c2e75a3a7519c126c6fdb35984976df9ae13f564";
-          sha256 = "V13La54aIb3hQNDE7BmOIIZWy7In5cG6kE0fti/wxVQ=";
-        };
-      };
+    name = "copilot-vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "github";
+      repo = "copilot.vim";
+      rev = "c2e75a3a7519c126c6fdb35984976df9ae13f564";
+      sha256 = "V13La54aIb3hQNDE7BmOIIZWy7In5cG6kE0fti/wxVQ=";
+    };
+  };
+  cmp-nvim-lsp-signature-help = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-nvim-lsp-signature-help";
+    src = pkgs.fetchFromGitHub {
+      owner = "hrsh7th";
+      repo = "cmp-nvim-lsp-signature-help";
+      rev = "007dd2740d9b70f2688db01a39d6d25b7169cd57";
+      sha256 = "L3tw+FYHiz5gYY23Sd9METHlxIvaaHGFJH/Qhc0SkaQ=";
+    };
+  };
 in {
   programs.neovim = {
     enable = true;
@@ -22,25 +31,26 @@ in {
       customRC = builtins.readFile ./init.vim;
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
-          catppuccin-nvim           # theme
-          vim-surround              # surround
-          gitsigns-nvim             # git
-          comment-nvim              # comment
-          feline-nvim               # statusline
-          nvim-web-devicons         # statusline
-          plenary-nvim              # search
-          telescope-fzf-native-nvim # search
-          telescope-nvim            # search
-          nvim-treesitter           # syntax highlighting
-          cmp-nvim-lsp              # autocomplete
-          cmp-buffer                # autocomplete
-          cmp-path                  # autocomplete
-          luasnip                   # autocomplete
-          cmp_luasnip               # autocomplete
-          nvim-cmp                  # autocomplete
-          nvim-lspconfig            # lsp
-          copilot                   # ai
-          refactoring-nvim          # refactoring
+          catppuccin-nvim               # theme
+          vim-surround                  # surround
+          gitsigns-nvim                 # git
+          comment-nvim                  # comment
+          feline-nvim                   # statusline
+          nvim-web-devicons             # statusline
+          plenary-nvim                  # search
+          telescope-fzf-native-nvim     # search
+          telescope-nvim                # search
+          nvim-treesitter               # syntax highlighting
+          cmp-nvim-lsp                  # autocomplete
+          cmp-buffer                    # autocomplete
+          cmp-path                      # autocomplete
+          luasnip                       # autocomplete
+          cmp_luasnip                   # autocomplete
+          nvim-cmp                      # autocomplete
+          cmp-nvim-lsp-signature-help   # autocomplete
+          nvim-lspconfig                # lsp
+          copilot                       # ai
+          refactoring-nvim              # refactoring
         ];
       };
     };
