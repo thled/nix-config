@@ -7,6 +7,7 @@
     gimp
     meld
     obs-studio
+    rnote
     vlc
     zoom-us
   ];
@@ -27,15 +28,13 @@
     };
   };
 
-  programs.noisetorch = {
-      enable = true;
-  };
+  programs.noisetorch.enable = true;
 
   programs.wireshark = {
     enable = true;
     package = pkgs.wireshark;
   };
 
-  # services.teamviewer.enable = true;
+  programs.dconf.enable = true; # needed by rnote
 }
 
