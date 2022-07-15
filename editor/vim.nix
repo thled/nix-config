@@ -71,6 +71,7 @@ in {
     rnix-lsp                                        # nix
     nodePackages.intelephense                       # php
     nodePackages.pyright                            # python
+    cargo                                           # rust
     rust-analyzer                                   # rust
     nodePackages.typescript                         # typescript
     nodePackages.typescript-language-server         # typescript
