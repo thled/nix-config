@@ -17,13 +17,13 @@
   };
 
   environment.etc."config/leftwm/config.toml".source = ./config.toml;
-  environment.etc."config/leftwm/themes/current".source = ./basic_polybar;
+  environment.etc."config/leftwm/themes/current".source = ./thledbar;
 
   programs.slock.enable = true;
   services.picom.enable = true;
   environment.systemPackages = with pkgs; [
     dmenu
-    polybar
+    (pkgs.callPackage ./thledbar.nix {})
   ];
 }
 

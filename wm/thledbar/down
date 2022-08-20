@@ -11,5 +11,5 @@ leftwm-command "UnloadTheme"
 
 pkill compton
 pkill picom
-pkill polybar
+pkill thledbar
 
