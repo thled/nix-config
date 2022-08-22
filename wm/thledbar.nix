@@ -1,23 +1,50 @@
-{ stdenv, lib, fetchurl, autoPatchelfHook }:
-stdenv.mkDerivation rec {
+{
+  alsaLib,
+  cairo,
+  cargo,
+  fetchFromGitHub,
+  glib,
+  lib,
+  openssl,
+  pango,
+  pkg-config,
+  python3,
+  rustPlatform,
+  rustc,
+  xorg,
+}:
+
+rustPlatform.buildRustPackage rec {
   pname = "thledbar";
-  version = "0.1.1";
-  src = fetchurl {
-    url = "https://github.com/thled/thledbar/releases/download/v0.1.1/thledbar";
-    sha256 = "4af9facf9037fc991cce293ed2d5a54ce3c1e1e020ddb865f01704b62b0674ba";
+  version = "v0.1.1";
+
+  src = fetchFromGitHub {
+    owner = "thled";
+    repo = pname;
+    rev = version;
+    sha256 = "oB/6zGLEippIPLiX7o2BxA74k2rXgMJKcs3unMsNAZw=";
   };
 
-  nativeBuildInputs = [ autoPatchelfHook ];
+  cargoSha256 = "WF6NoNpWOpu/0hAJ2yGIZOF0wewczvaeiq9VbHdotWk=";
 
-  phases = [ "installPhase" ];
-  installPhase = ''
-    mkdir -p $out/bin
-    cp $src $out/bin/thledbar
-  '';
+  nativeBuildInputs = [ 
+    pkg-config
+    python3
+  ];
+  buildInputs = [
+    alsaLib
+    cairo
+    cargo
+    glib
+    openssl
+    pango
+    rustc
+    xorg.libxcb
+    xorg.xcbutilwm
+  ];
 
   meta = with lib; {
-    homepage = https://github.com/thled/thledbar;
-    description = "ThledBar";
-    platforms = platforms.linux;
+    description = "My configuration of the Cnx status bar";
+    homepage = "https://github.com/thled/thledbar";
   };
 }
