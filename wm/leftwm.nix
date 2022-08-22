@@ -1,7 +1,10 @@
 { pkgs, ... }: {
   services.xserver = {
     enable = true;
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
     xkbOptions = "compose:menu";
     windowManager.leftwm = {
       enable = true;
