@@ -6,7 +6,7 @@
     extraGroups = [
       "audio"
       "docker"
-      "libvirt"
+      "libvirtd"
       "video"
       "wheel"
     ];
