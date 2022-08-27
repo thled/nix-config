@@ -22,10 +22,10 @@ rustPlatform.buildRustPackage rec {
     owner = "thled";
     repo = pname;
     rev = version;
-    sha256 = "oB/6zGLEippIPLiX7o2BxA74k2rXgMJKcs3unMsNAZw=";
+    sha256 = "mC+XfF4FmHgQXUrORAaejURcy5NYe3KXbuDmX/1lU/4=";
   };
 
-  cargoSha256 = "BAmAdQFwL1qSj2dL0tBLdhjoipyi0IaoRUW0UWRUzMc=";
+  cargoSha256 = "PIyiYKUvz4uj0cKPrmVdciOLHnjwPsex6Ak+Gr1TzdQ=";
 
   nativeBuildInputs = [ 
     pkg-config
