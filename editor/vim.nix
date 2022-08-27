@@ -45,7 +45,8 @@ in {
       };
     };
     runtime = {
-      "after/ftplugin/typescript.vim".text = "setlocal tabstop=2 softtabstop=2 shiftwidth=2";
+      "etc/ftplugin/nix.vim".text = "setlocal tabstop=2 softtabstop=2 shiftwidth=2";
+      "etc/ftplugin/typescript.vim".text = "setlocal tabstop=2 softtabstop=2 shiftwidth=2";
     };
   };
 
