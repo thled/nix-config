@@ -9,6 +9,7 @@
     ./terminal/tmux.nix
     ./terminal/fish.nix
     ./terminal/starship.nix
+    ./terminal/zellij.nix
     ./editor/vim.nix
     ./virtualisation/docker.nix
     ./virtualisation/virt_manager.nix
