@@ -429,6 +429,5 @@ plugins:
     - path: status-bar
       tag: status-bar
 
-#theme: default
-#scroll_buffer_size: 10000
-
+theme: catppuccin-mocha
+# scroll_buffer_size: 10000
