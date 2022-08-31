@@ -23,8 +23,6 @@ keybinds:
           key: [Alt: 'm',]
         - action: [Quit,]
           key: [Alt: 'q',]
-        - action: [Detach,]
-          key: [Alt: 'd',]
         - action: [NewPane: ]
           key: [Alt: 'n',]
         - action: [MoveFocusOrTab: Left,]
