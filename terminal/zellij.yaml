@@ -430,9 +430,9 @@ plugins:
 theme: catppuccin-mocha
 themes:
   catppuccin-mocha:
-    bg: [30, 30, 46] # Base
+    bg: [88, 91, 112] # Surface2
     fg: [108, 112, 134] # Overlay0
-    black: [49, 50, 68] # Surface0
+    black: [24, 24, 37] # Mantle
     white: [205, 214, 244] # Text
     red: [243, 139, 168] # Red
     green: [166, 227, 161] # Green
