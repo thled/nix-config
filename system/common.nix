@@ -1,4 +1,8 @@
 { config, pkgs, ... }: {
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   boot.loader.systemd-boot.configurationLimit = 8;
 
   time.timeZone = "Europe/Berlin";
