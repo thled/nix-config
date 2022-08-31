@@ -7,5 +7,4 @@ in
 {
   environment.systemPackages = with pkgs; [ unstable.zellij ];
   environment.etc."config/zellij/config.yaml".source = ./zellij.yaml;
-  environment.etc."config/zellij/themes/catppuccin.yaml".source = ./catppuccin.yaml;
 }
