@@ -42,7 +42,7 @@ key = "x"
 [[keybind]]
 command = "Execute"
 value = "slock"
-modifier = ["modkey", "Control"]
+modifier = ["modkey"]
 key = "l"
 
 [[keybind]]
@@ -273,13 +273,13 @@ key = "r"
 
 [[keybind]]
 command = "Execute"
-value = "xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off"
+value = "xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off && leftwm command SoftReload"
 modifier = ["modkey", "Control"]
 key = "1"
 
 [[keybind]]
 command = "Execute"
-value = "xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-2 --off"
+value = "xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-2 --off && leftwm command SoftReload"
 modifier = ["modkey", "Control"]
 key = "2"
 
