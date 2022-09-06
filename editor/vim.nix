@@ -5,8 +5,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp-signature-help";
-      rev = "007dd2740d9b70f2688db01a39d6d25b7169cd57";
-      sha256 = "L3tw+FYHiz5gYY23Sd9METHlxIvaaHGFJH/Qhc0SkaQ=";
+      rev = "3dd40097196bdffe5f868d5dddcc0aa146ae41eb";
+      sha256 = "0kfa0pw5yx961inirqwi0fjvgdbmsgw16703mw2w9km8313x17zw";
     };
   };
 in {
@@ -22,25 +22,57 @@ in {
       customRC = builtins.readFile ./init.vim;
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
-          catppuccin-nvim               # theme
-          vim-surround                  # surround
-          gitsigns-nvim                 # git
-          comment-nvim                  # comment
-          feline-nvim                   # statusline
-          nvim-web-devicons             # statusline
-          plenary-nvim                  # search
-          telescope-fzf-native-nvim     # search
-          telescope-nvim                # search
-          nvim-treesitter               # syntax highlighting
-          cmp-nvim-lsp                  # autocomplete
-          cmp-buffer                    # autocomplete
-          cmp-path                      # autocomplete
-          luasnip                       # autocomplete
-          cmp_luasnip                   # autocomplete
-          nvim-cmp                      # autocomplete
-          cmp-nvim-lsp-signature-help   # autocomplete
-          nvim-lspconfig                # lsp
-          refactoring-nvim              # refactoring
+          catppuccin-nvim                         # theme
+          vim-surround                            # surround
+          gitsigns-nvim                           # git
+          comment-nvim                            # comment
+          feline-nvim                             # statusline
+          nvim-web-devicons                       # statusline
+          plenary-nvim                            # search
+          telescope-fzf-native-nvim               # search
+          telescope-nvim                          # search
+          cmp-nvim-lsp                            # autocomplete
+          cmp-buffer                              # autocomplete
+          cmp-path                                # autocomplete
+          luasnip                                 # autocomplete
+          cmp_luasnip                             # autocomplete
+          nvim-cmp                                # autocomplete
+          cmp-nvim-lsp-signature-help             # autocomplete
+          nvim-lspconfig                          # lsp
+          (nvim-treesitter.withPlugins (          # highlighting
+            plugins: with plugins; [
+              tree-sitter-bash
+              tree-sitter-clojure
+              tree-sitter-css
+              tree-sitter-dockerfile
+              tree-sitter-fish
+              tree-sitter-go
+              tree-sitter-gomod
+              tree-sitter-graphql
+              tree-sitter-haskell
+              tree-sitter-html
+              tree-sitter-java
+              tree-sitter-javascript
+              tree-sitter-json
+              tree-sitter-json5
+              tree-sitter-lua
+              tree-sitter-make
+              tree-sitter-markdown
+              tree-sitter-nix
+              tree-sitter-php
+              tree-sitter-python
+              tree-sitter-regex
+              tree-sitter-rust
+              tree-sitter-scss
+              tree-sitter-svelte
+              tree-sitter-toml
+              tree-sitter-tsx
+              tree-sitter-typescript
+              tree-sitter-vim
+              tree-sitter-vue
+              tree-sitter-yaml
+            ]
+          ))
         ];
       };
     };
