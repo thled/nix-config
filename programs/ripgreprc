@@ -8,6 +8,10 @@
 # Include hidden files
 --hidden
 
+# Exclude .git
+--glob
+!.git
+
 # Disable .gitignore handling
 #--no-ignore
 
