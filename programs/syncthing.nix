@@ -14,6 +14,10 @@
         path = "/home/thled/sync";
         devices = [ "pixel4a" ];
       };
+      "Obsidian" = {
+        path = "/home/thled/projects/references";
+        devices = [ "pixel4a" ];
+      };
     };
   };
 }
