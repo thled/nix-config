@@ -17,6 +17,7 @@
     ./programs/git.nix
     ./programs/kubernetes.nix
     ./programs/ripgrep.nix
+    ./programs/syncthing.nix
     ./programs/apps.nix
   ];
 }
