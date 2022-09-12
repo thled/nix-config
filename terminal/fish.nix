@@ -15,6 +15,9 @@
       l = "exa -la --git";
       t = "exa -T --git-ignore";
     };
+    shellAliases = {
+      i = "echo \"Subject: \" $argv | sendmail (cat ~/.inbox_email)";
+    };
   };
 
   systemd.tmpfiles.rules = [

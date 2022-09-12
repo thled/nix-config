@@ -3,6 +3,7 @@
     ./system/user.nix
     ./system/common.nix
     ./network/networkmanager.nix
+    ./network/mail.nix
     ./wm/leftwm.nix
     ./audio/pulseaudio.nix
     ./terminal/alacritty.nix

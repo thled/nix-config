@@ -67,7 +67,8 @@
 - Sync Firefox config and addons by logging in.
 - Add SSH keys to `~/.ssh/`.
 - Create `~/projects` and `~/work` folder for private and work related projects, respectively.
-- Connect bluetooth headset with `bluetoothctl`.
+- For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email`.
+- Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
 
 ## Usage
 
@@ -78,4 +79,5 @@
 - Manage NixOS configuration in `/etc/nixos/nix-config`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
+[fish]: terminal/fish.nix
 
