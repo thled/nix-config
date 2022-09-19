@@ -67,7 +67,7 @@
 - Sync Firefox config and addons by logging in.
 - Add SSH keys to `~/.ssh/`.
 - Create `~/projects` and `~/work` folder for private and work related projects, respectively.
-- For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email`.
+- For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email` and password for SMTP into `~/.inbox_pass`.
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
 
 ## Usage
