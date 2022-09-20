@@ -16,7 +16,7 @@
       t = "exa -T --git-ignore";
     };
     shellAliases = {
-      i = "echo \"Subject: \" $argv | sendmail (cat ~/.inbox_email)";
+      i = "echo \"Subject: $argv\" | sendmail (cat ~/.inbox_email) && echo \"Send to inbox:\"";
     };
   };
 
