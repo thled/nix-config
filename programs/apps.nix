@@ -3,6 +3,7 @@
     arandr
     chromium
     cmus
+    discord
     firefox
     gimp
     meld
