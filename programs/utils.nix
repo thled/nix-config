@@ -18,6 +18,7 @@
     nmap
     nodejs
     ntfs3g
+    patchelf
     tldr
     tree
     unar
