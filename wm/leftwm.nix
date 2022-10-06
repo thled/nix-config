@@ -1,4 +1,25 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
+  nixpkgs.overlays = [
+    (self: super: {
+      leftwm = super.leftwm.overrideAttrs (oldAttrs: rec {
+        version = "0.3.0";
+
+        src = super.fetchFromGitHub {
+          owner = "thled";
+          repo = "leftwm";
+          rev = "83733f32c6ab2167144edeb0a29d18fed9cd0e1e";
+          sha256 = "sha256-vyKmx/hTZjT2YlFTrkQRq95I+Jj6ZISBk+9mT1k9gm8=";
+        };
+
+        cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
+          name = "leftwm-0.3.0-vendor.tar.gz";
+          inherit src;
+          outputHash = "sha256-MmxF1jt5VUZGbkEe858HBjAuHhgDY23MJJxpYQ4ckhs=";
+        });
+      });
+    })
+  ];
+
   services.xserver = {
     enable = true;
     libinput = {
@@ -64,7 +85,7 @@
   services.picom.enable = true;
   environment.systemPackages = with pkgs; [
     dmenu
-    (pkgs.callPackage ./thledbar.nix {})
+    (pkgs.callPackage ./thledbar.nix { })
   ];
 }
 
