@@ -30,10 +30,6 @@ highlight ColorColumn ctermbg=238 guibg=lightgrey
 " always show signcolumn
 set signcolumn=yes
 
-" keymap for no highlighting
-nnoremap <nowait><silent> <C-C> :nohlsearch<CR>
-
-
 """""""""
 """ theme
 """""""""
