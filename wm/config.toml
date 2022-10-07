@@ -10,6 +10,7 @@ scratchpad = [
 disable_current_tag_swap = false
 focus_behaviour = "Sloppy"
 focus_new_windows = true
+no_single_border = true
 
 [[keybind]]
 command = "Execute"

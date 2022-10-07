@@ -7,8 +7,8 @@
         src = super.fetchFromGitHub {
           owner = "thled";
           repo = "leftwm";
-          rev = "83733f32c6ab2167144edeb0a29d18fed9cd0e1e";
-          sha256 = "sha256-vyKmx/hTZjT2YlFTrkQRq95I+Jj6ZISBk+9mT1k9gm8=";
+          rev = "8ac9b28c129711b0a048133a3b50c95daad70642";
+          sha256 = "sha256-gzIOrvs/Z2FLEq8An3dRo/FcM3BibUJb6WDoalGKT60=";
         };
 
         cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
