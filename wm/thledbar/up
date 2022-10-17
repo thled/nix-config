@@ -18,8 +18,8 @@ elif [ -x "$(command -v compton)" ]; then
 fi
 
 
-#set the theme.toml config
-leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
+#set the theme.ron config
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 
 #set background

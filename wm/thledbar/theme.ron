@@ -1,0 +1,12 @@
+#![enable(implicit_some)]
+(
+    border_width: 1,
+    margin: 0,
+    default_border_color: "#6c7086",
+    floating_border_color: "#f9e2af",
+    focused_border_color: "#b4befe",
+    gutter: [(
+       side: Top,
+       value: 20
+    )]
+)

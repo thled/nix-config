@@ -2,20 +2,26 @@
   nixpkgs.overlays = [
     (self: super: {
       leftwm = super.leftwm.overrideAttrs (oldAttrs: rec {
-        version = "0.3.0";
+        version = "0.4.0";
 
         src = super.fetchFromGitHub {
           owner = "thled";
           repo = "leftwm";
-          rev = "14a797283049a833627c487158d9f392f961a29b";
-          sha256 = "sha256-0ODpWd7wGGW06j1Zh5ap350RqtsCFkPAx0CW+jSbFv0=";
+          rev = "4b284181d9666a0cbf39ddb921ca78e9f43821de";
+          sha256 = "sha256-UQiQe9hDc5dLU2+uQol6yWKpMz0N+tQUJ3hZqtXnhxM=";
         };
 
         cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
-          name = "leftwm-0.3.0-vendor.tar.gz";
+          name = "leftwm-0.4.0-vendor.tar.gz";
           inherit src;
-          outputHash = "sha256-MmxF1jt5VUZGbkEe858HBjAuHhgDY23MJJxpYQ4ckhs=";
+          outputHash = "sha256-D00IFTELRlqeKQ7zheJKTvu5FBgYQXsZ+OnPnVzweC4=";
         });
+
+        postInstall = ''
+          for p in $out/bin/left*; do
+            patchelf --set-rpath "${super.lib.makeLibraryPath [super.pkgs.xorg.libXinerama super.pkgs.xorg.libX11]}" $p
+          done
+        '';
       });
     })
   ];
@@ -31,6 +37,7 @@
       enable = true;
     };
     displayManager = {
+      startx.enable = true;
       defaultSession = "none+leftwm";
       lightdm.enable = true;
       autoLogin = {
@@ -78,7 +85,7 @@
     };
   };
 
-  environment.etc."config/leftwm/config.toml".source = ./config.toml;
+  environment.etc."config/leftwm/config.ron".source = ./leftwm.ron;
   environment.etc."config/leftwm/themes/current".source = ./thledbar;
 
   programs.slock.enable = true;
