@@ -23,7 +23,7 @@
     layout_mode: Workspace,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Rnote", value: "rnote", x: 50.0, y: 50.0, height: 50.0, width: 50.0),
+        (name: "Alacritty", value: "alacritty", x: 50.0, y: 50.0, height: 50.0, width: 50.0),
     ],
     window_rules: [],
     disable_current_tag_swap: false,
@@ -72,7 +72,7 @@
         (command: IncreaseMainWidth, value: "5", modifier: ["modkey"], key: "a"),
         (command: DecreaseMainWidth, value: "5", modifier: ["modkey"], key: "x"),
         (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
-        (command: ToggleScratchPad, value: "Rnote", modifier: ["modkey"], key: "r"),
+        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "r"),
         (command: Execute, value: "xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "1"),
         (command: Execute, value: "xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-2 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "2"),
         (command: Execute, value: "import ~/screenshots/$(date +\"%Y-%m-%d_%H-%M-%S\").png", modifier: ["modkey"], key: "s"),

@@ -9,7 +9,6 @@
     meld
     obs-studio
     obsidian
-    rnote
     vlc
     zoom-us
   ];
@@ -34,7 +33,5 @@
     enable = true;
     package = pkgs.wireshark;
   };
-
-  programs.dconf.enable = true; # needed by rnote
 }
 
