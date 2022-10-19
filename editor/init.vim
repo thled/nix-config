@@ -63,8 +63,37 @@ EOF
 """"""""""""""
 
 lua <<EOF
+local clrs = require("catppuccin.core.color_palette")
+local file_info_component = {
+    provider = {
+        name = 'file_info',
+        opts = {
+            type = 'relative'
+        }
+    },
+    short_provider = {
+        name = 'file_info',
+        opts = {
+            type = 'relative-short'
+        }
+    },
+    hl = {
+        fg = clrs.black3,
+        bg = clrs.maroon,
+    },
+    left_sep = {
+        str = "",
+        hl = {
+            fg = clrs.maroon,
+            bg = clrs.black3,
+        },
+    },
+}
+
+local components = require('catppuccin.core.integrations.feline')
+components.active[3][3] = file_info_component
 require("feline").setup({
-    components = require('catppuccin.core.integrations.feline'),
+    components = components,
 })
 EOF
 
