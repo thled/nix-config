@@ -5,16 +5,16 @@
         version = "0.4.0";
 
         src = super.fetchFromGitHub {
-          owner = "thled";
+          owner = "leftwm";
           repo = "leftwm";
-          rev = "314a26d19d02a8a71d57f3d3fe5c75222546bba2";
-          sha256 = "sha256-h9NIArJ6GInlapHWnGYKa2I3C93lASQEB4zD6YUwHec=";
+          rev = "360834f42734125758905059f2aedb6316d176ac";
+          sha256 = "sha256-mjFRGMQNTTw9G2X81EjamLL3dwMGU56t95Ao4uCAUoc=";
         };
 
         cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
           name = "leftwm-0.4.0-vendor.tar.gz";
           inherit src;
-          outputHash = "sha256-D00IFTELRlqeKQ7zheJKTvu5FBgYQXsZ+OnPnVzweC4=";
+          outputHash = "sha256-XJdnjfeLMwdgfwegkzJY/ksWLylKS8pse2/Xs7XTtrU=";
         });
 
         postInstall = ''
