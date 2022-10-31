@@ -6,5 +6,5 @@ let
 in
 {
   environment.systemPackages = with pkgs; [ unstable.zellij ];
-  environment.etc."config/zellij/config.yaml".source = ./zellij.yaml;
+  environment.etc."config/zellij/config.kdl".source = ./zellij.kdl;
 }
