@@ -34,7 +34,7 @@
     single_window_border: false,
     sloppy_mouse_follows_focus: true,
     keybind: [
-        (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
+        (command: Execute, value: "j4-dmenu-desktop", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),

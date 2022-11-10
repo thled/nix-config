@@ -91,7 +91,7 @@
   programs.slock.enable = true;
   services.picom.enable = true;
   environment.systemPackages = with pkgs; [
-    dmenu
+    j4-dmenu-desktop
     (pkgs.callPackage ./thledbar.nix { })
   ];
 }
