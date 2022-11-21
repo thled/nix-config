@@ -177,6 +177,7 @@ cmp.setup({
         ['<C-e>']       = cmp.mapping.close(),
         ['<CR>']        = cmp.mapping.confirm(),
     },
+    preselect = cmp.PreselectMode.None,
     sources = {
         { name = 'nvim_lsp_signature_help'  },
         { name = 'nvim_lsp'                 },
