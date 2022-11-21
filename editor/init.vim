@@ -31,6 +31,7 @@ highlight ColorColumn ctermbg=238 guibg=lightgrey
 " always show signcolumn
 set signcolumn=yes
 
+
 """""""""
 """ theme
 """""""""
@@ -39,6 +40,20 @@ set termguicolors
 
 let g:catppuccin_flavour = "mocha"
 colorscheme catppuccin
+
+
+""""""""""""
+""" terminal
+""""""""""""
+
+" remap Esc to be consistent with other modes
+tnoremap <Esc> <C-\><C-n>
+" send Esc to terminal with <C-v><Esc>
+tnoremap <C-v><Esc> <Esc>
+
+" show terminal cursor in normal mode
+highlight! link TermCursor Cursor
+highlight! TermCursorNC guibg=#b4befe guifg=#11111b
 
 
 """""""
