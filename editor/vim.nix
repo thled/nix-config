@@ -22,24 +22,25 @@ in {
       customRC = builtins.readFile ./init.vim;
       packages.myVimPackages = with pkgs.vimPlugins; {
         start = [
-          catppuccin-nvim                         # theme
-          vim-surround                            # surround
-          gitsigns-nvim                           # git
-          comment-nvim                            # comment
-          feline-nvim                             # statusline
-          nvim-web-devicons                       # statusline
-          plenary-nvim                            # search
-          telescope-fzf-native-nvim               # search
-          telescope-nvim                          # search
-          cmp-nvim-lsp                            # autocomplete
-          cmp-buffer                              # autocomplete
-          cmp-path                                # autocomplete
-          luasnip                                 # autocomplete
-          cmp_luasnip                             # autocomplete
-          nvim-cmp                                # autocomplete
-          cmp-nvim-lsp-signature-help             # autocomplete
-          nvim-lspconfig                          # lsp
-          (nvim-treesitter.withPlugins (          # highlighting
+          catppuccin-nvim                 # theme
+          vim-surround                    # surround
+          gitsigns-nvim                   # git
+          comment-nvim                    # comment
+          vim-unimpaired                  # bracket mappings
+          feline-nvim                     # statusline
+          nvim-web-devicons               # statusline
+          plenary-nvim                    # search
+          telescope-fzf-native-nvim       # search
+          telescope-nvim                  # search
+          cmp-nvim-lsp                    # autocomplete
+          cmp-buffer                      # autocomplete
+          cmp-path                        # autocomplete
+          luasnip                         # autocomplete
+          cmp_luasnip                     # autocomplete
+          nvim-cmp                        # autocomplete
+          cmp-nvim-lsp-signature-help     # autocomplete
+          nvim-lspconfig                  # lsp
+          (nvim-treesitter.withPlugins (  # highlighting
             plugins: with plugins; [
               tree-sitter-bash
               tree-sitter-clojure
