@@ -79,7 +79,7 @@ EOF
 """"""""""""""
 
 lua <<EOF
-local clrs = require("catppuccin.core.color_palette")
+local clrs = require("catppuccin.palettes").get_palette()
 local file_info_component = {
     provider = {
         name = 'file_info',
@@ -106,7 +106,7 @@ local file_info_component = {
     },
 }
 
-local components = require('catppuccin.core.integrations.feline')
+local components = require('catppuccin.groups.integrations.feline').get()
 components.active[3][3] = file_info_component
 require("feline").setup({
     components = components,
@@ -242,7 +242,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Autocomplete capability
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Install language servers w/o special config
 local servers = {
