@@ -5,7 +5,7 @@ env:
 window:
   decorations: none
   dynamic_title: false
-  gtk_theme_variant: dark
+  decorations_theme_variant: dark
 scrolling:
   history: 0
 font:
@@ -41,7 +41,7 @@ colors:
     focused_match:
       foreground: '#1E1E2E'
       background: '#A6E3A1'
-    bar:
+    footer_bar:
       foreground: '#1E1E2E'
       background: '#A6ADC8'
   hints:
