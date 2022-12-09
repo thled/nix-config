@@ -82,36 +82,50 @@ EOF
 
 lua <<EOF
 local clrs = require("catppuccin.palettes").get_palette()
-local file_info_component = {
-    provider = {
-        name = 'file_info',
-        opts = {
-            type = 'relative'
-        }
-    },
-    short_provider = {
-        name = 'file_info',
-        opts = {
-            type = 'relative-short'
-        }
-    },
-    hl = {
-        fg = clrs.black3,
-        bg = clrs.maroon,
-    },
-    left_sep = {
-        str = "",
-        hl = {
-            fg = clrs.maroon,
-            bg = clrs.black3,
-        },
-    },
-}
 
 local components = require('catppuccin.groups.integrations.feline').get()
-components.active[3][3] = file_info_component
+components.active[3][3] = nil
 require("feline").setup({
     components = components,
+})
+
+local provider = {
+    name = 'file_info',
+    opts = {
+        type = 'relative',
+    },
+}
+local short_provider = {
+    name = 'file_info',
+    opts = {
+        type = 'relative-short',
+    },
+}
+local active_hl = {
+    fg = clrs.subtext1,
+    bg = clrs.surface0,
+}
+local inactive_hl = {
+    fg = clrs.overlay1,
+    bg = clrs.surface0,
+}
+
+local winbar_components = {
+    active = {{}},
+    inactive = {{}},
+}
+winbar_components.active[1][1] = {
+    provider = provider,
+    short_provider = short_provider,
+    hl = active_hl,
+}
+winbar_components.inactive[1][1] = {
+    provider = provider,
+    short_provider = short_provider,
+    hl = inactive_hl,
+}
+require('feline').winbar.setup({
+    components = winbar_components,
 })
 EOF
 
