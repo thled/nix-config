@@ -16,16 +16,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "thledbar";
-  version = "v1.2.1";
+  version = "v1.2.2";
 
   src = fetchFromGitHub {
     owner = "thled";
     repo = pname;
     rev = version;
-    sha256 = "sha256-u2y52NxkflhL3xgP7rM33AqjXVEwlZCLEaOh9ylXz3A=";
+    sha256 = "sha256-oK7tBMFPPithuq/EBpw2R4iV+haknp8IuZx1z+1hKvk=";
   };
 
-  cargoSha256 = "sha256-wSx9aIyMaNTqMrLARuqICh4DcmYAkQXrcntMJD52dgg=";
+  cargoSha256 = "sha256-KNQfu1a48NeO0Pt0z3YClBlwIMhiPmywXGYTf6mkVVM=";
 
   nativeBuildInputs = [ 
     pkg-config
