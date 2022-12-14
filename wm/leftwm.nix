@@ -87,12 +87,14 @@
 
   environment.etc."config/leftwm/config.ron".source = ./leftwm.ron;
   environment.etc."config/leftwm/themes/current".source = ./thledbar;
+  environment.etc."config/uair/uair.toml".source = ./uair.toml;
 
   programs.slock.enable = true;
   services.picom.enable = true;
   environment.systemPackages = with pkgs; [
     j4-dmenu-desktop
     (pkgs.callPackage ./thledbar.nix { })
+    (pkgs.callPackage ./uair.nix { })
   ];
 }
 
