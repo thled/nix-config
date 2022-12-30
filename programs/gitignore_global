@@ -22,7 +22,7 @@
 
 ## Misc
 
-### Platform.sh
+### data dumps
 *--dump.sql
 *--dump.sql.gz
 *--dump.sql.xz
@@ -30,3 +30,5 @@
 *--dump.json.gz
 *--dump.json.xz
 
+### custom folder
+zthled/
