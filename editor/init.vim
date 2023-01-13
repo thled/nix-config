@@ -293,5 +293,12 @@ nvim_lsp.sumneko_lua.setup {
         },
     },
 }
+
+-- Install java lsp
+nvim_lsp.jdtls.setup{
+    on_attach       = on_attach,
+    capabilities    = capabilities,
+    cmd             = { 'jdt-language-server', '-data', '/home/thled/jdtls/workspace' },
+}
 EOF
 

@@ -78,6 +78,7 @@ in {
       };
     };
     runtime = {
+      "etc/ftplugin/java.vim".text = "setlocal noexpandtab";
       "etc/ftplugin/nix.vim".text = "setlocal tabstop=2 softtabstop=2 shiftwidth=2";
       "etc/ftplugin/typescript.vim".text = "setlocal tabstop=2 softtabstop=2 shiftwidth=2";
     };
@@ -91,6 +92,7 @@ in {
     nodePackages.dockerfile-language-server-nodejs  # docker
     go                                              # go
     gopls                                           # go
+    jdt-language-server                             # java
     sumneko-lua-language-server                     # lua
     rnix-lsp                                        # nix
     nodePackages.intelephense                       # php
