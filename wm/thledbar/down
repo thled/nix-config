@@ -12,4 +12,5 @@ leftwm-command "UnloadTheme"
 pkill compton
 pkill picom
 pkill thledbar
+pkill uair
 

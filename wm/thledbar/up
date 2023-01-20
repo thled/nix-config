@@ -29,5 +29,6 @@ fi
 
 
 #start the bar
+uair &> /dev/null &
 thledbar &> /dev/null &
 

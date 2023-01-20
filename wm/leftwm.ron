@@ -76,6 +76,7 @@
         (command: Execute, value: "xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "1"),
         (command: Execute, value: "xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-2 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "2"),
         (command: Execute, value: "import ~/screenshots/$(date +\"%Y-%m-%d_%H-%M-%S\").png", modifier: ["modkey"], key: "s"),
+        (command: Execute, value: "uairctl toggle", modifier: ["modkey"], key: "t"),
     ],
     state_path: None,
 )
