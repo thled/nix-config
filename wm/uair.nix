@@ -12,11 +12,11 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "metent";
     repo = pname;
-    rev = version;
-    hash = "sha256-xGPc371Dfo455rnfacXVDgC9SXU5s8jqw4ttSCBqWyk=";
+    rev = "e24fe2756e1a183e7bd42b7cb9275e8f5d8e6b34";
+    hash = "sha256-a4ANeHwcvEP9uaxiQqO87ab4HW4AQu2jk2es7d42/Is=";
   };
 
-  cargoHash = "sha256-tHcMR8ExIlzYZzacBYyyk2d5by20jG4ihM0yU0K6Xhg=";
+  cargoHash = "sha256-hunl2RXZGuNJHSQPH7Vp9ONG5hYAt6Ba+EI+A1PykCo=";
 
   nativeBuildInputs = [ installShellFiles scdoc ];
 
