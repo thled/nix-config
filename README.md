@@ -66,16 +66,16 @@
 
 - Sync Firefox config and addons by logging in.
 - Add SSH keys to `~/.ssh/`.
-- Create `~/projects` and `~/work` folder for private and work related projects, respectively.
+- Create `~/projects` and `~/work` folder for personal and work related projects, respectively.
 - For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email` and password for SMTP into `~/.inbox_pass`.
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
+- Copy OpenVPN configuration file for office into `/etc/nixos/nix-config/network/office.ovpn`.
 
 ## Usage
 
 - Start terminal with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd>.
 - Start any application with <kbd>Win</kbd>+<kbd>p</kbd>.
-- Use VPN with `systemctl start openvpn-protonVPN.service`.
-- Use office VPN with `nmcli connection up office --ask`.
+- Use VPN with `sudo systemctl start openvpn-protonVPN.service`.
 - Manage NixOS configuration in `/etc/nixos/nix-config`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
