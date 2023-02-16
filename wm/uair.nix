@@ -32,6 +32,6 @@ rustPlatform.buildRustPackage rec {
     description = "An extensible pomodoro timer";
     homepage = "https://github.com/metent/uair";
     license = licenses.mit;
-    maintainers = [ maintainers.metent ];
+    maintainers = with maintainers; [ thled ];
   };
 }
