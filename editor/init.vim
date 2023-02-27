@@ -81,51 +81,230 @@ EOF
 """"""""""""""
 
 lua <<EOF
-local clrs = require("catppuccin.palettes").get_palette()
+local conditions = require("heirline.conditions")
+local utils = require("heirline.utils")
 
-local components = require('catppuccin.groups.integrations.feline').get()
-components.active[3][3] = nil
-require("feline").setup({
-    components = components,
-})
+local colors = require("catppuccin.palettes").get_palette()
+require('heirline').load_colors(colors)
 
-local provider = {
-    name = 'file_info',
-    opts = {
-        type = 'relative',
+local ViMode = {
+    init = function(self)
+        self.mode = vim.fn.mode(1)
+        if not self.once then
+            vim.api.nvim_create_autocmd("ModeChanged", {
+                pattern = "*:*o",
+                command = 'redrawstatus'
+            })
+            self.once = true
+        end
+    end,
+    static = {
+        mode_names = {
+            n = "N",
+            no = "N?",
+            nov = "N?",
+            noV = "N?",
+            ["no\22"] = "N?",
+            niI = "Ni",
+            niR = "Nr",
+            niV = "Nv",
+            nt = "Nt",
+            v = "V",
+            vs = "Vs",
+            V = "V_",
+            Vs = "Vs",
+            ["\22"] = "^V",
+            ["\22s"] = "^V",
+            s = "S",
+            S = "S_",
+            ["\19"] = "^S",
+            i = "I",
+            ic = "Ic",
+            ix = "Ix",
+            R = "R",
+            Rc = "Rc",
+            Rx = "Rx",
+            Rv = "Rv",
+            Rvc = "Rv",
+            Rvx = "Rv",
+            c = "C",
+            cv = "Ex",
+            r = "...",
+            rm = "M",
+            ["r?"] = "?",
+            ["!"] = "!",
+            t = "T",
+        },
+        mode_colors = {
+            n = "green" ,
+            i = "maroon",
+            v = "teal",
+            V =  "teal",
+            ["\22"] =  "teal",
+            c =  "peach",
+            s =  "lavender",
+            S =  "lavender",
+            ["\19"] =  "lavender",
+            R =  "peach",
+            r =  "peach",
+            ["!"] =  "maroon",
+            t =  "maroon",
+        }
+    },
+    provider = function(self)
+        return " %2("..self.mode_names[self.mode].."%)"
+    end,
+    hl = function(self)
+        local mode = self.mode:sub(1, 1)
+        return { fg = self.mode_colors[mode], bold = true, }
+    end,
+    update = { "ModeChanged", },
+}
+
+
+local FileNameBlock = {
+    init = function(self)
+        self.filename = vim.api.nvim_buf_get_name(0)
+    end,
+}
+
+local FileIcon = {
+    init = function(self)
+        local filename = self.filename
+        local extension = vim.fn.fnamemodify(filename, ":e")
+        self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(
+            filename,
+            extension,
+            { default = true }
+        )
+    end,
+    provider = function(self)
+        return self.icon and (self.icon .. " ")
+    end,
+    hl = function(self)
+        return { fg = self.icon_color }
+    end
+}
+
+local FileName = {
+    provider = function(self)
+        local filename = vim.fn.fnamemodify(self.filename, ":.")
+        if filename == "" then return "[No Name]" end
+        if not conditions.width_percent_below(#filename, 0.5) then
+            filename = vim.fn.pathshorten(filename)
+        end
+        return filename
+    end,
+    hl = { fg = utils.get_highlight("Directory").fg },
+}
+
+local FileFlags = {
+    {
+        condition = function()
+            return vim.bo.modified
+        end,
+        provider = "[+]",
+        hl = { fg = "green" },
+    },
+    {
+        condition = function()
+            return not vim.bo.modifiable or vim.bo.readonly
+        end,
+        provider = "",
+        hl = { fg = "peach" },
     },
 }
-local short_provider = {
-    name = 'file_info',
-    opts = {
-        type = 'relative-short',
-    },
-}
-local active_hl = {
-    fg = clrs.subtext1,
-    bg = clrs.surface0,
-}
-local inactive_hl = {
-    fg = clrs.overlay1,
-    bg = clrs.surface0,
+
+local FileNameModifer = {
+    hl = function()
+        if vim.bo.modified then
+            return { fg = "teal", bold = true, force=true }
+        end
+    end,
 }
 
-local winbar_components = {
-    active = {{}},
-    inactive = {{}},
+FileNameBlock = utils.insert(
+    FileNameBlock,
+    FileIcon,
+    utils.insert(FileNameModifer, FileName),
+    FileFlags,
+    { provider = '%<'}
+)
+
+local FileType = {
+    provider = function()
+        return string.upper(vim.bo.filetype)
+    end,
+    hl = { fg = "yellow", bold = true },
 }
-winbar_components.active[1][1] = {
-    provider = provider,
-    short_provider = short_provider,
-    hl = active_hl,
+
+local Ruler = {
+    provider = "%7(%l/%3L%):%2c %P",
 }
-winbar_components.inactive[1][1] = {
-    provider = provider,
-    short_provider = short_provider,
-    hl = inactive_hl,
+
+local LSPActive = {
+    condition = conditions.lsp_attached,
+    update = {'LspAttach', 'LspDetach'},
+    provider = "[LSP]",
+    hl = { fg = "green", bold = true },
 }
-require('feline').winbar.setup({
-    components = winbar_components,
+
+local Diagnostics = {
+    condition = conditions.has_diagnostics,
+
+    static = {
+        error_icon = "E ",
+        warn_icon = "W ",
+        info_icon = "I ",
+        hint_icon = "H ",
+    },
+
+    init = function(self)
+        self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+        self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+        self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+        self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+    end,
+
+    update = { "DiagnosticChanged", "BufEnter" },
+
+    {
+        provider = function(self)
+            return self.errors > 0 and (self.error_icon .. self.errors .. " ")
+        end,
+        hl = { fg = "maroon" },
+    },
+    {
+        provider = function(self)
+            return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
+        end,
+        hl = { fg = "peach" },
+    },
+    {
+        provider = function(self)
+            return self.info > 0 and (self.info_icon .. self.info .. " ")
+        end,
+        hl = { fg = "blue" },
+    },
+    {
+        provider = function(self)
+            return self.hints > 0 and (self.hint_icon .. self.hints)
+        end,
+        hl = { fg = "rosewater" },
+    },
+}
+
+ViMode = utils.surround({ "", "" }, "surface0", { ViMode, })
+
+local Align = { provider = "%=" }
+local Space = { provider = " " }
+
+local WinBar = { FileNameBlock, }
+local StatusLine = { ViMode, Align, Diagnostics, Align, LSPActive, Space, FileType, Space, Ruler, }
+
+require("heirline").setup({
+    statusline = StatusLine,
+    winbar = WinBar,
 })
 EOF
 

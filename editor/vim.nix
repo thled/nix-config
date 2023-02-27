@@ -1,12 +1,12 @@
 { pkgs, ... }:
 let
-  cmp-nvim-lsp-signature-help = pkgs.vimUtils.buildVimPlugin {
-    name = "cmp-nvim-lsp-signature-help";
+  heirline-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "heirline-nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-nvim-lsp-signature-help";
-      rev = "3dd40097196bdffe5f868d5dddcc0aa146ae41eb";
-      sha256 = "0kfa0pw5yx961inirqwi0fjvgdbmsgw16703mw2w9km8313x17zw";
+      owner = "rebelot";
+      repo = "heirline.nvim";
+      rev = "b69415d912d466db17b8ee1eb777cc7f776a9286";
+      sha256 = "0pv320i23wwp58xy3lpiy4j90y6fl8frmw19nk0c8dy9c10pdg6s";
     };
   };
 in {
@@ -27,7 +27,7 @@ in {
           gitsigns-nvim                   # git
           comment-nvim                    # comment
           vim-unimpaired                  # bracket mappings
-          feline-nvim                     # statusline
+          heirline-nvim                   # statusline
           nvim-web-devicons               # statusline
           plenary-nvim                    # search
           telescope-fzf-native-nvim       # search
