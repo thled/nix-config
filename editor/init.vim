@@ -204,21 +204,21 @@ local FileFlags = {
             return vim.bo.modified
         end,
         provider = "[+]",
-        hl = { fg = "green" },
+        hl = { fg = "green", },
     },
     {
         condition = function()
             return not vim.bo.modifiable or vim.bo.readonly
         end,
         provider = "",
-        hl = { fg = "peach" },
+        hl = { fg = "peach", },
     },
 }
 
 local FileNameModifer = {
     hl = function()
         if vim.bo.modified then
-            return { fg = "teal", bold = true, force=true }
+            return { fg = "teal", bold = true, force=true, }
         end
     end,
 }
@@ -235,7 +235,7 @@ local FileType = {
     provider = function()
         return string.upper(vim.bo.filetype)
     end,
-    hl = { fg = "yellow", bold = true },
+    hl = { fg = "yellow", bg = "mantle", bold = true, },
 }
 
 local Ruler = {
@@ -245,52 +245,52 @@ local Ruler = {
 local LSPActive = {
     condition = conditions.lsp_attached,
     update = {'LspAttach', 'LspDetach'},
-    provider = "[LSP]",
-    hl = { fg = "green", bold = true },
+    provider = "LSP",
+    hl = { fg = "green", bg = "mantle", bold = true, },
 }
 
 local Diagnostics = {
     condition = conditions.has_diagnostics,
 
     static = {
-        error_icon = "E ",
-        warn_icon = "W ",
-        info_icon = "I ",
-        hint_icon = "H ",
+        error_icon = " ",
+        warn_icon = " ",
+        info_icon = " ",
+        hint_icon = " ",
     },
 
     init = function(self)
         self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
         self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
-        self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
         self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+        self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
     end,
 
-    update = { "DiagnosticChanged", "BufEnter" },
+    update = { "DiagnosticChanged", "BufEnter", },
 
     {
         provider = function(self)
             return self.errors > 0 and (self.error_icon .. self.errors .. " ")
         end,
-        hl = { fg = "maroon" },
+        hl = { fg = "maroon", bg = "mantle", },
     },
     {
         provider = function(self)
             return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
         end,
-        hl = { fg = "peach" },
+        hl = { fg = "peach", bg = "mantle", },
     },
     {
         provider = function(self)
             return self.info > 0 and (self.info_icon .. self.info .. " ")
         end,
-        hl = { fg = "blue" },
+        hl = { fg = "blue", bg = "mantle", },
     },
     {
         provider = function(self)
             return self.hints > 0 and (self.hint_icon .. self.hints)
         end,
-        hl = { fg = "rosewater" },
+        hl = { fg = "rosewater", bg = "mantle", },
     },
 }
 
