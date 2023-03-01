@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     arandr
+    dbeaver
     chromium
     cmus
     discord
