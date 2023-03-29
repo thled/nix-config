@@ -15,6 +15,7 @@
     jless
     jq
     libnotify
+    lsof
     nmap
     nodejs
     ntfs3g
