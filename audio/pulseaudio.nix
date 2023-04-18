@@ -1,7 +1,13 @@
 { pkgs, ... }: {
   sound.enable = true;
   hardware = {
-    pulseaudio.enable = true;
+    pulseaudio = {
+      enable = true;
+      extraConfig = ''
+        load-module module-null-sink sink_name=Source
+        load-module module-virtual-source source_name=VirtualMic master=Source.monitor
+      '';
+    };
     bluetooth.enable = true;
   };
   nixpkgs.config.pulseaudio = true;
