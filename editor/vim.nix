@@ -9,6 +9,15 @@ let
       sha256 = "0pv320i23wwp58xy3lpiy4j90y6fl8frmw19nk0c8dy9c10pdg6s";
     };
   };
+  centerpad-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "centerpad-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "smithbm2316";
+      repo = "centerpad.nvim";
+      rev = "666641d02fd8c58ac401c1fb6bf596bb00b815fb";
+      sha256 = "clHJFfU7F95WYpGVGr3iQEN+00lnS9YxIpLOoH56e68=";
+    };
+  };
 in {
   programs.neovim = {
     enable = true;
@@ -40,6 +49,7 @@ in {
           nvim-cmp                        # autocomplete
           cmp-nvim-lsp-signature-help     # autocomplete
           nvim-lspconfig                  # lsp
+          centerpad-nvim                  # zen
           (nvim-treesitter.withPlugins (  # highlighting
             plugins: with plugins; [
               tree-sitter-bash

@@ -407,6 +407,13 @@ EOF
 
 
 """""""
+""" zen
+"""""""
+
+nnoremap <leader>z <cmd>lua require'centerpad'.toggle { leftpad = 64, rightpad = 64 }<CR>
+
+
+"""""""
 """ lsp
 """""""
 
