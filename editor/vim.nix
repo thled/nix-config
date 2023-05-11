@@ -104,9 +104,9 @@ in {
     gopls                                           # go
     jdt-language-server                             # java
     sumneko-lua-language-server                     # lua
-    rnix-lsp                                        # nix
+    nil                                             # nix
     nodePackages.intelephense                       # php
-    nodePackages.pyright                            # python
+    python310Packages.python-lsp-server             # python
     cargo                                           # rust
     rust-analyzer                                   # rust
     nodePackages.typescript                         # typescript

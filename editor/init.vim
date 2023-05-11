@@ -459,9 +459,9 @@ local servers = {
     'gopls',            -- go
     'html',             -- html
     'jsonls',           -- json
-    'rnix',             -- nix
+    'nil',              -- nix
     'intelephense',     -- php
-    'pyright',          -- python
+    'pylsp',            -- python
     'rust_analyzer',    -- rust
     'tsserver',         -- typescript
     'vimls',            -- vim
