@@ -11,6 +11,7 @@
     ./terminal/starship.nix
     ./terminal/zellij.nix
     ./editor/vim.nix
+    ./editor/helix.nix
     ./virtualisation/docker.nix
     ./virtualisation/virt_manager.nix
     ./network/vpn.nix
