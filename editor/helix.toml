@@ -1,4 +1,4 @@
-theme = "fleet_dark"
+theme = "catppuccin_mocha"
 
 [editor]
 mouse = false
@@ -10,7 +10,7 @@ completion-trigger-len = 3
 true-color = true
 rulers = [120]
 text-width = 120
-auto-pairs = true
+auto-pairs = false
 
 [editor.lsp]
 display-inlay-hints = true
