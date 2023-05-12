@@ -10,6 +10,7 @@
     ./terminal/fish.nix
     ./terminal/starship.nix
     ./terminal/zellij.nix
+    ./terminal/direnv.nix
     ./editor/vim.nix
     ./editor/helix.nix
     ./virtualisation/docker.nix
@@ -22,5 +23,7 @@
     ./programs/syncthing.nix
     ./programs/apps.nix
   ];
+
+  nix.settings.accept-flake-config = true;
 }
 
