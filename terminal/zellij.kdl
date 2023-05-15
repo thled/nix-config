@@ -6,39 +6,46 @@ keybinds clear-defaults=true {
     shared_among "pane" "tab" "resize" "move" "scroll" "session" "search" {
         bind "Enter" "Space" "Esc" { SwitchToMode "normal"; }
     }
-    shared_among "normal" "pane" "tab" "resize" "move" "scroll" "session" "search" {
+    shared_among "normal" "resize" "move" "scroll" "session" "search" {
         bind "Alt g" { SwitchToMode "locked"; }
-        bind "Alt p" { SwitchToMode "pane"; }
+        bind "Alt l" { SwitchToMode "pane"; }
+        bind "Alt u" { SwitchToMode "tab"; }
         bind "Alt r" { SwitchToMode "resize"; }
-        bind "Alt l" { SwitchToMode "tab"; }
-        bind "Alt s" { SwitchToMode "scroll"; }
-        bind "Alt o" { SwitchToMode "session"; }
         bind "Alt m" { SwitchToMode "move"; }
-        bind "Alt q" { Quit; }
-        bind "Alt n" { NewPane; }
+        bind "Alt y" { SwitchToMode "scroll"; }
+        bind "Alt '" { SwitchToMode "session"; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
         bind "Alt Up" { MoveFocus "Up"; }
     }
-    normal {
-        bind "Alt h" { ToggleTab; }
-    }
     locked {
         bind "Alt g" { SwitchToMode "normal"; }
     }
     pane {
-        bind "p" "Tab" { SwitchFocus; }
-        bind "j" "Down" { NewPane "Down"; }
-        bind "l" "Right" { NewPane "Right"; }
+        bind "n" "Alt n" { NewPane; SwitchToMode "normal"; }
+        bind "l" "Alt l" { SwitchFocus; SwitchToMode "normal"; }
+        bind "Down" { NewPane "Down"; }
+        bind "Right" { NewPane "Right"; }
         bind "x" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; }
-        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0; }
+   
+        bind "Alt g" { SwitchToMode "locked"; }
+        bind "Alt u" { SwitchToMode "tab"; }
+        bind "Alt r" { SwitchToMode "resize"; }
+        bind "Alt m" { SwitchToMode "move"; }
+        bind "Alt y" { SwitchToMode "scroll"; }
+        bind "Alt '" { SwitchToMode "session"; }
+        bind "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+        bind "Alt Up" { MoveFocus "Up"; }
     }
     tab {
-        bind "h" "Left" "k" "Up" { GoToPreviousTab; }
-        bind "l" "Right" "j" "Down" { GoToNextTab; }
-        bind "n" { NewTab; SwitchToMode "normal"; }
+        bind "Left" "Up" { GoToPreviousTab; }
+        bind "Right" "Down" { GoToNextTab; }
+        bind "n" "Alt n" { NewTab; SwitchToMode "normal"; }
+        bind "u" "Alt u" { ToggleTab; SwitchToMode "normal"; }
         bind "x" { CloseTab; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "normal"; }
         bind "1" { GoToTab 1; }
@@ -50,30 +57,39 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; }
         bind "8" { GoToTab 8; }
         bind "9" { GoToTab 9; }
-        bind "p" "Tab" { ToggleTab; }
-        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+
+        bind "Alt g" { SwitchToMode "locked"; }
+        bind "Alt l" { SwitchToMode "pane"; }
+        bind "Alt r" { SwitchToMode "resize"; }
+        bind "Alt m" { SwitchToMode "move"; }
+        bind "Alt y" { SwitchToMode "scroll"; }
+        bind "Alt '" { SwitchToMode "session"; }
+        bind "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+        bind "Alt Up" { MoveFocus "Up"; }
     }
     resize {
-        bind "h" "Left" { Resize "Left"; }
-        bind "j" "Down" { Resize "Down"; }
-        bind "k" "Up" { Resize "Up"; }
-        bind "l" "Right" { Resize "Right"; }
+        bind "Left" { Resize "Left"; }
+        bind "Down" { Resize "Down"; }
+        bind "Up" { Resize "Up"; }
+        bind "Right" { Resize "Right"; }
         bind "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
     }
     move {
-        bind "n" "Tab" { MovePane; }
-        bind "h" "Left" { MovePane "Left"; }
-        bind "j" "Down" { MovePane "Down"; }
-        bind "k" "Up" { MovePane "Up"; }
-        bind "l" "Right" { MovePane "Right"; }
+        bind "n" { MovePane; }
+        bind "Left" { MovePane "Left"; }
+        bind "Down" { MovePane "Down"; }
+        bind "Up" { MovePane "Up"; }
+        bind "Right" { MovePane "Right"; }
     }
     scroll {
         bind "c" { ScrollToBottom; SwitchToMode "normal"; }
-        bind "j" "Down" { ScrollDown; }
-        bind "k" "Up" { ScrollUp; }
-        bind "PageDown" "Right" "l" { PageScrollDown; }
-        bind "PageUp" "Left" "h" { PageScrollUp; }
+        bind "Down" { ScrollDown; }
+        bind "Up" { ScrollUp; }
+        bind "Left" "PageUp" { PageScrollUp; }
+        bind "Right" "PageDown" { PageScrollDown; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         bind "e" { EditScrollback; SwitchToMode "normal"; }
@@ -87,35 +103,16 @@ keybinds clear-defaults=true {
         bind "n" { Search "Down"; }
         bind "p" { Search "Up"; }
         bind "c" { ScrollToBottom; SwitchToMode "normal"; }
-        bind "j" "Down" { ScrollDown; }
-        bind "k" "Up" { ScrollUp; }
-        bind "PageDown" "Right" "l" { PageScrollDown; }
-        bind "PageUp" "Left" "h" { PageScrollUp; }
+        bind "Down" { ScrollDown; }
+        bind "Up" { ScrollUp; }
+        bind "Right" "PageDown" { PageScrollDown; }
+        bind "Left" "PageUp" { PageScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
     }
     entersearch {
         bind "Enter" { SwitchToMode "search"; }
         bind "Esc" { SearchInput 27; SwitchToMode "scroll"; }
-        bind "Alt n" { NewPane; }
-        bind "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Alt Down" { MoveFocus "Down"; }
-        bind "Alt Up" { MoveFocus "Up"; }
-    }
-    RenameTab {
-        bind "Enter" { SwitchToMode "normal"; }
-        bind "Esc" { UndoRenameTab; SwitchToMode "tab"; }
-        bind "Alt n" { NewPane; }
-        bind "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Alt Down" { MoveFocus "Down"; }
-        bind "Alt Up" { MoveFocus "Up"; }
-    }
-    RenamePane {
-        bind "Enter" { SwitchToMode "normal"; }
-        bind "Esc" { UndoRenamePane; SwitchToMode "pane"; }
-        bind "Alt n" { NewPane; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
