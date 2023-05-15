@@ -2,6 +2,7 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
+      d = "docker";
       dc = "docker compose";
       gc = "git commit";
       gd = "git diff";

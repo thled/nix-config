@@ -22,6 +22,9 @@
 
 ## Misc
 
+### direnv
+.direnv/
+
 ### data dumps
 *--dump.sql
 *--dump.sql.gz
