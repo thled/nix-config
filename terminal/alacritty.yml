@@ -5,7 +5,7 @@ env:
 window:
   decorations: none
   dynamic_title: false
-  decorations_theme_variant: dark
+  decorations_theme_variant: Dark
 scrolling:
   history: 0
 font:

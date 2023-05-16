@@ -1,31 +1,4 @@
-{ pkgs, lib, ... }: {
-  nixpkgs.overlays = [
-    (self: super: {
-      leftwm = super.leftwm.overrideAttrs (oldAttrs: rec {
-        version = "0.4.0";
-
-        src = super.fetchFromGitHub {
-          owner = "leftwm";
-          repo = "leftwm";
-          rev = "360834f42734125758905059f2aedb6316d176ac";
-          sha256 = "sha256-mjFRGMQNTTw9G2X81EjamLL3dwMGU56t95Ao4uCAUoc=";
-        };
-
-        cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
-          name = "leftwm-0.4.0-vendor.tar.gz";
-          inherit src;
-          outputHash = "sha256-XJdnjfeLMwdgfwegkzJY/ksWLylKS8pse2/Xs7XTtrU=";
-        });
-
-        postInstall = ''
-          for p in $out/bin/left*; do
-            patchelf --set-rpath "${super.lib.makeLibraryPath [super.pkgs.xorg.libXinerama super.pkgs.xorg.libX11]}" $p
-          done
-        '';
-      });
-    })
-  ];
-
+{ pkgs, ... }: {
   services.xserver = {
     enable = true;
     libinput = {
