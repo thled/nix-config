@@ -48,6 +48,9 @@ max-indent-retain = 40
 wrap-indicator = "↪"
 wrap-at-text-width = false
 
+[keys.normal]
+esc = "collapse_selection"
+
 [keys.normal.g]
 l = ["collapse_selection", "extend_to_line_end"]
 h = ["collapse_selection", "extend_to_line_start"]
