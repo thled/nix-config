@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     bat
+    calc
     difftastic
     dunst
     exa
