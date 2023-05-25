@@ -474,10 +474,9 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Install lua lsp
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
     on_attach       = on_attach,
     capabilities    = capabilities,
-    cmd             = { 'lua-language-server' },
     settings        = {
         Lua = {
             telemetry = {

@@ -103,7 +103,7 @@ in {
     go                                              # go
     gopls                                           # go
     jdt-language-server                             # java
-    sumneko-lua-language-server                     # lua
+    luajitPackages.lua-lsp                          # lua
     nil                                             # nix
     nodePackages.intelephense                       # php
     python310Packages.python-lsp-server             # python
