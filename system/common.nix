@@ -12,7 +12,7 @@
   boot.loader.systemd-boot.configurationLimit = 8;
 
   time.timeZone = "Europe/Berlin";
-  networking.hostName = "NB61";
+  networking.hostName = "NBL0112";
 
   fonts.fonts = with pkgs; [
     nerdfonts

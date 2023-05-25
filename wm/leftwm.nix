@@ -1,6 +1,10 @@
 { pkgs, ... }: {
   services.xserver = {
     enable = true;
+    videoDrivers = [ "intel" ];
+    deviceSection = ''
+    Option "DRI" "1"
+    '';
     libinput = {
       enable = true;
       touchpad.naturalScrolling = true;

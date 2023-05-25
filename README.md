@@ -62,6 +62,11 @@
     nmcli device wifi connect <SSID> --ask
     ```
 
+## After installation
+
+- `sudo chown -R thled /etc/nixos/nix-config`
+- `git remote set-url origin git@github.com:thled/nix-config.git` Change remote from HTTPS to SSH.
+
 ## After installation (optional)
 
 - Sync Firefox config and addons by logging in.
@@ -69,6 +74,7 @@
 - Create `~/projects` and `~/work` folder for personal and work related projects, respectively.
 - For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email` and password for SMTP into `~/.inbox_pass`.
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
+- Obsidian Vault: `git clone git@github.com:thled/references.git`
 - Copy OpenVPN configuration file for office into `/etc/nixos/nix-config/network/office.ovpn`.
 
 ## Usage
