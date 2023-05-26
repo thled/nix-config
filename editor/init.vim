@@ -473,19 +473,6 @@ for _, lsp in ipairs(servers) do
     }
 end
 
--- Install lua lsp
-nvim_lsp.lua_ls.setup {
-    on_attach       = on_attach,
-    capabilities    = capabilities,
-    settings        = {
-        Lua = {
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
-}
-
 -- Install java lsp
 nvim_lsp.jdtls.setup{
     on_attach       = on_attach,

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   imports = [
     ./system/user.nix
     ./system/common.nix
@@ -11,6 +11,7 @@
     ./terminal/starship.nix
     ./terminal/zellij.nix
     ./terminal/direnv.nix
+    ./editor/lsp.nix
     ./editor/vim.nix
     ./editor/helix.nix
     ./virtualisation/docker.nix

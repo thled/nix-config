@@ -1,0 +1,8 @@
+[[language]]
+name = "java"
+scope = "source.java"
+injection-regex = "java"
+file-types = ["java"]
+roots = ["pom.xml", "build.gradle", "build.gradle.kts"]
+language-server = { command = "jdt-language-server", args = ["-data /home/thled/jdtls/workspace"] }
+indent = { tab-width = 4, unit = "    " }
