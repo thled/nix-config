@@ -78,6 +78,7 @@
 - Obsidian Vault: `git clone git@github.com:thled/references.git`
 - Copy OpenVPN configuration file for office into `/etc/nixos/nix-config/network/office.ovpn`.
 - Put licence key for intelephense into `~/intelephense/licence.txt`.
+- Configure k8s in `~/.kube/config`.
 
 ## Usage
 
