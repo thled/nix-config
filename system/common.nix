@@ -15,7 +15,7 @@
   networking.hostName = "NBL0112";
 
   fonts.fonts = with pkgs; [
-    nerdfonts
+    cascadia-code
   ];
 
   systemd.tmpfiles.rules = [
