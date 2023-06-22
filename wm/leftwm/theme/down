@@ -11,6 +11,7 @@ leftwm-command "UnloadTheme"
 
 pkill compton
 pkill picom
-pkill thledbar
-pkill uair
 
+if [ -x "$(command -v eww)" ]; then
+  eww kill
+fi
