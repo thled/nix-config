@@ -1,5 +1,6 @@
 (defwidget bar []
-  (centerbox :orientation "h"
+  (centerbox :class "bar"
+             :orientation "h"
     (workspaces)
     "window title"
     (sidestuff)))
@@ -21,8 +22,14 @@
           {!tag.mine && !tag.busy && !tag.visible && !tag.urgent ?  "·" : "${tag.name}"})))))
 
 (defwidget sidestuff []
-  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    "CPU"
+  (box :class "sidestuff" 
+       :orientation "h" 
+       :space-evenly false 
+       :halign "end"
+       :spacing 10
+    (metric :label "CPU"
+            :value {EWW_CPU.avg}
+            :onchange "")
     time))
 
 (defwidget metric [label value onchange]
@@ -41,7 +48,7 @@
    "leftwm state")
 
 (defpoll time :interval "10s"
-  "date '+%H:%M %b %d, %Y'")
+  "date '+%Ww %Y/%m/%d %I:%m %P'")
 
 (defwindow bar
   :monitor 0
@@ -51,5 +58,5 @@
                       :width "100%"
                       :height "10px"
                       :anchor "top center")
-  :reserve (struts :side "top" :distance "4%")
+  :reserve (struts :side "top" :distance "30px")
   (bar))
