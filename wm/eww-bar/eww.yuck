@@ -2,7 +2,7 @@
   (centerbox :class "bar"
              :orientation "h"
     (workspaces)
-    "window title"
+    window_name
     (sidestuff)))
 
 (defwidget workspaces []
@@ -47,8 +47,11 @@
    :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
    "leftwm state")
 
+(deflisten window_name :initial ""
+  'while read window; do xprop -id $(echo $window | cut -d" " -f5) _NET_WM_NAME | cut -d"\\"" -f2; done < <(xprop -spy -root _NET_ACTIVE_WINDOW)')
+
 (defpoll time :interval "10s"
-  "date '+%Ww %Y/%m/%d %I:%m %P'")
+  "LC_TIME=en_US.UTF-8 date '+%Ww %Y/%m/%d %I:%M %P'")
 
 (defwindow bar
   :monitor 0
@@ -58,5 +61,5 @@
                       :width "100%"
                       :height "10px"
                       :anchor "top center")
-  :reserve (struts :side "top" :distance "30px")
+  :reserve (struts :side "top" :distance "23px")
   (bar))
