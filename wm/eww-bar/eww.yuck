@@ -44,12 +44,12 @@
            :onchange onchange)))
           
 (deflisten wmstate 
-   :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
-   "leftwm state")
+  :initial '{"workspaces":[{"layout":"","tags":[{"name":"","index":0,"mine":false,"busy":false,"visible":false,"urgent":false}]}]}'
+  "leftwm state")
 
 (deflisten window_name :initial ""
-  'while read window; do xprop -id $(echo $window | cut -d" " -f5) _NET_WM_NAME | cut -d"\\"" -f2; done < <(xprop -spy -root _NET_ACTIVE_WINDOW)')
-
+  "scripts/get-window-name.sh")
+  
 (defpoll time :interval "10s"
   "LC_TIME=en_US.UTF-8 date '+%Ww %Y/%m/%d %I:%M %P'")
 
