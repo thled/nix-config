@@ -17,9 +17,9 @@
     libnotify
     lsof
     nmap
+    mycli
     nodejs
     ntfs3g
-    patchelf
     tldr
     tree
     unar
