@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
@@ -23,6 +23,7 @@
   ];
   environment.variables = {
     XDG_CONFIG_HOME = "/etc/config";
+    EDITOR = "hx";
   };
 }
 
