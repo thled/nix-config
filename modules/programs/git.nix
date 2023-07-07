@@ -12,8 +12,7 @@
       mergetool.meld.cmd = "meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"";
       pager.difftool = "true";
       user.name = "Thomas Le Duc";
-      includeIf."gitdir:~/projects/".path = "/etc/gitconfig.private";
-      includeIf."gitdir:/etc/nixos/nix-config/".path = "/etc/gitconfig.private";
+      includeIf."gitdir:~/dev/".path = "/etc/gitconfig.private";
       includeIf."gitdir:~/work/".path = "/etc/gitconfig.work";
     };
   };

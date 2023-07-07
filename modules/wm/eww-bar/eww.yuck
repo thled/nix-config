@@ -51,7 +51,7 @@
   "scripts/get-window-name.sh")
   
 (defpoll time :interval "10s"
-  "LC_TIME=en_US.UTF-8 date '+%Ww %Y/%m/%d %I:%M %P'")
+  "date '+%Ww %Y/%m/%d %I:%M %P'")
 
 (defwindow bar
   :monitor 0

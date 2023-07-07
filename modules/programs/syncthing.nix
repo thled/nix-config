@@ -15,7 +15,7 @@
         devices = [ "pixel4a" ];
       };
       "Obsidian" = {
-        path = "/home/thled/projects/references";
+        path = "/home/thled/dev/references";
         devices = [ "pixel4a" ];
       };
     };

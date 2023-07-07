@@ -7,12 +7,17 @@
 ## NixOS Installation
 
 1. Use GUI installer
-1. Clone repo
+1. Clone repo into `~/dev/`
+
+    ```shell
+    git clone https://github.com/thled/nix-config.git
+    ```
+
 1. Link configuration
 
     ```shell
     rm -rf /etc/nixos
-    sudo ln -s ~/dev/nixos-config /etc/nixos
+    sudo ln -s ~/dev/nix-config /etc/nixos
     ```
 1. Deploy configuration
 
@@ -47,7 +52,7 @@
 - For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email` and password for SMTP into `~/.inbox_pass`.
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
 - Obsidian Vault: `git clone git@github.com:thled/references.git`
-- Copy OpenVPN configuration file for office into `/etc/nixos/nix-config/network/office.ovpn`.
+- Put OpenVPN configuration for office into `network/office.ovpn` and ignore this change with `git update-index --skip-worktree modules/network/office.ovpn`.
 - Put licence key for intelephense into `~/intelephense/licence.txt`.
 - Configure k8s in `~/.kube/config`.
 
@@ -56,7 +61,7 @@
 - Start terminal with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd>.
 - Start any application with <kbd>Win</kbd>+<kbd>p</kbd>.
 - Use VPN with `sudo systemctl start openvpn-protonVPN.service`.
-- Manage NixOS configuration in `~/dev/nixos-config`.
+- Manage NixOS configuration in `~/dev/nix-config`.
 - Update with `nix flake update`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
