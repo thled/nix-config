@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  nixpkgs.config.allowUnfree = true; # for intelephense
   environment.systemPackages = with pkgs; [
     nodePackages.bash-language-server               # bash
     nodePackages.vscode-langservers-extracted       # css/html/json
