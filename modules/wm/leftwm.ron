@@ -29,10 +29,9 @@
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
-    focus_behaviour: Sloppy,
+    focus_behaviour: ClickTo,
     focus_new_windows: true,
     single_window_border: false,
-    sloppy_mouse_follows_focus: true,
     keybind: [
         (command: Execute, value: "j4-dmenu-desktop", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
