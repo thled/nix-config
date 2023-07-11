@@ -9,8 +9,8 @@ fi
 
 leftwm-command "UnloadTheme"
 
-pkill compton
-pkill picom
+# pkill compton
+# pkill picom
 
 if [ -x "$(command -v eww)" ]; then
   eww kill
