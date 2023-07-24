@@ -179,6 +179,22 @@
         "type": "github"
       }
     },
+    "master": {
+      "locked": {
+        "lastModified": 1690181217,
+        "narHash": "sha256-77/oUvsnl5+NY7f8PIIz4zaXOvEOgxgvaVGUUWX9QzQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d75ba3d7a2b5c4952f89f498e435cb5648c0f0cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "mk-naked-shell": {
       "flake": false,
       "locked": {
@@ -331,6 +347,7 @@
     "root": {
       "inputs": {
         "helix": "helix",
+        "master": "master",
         "nixpkgs": "nixpkgs_2"
       }
     },
