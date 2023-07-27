@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    master.url = "github:NixOS/nixpkgs/master";
+    # master.url = "github:NixOS/nixpkgs/master";
 
     helix.url = "github:helix-editor/helix/23.05";
   };
