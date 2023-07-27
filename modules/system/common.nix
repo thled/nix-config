@@ -6,7 +6,7 @@
 
   networking.hostName = "NBL0112";
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     cascadia-code
   ];
 
