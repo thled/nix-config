@@ -84,3 +84,11 @@ m = ["collapse_selection", "select_mode", "match_brackets", "exit_select_mode"]
 
 [keys.normal.space]
 space = "flip_selections"
+
+[keys.normal.backspace]
+a = ":run-shell-command zellij run -f -- just analyze"
+b = ":run-shell-command zellij run -f -- just build"
+f = ":run-shell-command zellij run -fc -- broot"
+l = ":run-shell-command zellij run -f -- just lint"
+r = ":run-shell-command zellij run -f -- just run"
+t = ":run-shell-command zellij run -f -- just test"

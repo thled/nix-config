@@ -18,6 +18,7 @@ keybinds clear-defaults=true {
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
         bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt h" { ToggleFloatingPanes; SwitchToMode "normal"; }
     }
     locked {
         bind "Alt g" { SwitchToMode "normal"; }

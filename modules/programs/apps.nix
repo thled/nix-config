@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     arandr
     dbeaver
-    broot
     chromium
     cmus
     discord
