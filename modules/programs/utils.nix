@@ -14,6 +14,7 @@
     imagemagick
     jless
     jq
+    just
     libnotify
     lsof
     nmap
