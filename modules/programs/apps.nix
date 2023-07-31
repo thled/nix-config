@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     arandr
     dbeaver
+    broot
     chromium
     cmus
     discord
@@ -27,8 +28,6 @@
       "SyncDisabled" = true;
     };
   };
-
-  programs.noisetorch.enable = true;
 
   programs.wireshark = {
     enable = true;
