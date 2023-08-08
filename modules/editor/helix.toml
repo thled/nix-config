@@ -85,6 +85,10 @@ m = ["collapse_selection", "select_mode", "match_brackets", "exit_select_mode"]
 [keys.normal.space]
 space = "flip_selections"
 
+[keys.normal.z]
+c = ":set gutters.line-numbers.min-width 65"
+C = ":set gutters.line-numbers.min-width 3"
+
 [keys.normal.backspace]
 a = ":run-shell-command zellij run -f -- just analyze"
 b = ":run-shell-command zellij run -f -- just build"
