@@ -76,7 +76,6 @@
         (command: Execute, value: "xrandr --output eDP-1 --off --output HDMI-1 --off --output DP-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "2"),
         (command: Execute, value: "xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --off --output DP-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "3"),
         (command: Execute, value: "import ~/screenshots/$(date +\"%Y-%m-%d_%H-%M-%S\").png", modifier: ["modkey"], key: "s"),
-        (command: Execute, value: "/etc/config/zellij/zellij_zen.sh", modifier: ["modkey"], key: "z"),
     ],
     state_path: None,
 )
