@@ -6,7 +6,7 @@
     ./network/mail.nix
     ./wm/eww.nix
     ./wm/leftwm.nix
-    ./audio/pulseaudio.nix
+    ./audio/pipewire.nix
     ./terminal/alacritty.nix
     ./terminal/fish.nix
     ./terminal/starship.nix
