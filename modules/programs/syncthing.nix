@@ -8,7 +8,7 @@
     overrideFolders = true;
     settings = {
       devices = {
-        pixel4a = { id = "A4BICQY-5SI372K-YGFDIMG-VI2EEET-0Y72ZER-YD6WGCG-V30NUKI-Q7R3YAN"; };
+        pixel4a = { id = "A4BICQY-5SI372K-YGFDIMG-VI2EEET-OY72ZER-YD6WGCG-V3ONUKI-Q7R3YAN"; };
       };
       folders = {
         Sync = {
