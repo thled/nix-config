@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # master.url = "github:NixOS/nixpkgs/master";
 
-    helix.url = "github:helix-editor/helix/23.05";
+    helix.url = "github:helix-editor/helix/master";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
