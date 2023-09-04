@@ -6,14 +6,14 @@ keybinds clear-defaults=true {
     shared_among "pane" "tab" "resize" "move" "scroll" "session" "search" {
         bind "Enter" "Space" "Esc" { SwitchToMode "normal"; }
     }
-    shared_among "normal" "resize" "move" "scroll" "session" "search" {
+    shared_among "normal" "resize" "move" "scroll" "search" {
         bind "Alt g" { SwitchToMode "locked"; }
         bind "Alt l" { SwitchToMode "pane"; }
         bind "Alt u" { SwitchToMode "tab"; }
         bind "Alt r" { SwitchToMode "resize"; }
         bind "Alt m" { SwitchToMode "move"; }
-        bind "Alt y" { SwitchToMode "scroll"; }
-        bind "Alt '" { SwitchToMode "session"; }
+        bind "Alt '" { SwitchToMode "scroll"; }
+        bind "Alt y" { SwitchToMode "session"; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
@@ -35,12 +35,13 @@ keybinds clear-defaults=true {
         bind "Alt u" { SwitchToMode "tab"; }
         bind "Alt r" { SwitchToMode "resize"; }
         bind "Alt m" { SwitchToMode "move"; }
-        bind "Alt y" { SwitchToMode "scroll"; }
-        bind "Alt '" { SwitchToMode "session"; }
+        bind "Alt '" { SwitchToMode "scroll"; }
+        bind "Alt y" { SwitchToMode "session"; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
         bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt h" { ToggleFloatingPanes; SwitchToMode "normal"; }
     }
     tab {
         bind "Left" "Up" { GoToPreviousTab; }
@@ -63,12 +64,13 @@ keybinds clear-defaults=true {
         bind "Alt l" { SwitchToMode "pane"; }
         bind "Alt r" { SwitchToMode "resize"; }
         bind "Alt m" { SwitchToMode "move"; }
-        bind "Alt y" { SwitchToMode "scroll"; }
-        bind "Alt '" { SwitchToMode "session"; }
+        bind "Alt '" { SwitchToMode "scroll"; }
+        bind "Alt y" { SwitchToMode "session"; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
         bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt h" { ToggleFloatingPanes; SwitchToMode "normal"; }
     }
     resize {
         bind "Left" { Resize "Left"; }
@@ -98,6 +100,25 @@ keybinds clear-defaults=true {
     }
     session {
         bind "d" { Detach; }
+        bind "y" "Alt y" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
+
+        bind "Alt g" { SwitchToMode "locked"; }
+        bind "Alt l" { SwitchToMode "pane"; }
+        bind "Alt u" { SwitchToMode "tab"; }
+        bind "Alt r" { SwitchToMode "resize"; }
+        bind "Alt m" { SwitchToMode "move"; }
+        bind "Alt '" { SwitchToMode "scroll"; }
+        bind "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+        bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt h" { ToggleFloatingPanes; SwitchToMode "normal"; }
     }
     search {
         bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
@@ -227,4 +248,5 @@ default_layout "compact"
 plugins {
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
+    session-manager { path "session-manager"; }
 }
