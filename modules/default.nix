@@ -19,7 +19,6 @@
     ./virtualisation/virt_manager.nix
     ./network/vpn.nix
     ./programs/utils.nix
-    ./programs/broot.nix
     ./programs/git.nix
     ./programs/kubernetes.nix
     ./programs/ripgrep.nix

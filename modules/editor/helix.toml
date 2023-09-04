@@ -88,11 +88,3 @@ space = "flip_selections"
 [keys.normal.z]
 c = ":set gutters.line-numbers.min-width 65"
 C = ":set gutters.line-numbers.min-width 3"
-
-[keys.normal.backspace]
-a = ":run-shell-command zellij run -f -- just analyze"
-b = ":run-shell-command zellij run -f -- just build"
-f = ":run-shell-command zellij run -fc -- broot"
-l = ":run-shell-command zellij run -f -- just lint"
-r = ":run-shell-command zellij run -f -- just run"
-t = ":run-shell-command zellij run -f -- just test"
