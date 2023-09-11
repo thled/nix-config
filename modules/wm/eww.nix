@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = [(pkgs.callPackage ./eww-override.nix { })];
+  environment.systemPackages = with pkgs; [eww];
   environment.etc."config/eww".source = ./eww-bar;
 }
 
