@@ -4,7 +4,7 @@
     calc
     difftastic
     dunst
-    exa
+    eza
     fd
     feh
     ffmpeg

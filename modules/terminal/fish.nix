@@ -13,8 +13,8 @@
       k = "kubectl";
       ks = "kubens";
       kx = "kubectx";
-      l = "exa -la --git";
-      t = "exa -T --git-ignore";
+      l = "eza -la --git";
+      t = "eza -T --git-ignore";
     };
     shellAliases = {
       i = "echo \"Subject: $argv\" | sendmail (cat ~/.inbox_email) && echo \"Send to inbox:\"";
