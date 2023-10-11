@@ -19,6 +19,7 @@
     rm -rf /etc/nixos
     sudo ln -s ~/dev/nix-config /etc/nixos
     ```
+
 1. Deploy configuration
 
     ```shell
