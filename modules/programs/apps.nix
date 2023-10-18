@@ -6,6 +6,7 @@
     cmus
     discord
     firefox
+    flameshot
     gimp
     meld
     obs-studio
