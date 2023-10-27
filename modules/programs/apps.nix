@@ -3,7 +3,6 @@
     arandr
     dbeaver
     chromium
-    cmus
     discord
     firefox
     flameshot
