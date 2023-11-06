@@ -71,6 +71,8 @@ T = "extend_till_char"
 W = "extend_next_word_start"
 X = "extend_line_above"
 
+Y = ":yank-join"
+
 [keys.normal.g]
 h = ["collapse_selection", "extend_to_line_start"]
 H = ["extend_to_line_start"]
