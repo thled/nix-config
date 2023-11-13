@@ -30,7 +30,21 @@
     (metric :label "CPU"
             :value {EWW_CPU.avg}
             :onchange "")
+    (battery :status {EWW_BATTERY.BAT0.status}
+             :battery {EWW_BATTERY.BAT0.capacity}
+             :charge "charging" :one "100%" :two "80%" :three "70%" :four "50%" :five "40%" :six "20%" :seven "5%")
     time))
+
+(defwidget battery [battery status one two three
+                    four five six seven charge]
+  (box :space-evenly false :spacing 8
+    (label :text {status == 'Charging' ? charge :
+      battery < 15 ? seven :
+        battery < 30 ? six :
+          battery < 45 ? five :
+            battery < 60 ? four :
+              battery < 75 ? three :
+                battery < 95 ? two : one})))
 
 (defwidget metric [label value onchange]
   (box :orientation "h"
