@@ -6,9 +6,18 @@
 
   networking.hostName = "NBL0112";
 
-  fonts.packages = with pkgs; [
-    cascadia-code
-  ];
+  fonts = {
+    enableDefaultPackages = false;
+    packages = with pkgs; [
+      cascadia-code
+      noto-fonts
+    ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Cascadia Code" ];
+      };
+    };
+  };
 
   boot.loader.systemd-boot.configurationLimit = 8;
 

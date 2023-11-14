@@ -9,8 +9,7 @@ window:
 scrolling:
   history: 0
 font:
-  family: "Cascadia Code"
-  size: 11.0
+  size: 12.0
 draw_bold_text_with_bright_colors: false
 mouse:
   hide_when_typing: true
