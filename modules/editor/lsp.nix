@@ -14,7 +14,6 @@
     rust-analyzer                                   # rust
     nodePackages.typescript                         # typescript
     nodePackages.typescript-language-server         # typescript
-    nodePackages.vim-language-server                # vim
   ];
 }
 
