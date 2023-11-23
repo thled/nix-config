@@ -10,6 +10,7 @@
     meld
     obs-studio
     obsidian
+    ollama
     strawberry
     vlc
     zoom-us
