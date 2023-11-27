@@ -15,6 +15,7 @@
     ./editor/lsp.nix
     ./editor/vim.nix
     ./editor/helix.nix
+    ./editor/wezterm.nix
     ./virtualisation/docker.nix
     ./virtualisation/virt_manager.nix
     ./network/vpn.nix
