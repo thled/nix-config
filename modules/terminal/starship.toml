@@ -10,7 +10,7 @@ disabled = false
 use_12hr = true
 format = '[$time]($style) '
 time_format = "%I:%M"
-style = "bold white dimmed"
+style = "246"
 
 [nix_shell]
 symbol = ' '
