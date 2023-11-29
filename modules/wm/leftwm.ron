@@ -22,7 +22,7 @@
     layout_mode: Workspace,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Alacritty", value: "alacritty", x: 50.0, y: 50.0, height: 50.0, width: 50.0),
+        (name: "Terminal", value: "wezterm --config 'hide_tab_bar_if_only_one_tab=true'", x: 50.0, y: 50.0, height: 50.0, width: 50.0),
     ],
     window_rules: [],
     disable_current_tag_swap: false,
@@ -33,7 +33,7 @@
     single_window_border: false,
     keybind: [
         (command: Execute, value: "j4-dmenu-desktop", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: Execute, value: "wezterm", modifier: ["modkey", "Shift"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
@@ -70,7 +70,7 @@
         (command: IncreaseMainSize, value: "5", modifier: ["modkey"], key: "a"),
         (command: DecreaseMainSize, value: "5", modifier: ["modkey"], key: "x"),
         (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
-        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "r"),
+        (command: ToggleScratchPad, value: "Terminal", modifier: ["modkey"], key: "r"),
         (command: Execute, value: "xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "1"),
         (command: Execute, value: "xrandr --output eDP-1 --off --output HDMI-1 --off --output DP-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "2"),
         (command: Execute, value: "xrandr --output eDP-1 --mode 1920x1080 --pos 2560x360 --rotate normal --output HDMI-1 --off --output DP-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off && leftwm command SoftReload", modifier: ["modkey", "Control"], key: "3"),
