@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0" # for obsidian
+  ];
+  
   environment.systemPackages = with pkgs; [
     arandr
     dbeaver
