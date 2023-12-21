@@ -20,7 +20,7 @@
     ./virtualisation/virt_manager.nix
     ./network/vpn.nix
     ./programs/utils.nix
-    ./programs/clipcat/clipcat.nix
+    # ./programs/clipcat/clipcat.nix
     ./programs/git.nix
     ./programs/kubernetes.nix
     ./programs/ripgrep.nix
