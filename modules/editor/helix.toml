@@ -69,7 +69,8 @@ E = "extend_next_word_end"
 F = "extend_next_char"
 T = "extend_till_char"
 W = "extend_next_word_start"
-X = "extend_line_up"
+X = "extend_line_above"
+A-X = "extend_line_up"
 
 Y = ":yank-join"
 
