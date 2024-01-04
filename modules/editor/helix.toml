@@ -70,7 +70,8 @@ F = "extend_next_char"
 T = "extend_till_char"
 W = "extend_next_word_start"
 X = "extend_line_above"
-A-X = "extend_line_up"
+A-x = "extend_line_up"
+A-X = "extend_line_down"
 
 Y = ":yank-join"
 
