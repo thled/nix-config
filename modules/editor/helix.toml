@@ -59,6 +59,7 @@ esc = ["collapse_selection", "keep_primary_selection"]
 
 down = "move_line_down"
 up = "move_line_up"
+G = "goto_last_line"
 
 A-F = "extend_prev_char"
 A-f = "find_prev_char"
@@ -78,8 +79,8 @@ Y = ":yank-join"
 [keys.normal.g]
 h = ["collapse_selection", "extend_to_line_start"]
 H = ["extend_to_line_start"]
-l = ["collapse_selection", "extend_to_line_end"]
-L = ["extend_to_line_end"]
+e = ["collapse_selection", "extend_to_line_end"]
+E = ["extend_to_line_end"]
 s = ["collapse_selection", "extend_to_first_nonwhitespace"]
 S = ["extend_to_first_nonwhitespace"]
 
