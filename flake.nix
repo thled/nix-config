@@ -6,6 +6,7 @@
     # master.url = "github:NixOS/nixpkgs/master";
 
     helix.url = "github:helix-editor/helix/master";
+    statix.url = "github:NerdyPepper/statix/master";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, statix, ... }: {
   environment.systemPackages = with pkgs; [
     bat
     calc
@@ -21,6 +21,7 @@
     mycli
     nodejs
     ntfs3g
+    statix.packages."${pkgs.system}".statix
     tldr
     tree
     unar
