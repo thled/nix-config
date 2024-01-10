@@ -12,6 +12,7 @@
     flameshot
     gimp
     meld
+    nyxt
     obs-studio
     obsidian
     ollama
