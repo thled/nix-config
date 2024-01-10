@@ -5,9 +5,11 @@ _: {
       alias.dt = "difftool";
       init.defaultBranch = "main";
       diff.tool = "difftastic";
-      difftool.prompt = "false";
-      difftool.meld.cmd = "meld \"$LOCAL\" \"$REMOTE\"";
-      difftool.difftastic.cmd = "difft \"$LOCAL\" \"$REMOTE\"";
+      difftool = {
+        prompt = "false";
+        meld.cmd = "meld \"$LOCAL\" \"$REMOTE\"";
+        difftastic.cmd = "difft \"$LOCAL\" \"$REMOTE\"";
+      };
       merge.tool = "meld";
       mergetool.meld.cmd = "meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"";
       pager.difftool = "true";
@@ -17,14 +19,15 @@ _: {
     };
   };
 
-  environment.etc."config/git/ignore".source = ./gitignore_global;
+  environment.etc = {
+    "config/git/ignore".source = ./gitignore_global;
+    "gitconfig.private".text =
+      "[user]
+      email = dev@tleduc.de";
 
-  environment.etc."gitconfig.private".text =
-    "[user]
-    email = dev@tleduc.de";
-
-  environment.etc."gitconfig.work".text =
-    "[user]
-    email = leduc@publicplan.de";
+    "gitconfig.work".text =
+      "[user]
+      email = leduc@publicplan.de";
+  };
 }
 

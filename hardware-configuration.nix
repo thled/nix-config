@@ -8,25 +8,28 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ ];
-  # boot.kernelParams = [ "i915.force_probe=00:02.0" "ibt=off"];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-  boot.extraModprobeConfig = "options kvm_intel nested=1";
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ff8f6117-101b-4d0c-88e3-a414515ad5a5";
-      fsType = "ext4";
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+      kernelModules = [ ];
+      luks.devices."luks-2960059a-cd1a-431a-91bc-2114a863ca8c".device = "/dev/disk/by-uuid/2960059a-cd1a-431a-91bc-2114a863ca8c";
     };
+    # kernelParams = [ "i915.force_probe=00:02.0" "ibt=off"];
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+    extraModprobeConfig = "options kvm_intel nested=1";
+  };
 
-  boot.initrd.luks.devices."luks-2960059a-cd1a-431a-91bc-2114a863ca8c".device = "/dev/disk/by-uuid/2960059a-cd1a-431a-91bc-2114a863ca8c";
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/ff8f6117-101b-4d0c-88e3-a414515ad5a5";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/B909-2F37";
-      fsType = "vfat";
-    };
+  fileSystems."/boot/efi" = {
+    device = "/dev/disk/by-uuid/B909-2F37";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
 

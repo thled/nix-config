@@ -1,9 +1,13 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ clipcat dmenu ];
+  environment = {
+  systemPackages = with pkgs; [ clipcat dmenu ];
 
-  environment.etc."config/clipcat/clipcatd.toml".source = ./clipcatd.toml;
-  environment.etc."config/clipcat/clipcatctl.toml".source = ./clipcatctl.toml;
-  environment.etc."config/clipcat/clipcat-menu.toml".source = ./clipcat-menu.toml;
+  etc = {
+  "config/clipcat/clipcatd.toml".source = ./clipcatd.toml;
+  "config/clipcat/clipcatctl.toml".source = ./clipcatctl.toml;
+  "config/clipcat/clipcat-menu.toml".source = ./clipcat-menu.toml;
+  };
+  };
 
   systemd.services.clipcatd = {
     description = "Clipcat Daemon";

@@ -7,12 +7,18 @@
     ./modules
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+    };
 
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
+    initrd.secrets = {
+      "/crypto_keyfile.bin" = null;
+    };
   };
 
   system.stateVersion = "22.11";

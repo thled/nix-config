@@ -40,13 +40,15 @@
     };
   };
 
-  environment.etc."config/leftwm/config.ron".source = ./leftwm.ron;
-  environment.etc."config/leftwm/themes/current".source = ./leftwm/theme;
+  environment = {
+    etc."config/leftwm/config.ron".source = ./leftwm.ron;
+    etc."config/leftwm/themes/current".source = ./leftwm/theme;
+    systemPackages = with pkgs; [
+      j4-dmenu-desktop
+    ];
+  };
 
   programs.slock.enable = true;
   services.picom.enable = true;
-  environment.systemPackages = with pkgs; [
-    j4-dmenu-desktop
-  ];
 }
 
