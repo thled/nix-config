@@ -19,6 +19,8 @@ build:
 
 fix:
     just --fmt --unstable
+    statix fix
 
 lint:
     just --fmt --check --unstable
+    statix check
