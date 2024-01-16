@@ -43,9 +43,7 @@
   environment = {
     etc."config/leftwm/config.ron".source = ./leftwm.ron;
     etc."config/leftwm/themes/current".source = ./leftwm/theme;
-    systemPackages = with pkgs; [
-      j4-dmenu-desktop
-    ];
+    systemPackages = with pkgs; [ dmenu ];
   };
 
   programs.slock.enable = true;

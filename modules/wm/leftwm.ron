@@ -32,7 +32,7 @@
     focus_new_windows: true,
     single_window_border: false,
     keybind: [
-        (command: Execute, value: "j4-dmenu-desktop", modifier: ["modkey"], key: "p"),
+        (command: Execute, value: "dmenu", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "wezterm", modifier: ["modkey", "Shift"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
