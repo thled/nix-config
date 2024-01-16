@@ -23,6 +23,7 @@
     # ./programs/clipcat/clipcat.nix
     ./programs/git.nix
     ./programs/kubernetes.nix
+    ./programs/pwa.nix
     ./programs/ripgrep.nix
     ./programs/syncthing.nix
     ./programs/apps.nix
