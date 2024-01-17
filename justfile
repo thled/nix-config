@@ -24,3 +24,7 @@ fix:
 lint:
     just --fmt --check --unstable
     statix check
+
+add: fix
+    git add .
+    git status
