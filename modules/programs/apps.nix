@@ -15,6 +15,7 @@
     obs-studio
     obsidian
     ollama
+    qutebrowser
     strawberry
     vlc
     zoom-us
