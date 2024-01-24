@@ -17,9 +17,8 @@
     just
     libnotify
     lsof
-    mpv
-    mycli
     nmap
+    mycli
     nodejs
     ntfs3g
     statix.packages."${pkgs.system}".statix
