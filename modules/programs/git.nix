@@ -1,6 +1,7 @@
-_: {
+{pkgs, ...}: {
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     config = {
       alias.dt = "difftool";
       init.defaultBranch = "main";

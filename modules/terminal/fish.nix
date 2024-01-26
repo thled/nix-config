@@ -9,6 +9,7 @@ _: {
       gd  = "git diff";
       gdt = "git difftool";
       gf  = "git fetch";
+      gg  = "git gui";
       gl  = "git log";
       gm  = "git merge";
       gp  = "git push";
