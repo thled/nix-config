@@ -25,7 +25,7 @@
       enable = true;
       touchpad.naturalScrolling = true;
     };
-    xkbOptions = "compose:menu";
+    xkb.options = "compose:menu";
     windowManager.leftwm = {
       enable = true;
     };
