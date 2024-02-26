@@ -10,6 +10,7 @@
     discord
     firefox
     flameshot
+    floorp
     gimp
     meld
     obs-studio
