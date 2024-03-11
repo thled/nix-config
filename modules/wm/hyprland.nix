@@ -28,5 +28,7 @@
       wlr-randr
     ];
   };
+
+  security.pam.services.waylock = {};
 }
 
