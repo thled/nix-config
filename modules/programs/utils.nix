@@ -2,8 +2,8 @@
   environment.systemPackages = with pkgs; [
     bat
     calc
+    cliphist
     difftastic
-    dunst
     eza
     fd
     feh
@@ -17,6 +17,8 @@
     just
     libnotify
     lsof
+    mako
+    neofetch
     nmap
     mycli
     nodejs

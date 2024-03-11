@@ -4,23 +4,20 @@
     ./system/common.nix
     ./network/networkmanager.nix
     ./network/mail.nix
-    ./wm/eww.nix
-    ./wm/leftwm.nix
+    # ./wm/eww.nix
+    ./wm/hyprland.nix
     ./audio/pipewire.nix
-    ./terminal/alacritty.nix
     ./terminal/fish.nix
+    ./terminal/foot.nix
     ./terminal/starship.nix
-    ./terminal/zellij.nix
     ./terminal/direnv.nix
     ./editor/lsp.nix
     ./editor/vim.nix
     ./editor/helix.nix
-    ./editor/wezterm.nix
     ./virtualisation/docker.nix
     ./virtualisation/virt_manager.nix
     ./network/vpn.nix
     ./programs/utils.nix
-    # ./programs/clipcat/clipcat.nix
     ./programs/git.nix
     ./programs/kubernetes.nix
     ./programs/pwa.nix
