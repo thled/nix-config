@@ -25,6 +25,7 @@
       fuzzel
       ironbar
       waylock
+      wl-clipboard
       wlr-randr
     ];
   };

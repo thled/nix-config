@@ -13,7 +13,6 @@
     meld
     obs-studio
     obsidian
-    satty
     strawberry
     vlc
     zoom-us
