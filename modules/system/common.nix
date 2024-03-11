@@ -10,6 +10,7 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       cascadia-code
+      font-awesome
       noto-fonts
       noto-fonts-lgc-plus
       noto-fonts-cjk-sans
