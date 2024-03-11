@@ -22,10 +22,11 @@
   environment = {
     etc."config/hypr/hyprland.conf".source = ./hyprland.conf;
     etc."config/hypr/hypridle.conf".source = ./hypridle.conf;
+    etc."config/waybar/config".source = ./waybar.jsonc;
     systemPackages = with pkgs; [ 
       fuzzel
-      ironbar
       hypridle
+      waybar
       waylock
       wl-clipboard
       wlr-randr
