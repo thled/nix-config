@@ -1,4 +1,4 @@
 { pkgs, ... }: {
   environment.systemPackages = [ pkgs.foot ];
-  # environment.etc."config/wezterm/wezterm.lua".source = ./wezterm.lua;
+  environment.etc."config/foot/foot.ini".source = ./foot.ini;
 }
