@@ -21,23 +21,6 @@
   "modules-right": [
     "tray"
   ],
-  // Modules configuration
-  // "sway/workspaces": {
-  //     "disable-scroll": true,
-  //     "all-outputs": true,
-  //     "warp-on-scroll": false,
-  //     "format": "{name}: {icon}",
-  //     "format-icons": {
-  //         "1": "",
-  //         "2": "",
-  //         "3": "",
-  //         "4": "",
-  //         "5": "",
-  //         "urgent": "",
-  //         "focused": "",
-  //         "default": ""
-  //     }
-  // },
   "tray": {
     // "icon-size": 21,
     "spacing": 10

@@ -23,6 +23,7 @@
     etc."config/hypr/hyprland.conf".source = ./hyprland.conf;
     etc."config/hypr/hypridle.conf".source = ./hypridle.conf;
     etc."config/waybar/config".source = ./waybar.jsonc;
+    etc."config/waybar/style.css".source = ./waybar.css;
     systemPackages = with pkgs; [ 
       fuzzel
       hypridle
