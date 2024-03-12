@@ -6,19 +6,18 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": [],
   "modules-center": [
-    "clock"
-  ],
-  "modules-right": [
-    "pulseaudio",
-    "network",
+    "hyprland/workspaces",
     "cpu",
     "memory",
+    "clock",
+    "network",
     "battery",
     "battery#bat2",
+    "pulseaudio"
+  ],
+  "modules-right": [
     "tray"
   ],
   // Modules configuration
@@ -44,7 +43,7 @@
   },
   "clock": {
     // "timezone": "America/New_York",
-    "format": "{:%I:%M} __________ {:%Y-%m-%d}",
+    "format": "{:%I:%M %Y-%m-%d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
@@ -65,17 +64,17 @@
   },
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
+    // "format-full": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
+    "format-good": "", // An empty format will hide the module
+    "format-full": "",
     "format-icons": [
       "",
       "",
