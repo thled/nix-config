@@ -1,8 +1,4 @@
 { pkgs, ... }: {
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "electron-25.9.0" # for obsidian
-  # ];
-  
   environment.systemPackages = with pkgs; [
     dbeaver
     chromium
@@ -11,10 +7,9 @@
     floorp
     gimp
     meld
+    mpv
     obs-studio
     obsidian
-    strawberry
-    vlc
     zoom-us
   ];
 
