@@ -31,6 +31,7 @@
       waylock
       wl-clipboard
       wlr-randr
+      xdg-desktop-portal-gtk
     ];
   };
 
