@@ -47,8 +47,6 @@
     sessionVariables = {
       # hint electron apps to use wayland
       NIXOS_OZONE_WL = "1";
-      # if cursor invisible
-      # WLR_NO_HARDWARE_CURSORS = "1";
     };
     systemPackages = with pkgs; [ 
       fuzzel
@@ -70,13 +68,5 @@
   };
 
   security.pam.services.waylock = {};
-
-  # screen sharing
-  services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    wlr.enable = true;
-  };
 }
 
