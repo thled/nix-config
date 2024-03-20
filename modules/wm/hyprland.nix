@@ -1,7 +1,4 @@
-{ pkgs
-, lib
-, config
-, ... }: {
+{ pkgs, ... }: {
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
@@ -9,19 +6,25 @@
       modesetting.enable = true;
       nvidiaSettings = true;
       open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # package = config.boot.kernelPackages.nvidiaPackages.stable;
       prime = {
         # Option A: Offload Mode
-        # offload = {
-        #   enable = lib.mkOverride 990 true;
-        #   enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true;
-        # };
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
 
         # Option B: Sync Mode
-        sync.enable = true;
+        # sync.enable = true;
 
-        intelBusId = lib.mkDefault "PCI:0:2:0";
-        nvidiaBusId = lib.mkDefault "PCI:1:0:0";
+        # Option C: Reverse Sync Mode
+        # reverseSync.enable = true;
+        # allowExternalGpu = false;
+
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+
+        # allowExternalGpu = true;
       };
       powerManagement.enable = false;
     };
@@ -44,10 +47,6 @@
     etc."config/hypr/hypridle.conf".source = ./hypridle.conf;
     etc."config/waybar/config".source = ./waybar.jsonc;
     etc."config/waybar/style.css".source = ./waybar.css;
-    sessionVariables = {
-      # hint electron apps to use wayland
-      NIXOS_OZONE_WL = "1";
-    };
     systemPackages = with pkgs; [ 
       fuzzel
       hypridle
@@ -56,14 +55,6 @@
       wl-clipboard
       wlr-randr
       xdg-desktop-portal-gtk
-
-      (pkgs.writeShellScriptBin "nvidia-offload" ''
-        export __NV_PRIME_RENDER_OFFLOAD=1
-        export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-        export __GLX_VENDOR_LIBRARY_NAME=nvidia
-        export __VK_LAYER_NV_optimus=NVIDIA_only
-        exec "$0"
-      '')
     ];
   };
 

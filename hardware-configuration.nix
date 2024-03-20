@@ -33,22 +33,6 @@
 
   swapDevices = [ ];
 
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  # };
-
-  # hardware.opengl = {
-  #   enable = true;
-  #   extraPackages = with pkgs; [
-  #     intel-media-driver
-  #     vaapiIntel
-  #     vaapiVdpau
-  #     libvdpau-va-gl
-  #   ];
-  #   extraPackages32 = with pkgs.pkgsi686Linux; [ vaapiIntel ];
-  #   driSupport32Bit = true;
-  # };
-
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
