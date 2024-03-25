@@ -1,5 +1,6 @@
 { pkgs, statix, ... }: {
   environment.systemPackages = with pkgs; [
+    atuin
     bat
     calc
     cliphist
@@ -11,8 +12,6 @@
     fzf
     gcc
     gnumake
-    imagemagick
-    jless
     jq
     just
     libnotify
@@ -29,7 +28,6 @@
     unar
     unzip
     watchexec
-    xsel
     zoxide
   ];
 }
