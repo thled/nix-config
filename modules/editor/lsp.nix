@@ -6,7 +6,6 @@
     go                                              # go
     gopls                                           # go
     jdt-language-server                             # java
-    sumneko-lua-language-server                     # lua
     nil                                             # nix
     nodePackages.intelephense                       # php
     python311Packages.python-lsp-server             # python
