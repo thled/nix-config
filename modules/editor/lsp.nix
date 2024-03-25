@@ -9,7 +9,7 @@
     sumneko-lua-language-server                     # lua
     nil                                             # nix
     nodePackages.intelephense                       # php
-    python310Packages.python-lsp-server             # python
+    python311Packages.python-lsp-server             # python
     cargo                                           # rust
     rust-analyzer                                   # rust
     nodePackages.typescript                         # typescript
