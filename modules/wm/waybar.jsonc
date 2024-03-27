@@ -27,8 +27,16 @@
   },
   "clock": {
     // "timezone": "America/New_York",
-    "format": "{:%I:%M %Y-%m-%d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    "format": "<b>{:%I:%M}</b>  ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "format": {
+        "today": "<span color='#dd532e'><u>{}</u></span>"
+      }
+    }
   },
   "cpu": {
     "format": "{icon} ",
@@ -55,7 +63,8 @@
     "format": "{capacity}% {icon}",
     // "format-full": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    // "format-plugged": "{capacity}% ",
+    "format-plugged": "",
     "format-alt": "{time} {icon}",
     "format-good": "", // An empty format will hide the module
     "format-full": "",
@@ -68,7 +77,26 @@
     ]
   },
   "battery#bat2": {
-    "bat": "BAT2"
+    "bat": "BAT2",
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    // "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "",
+    "format-alt": "{time} {icon}",
+    "format-good": "", // An empty format will hide the module
+    "format-full": "",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
