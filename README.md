@@ -54,6 +54,7 @@
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
 - Obsidian Vault: `git clone git@github.com:thled/references.git`
 - Put OpenVPN configuration for office into `~/office.ovpn`.
+- Put encryption key for atuin into `~/.atuin-key`.
 - Put licence key for intelephense into `~/intelephense/licence.txt`.
 - Configure k8s in `~/.kube/config`.
 

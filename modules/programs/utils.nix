@@ -1,6 +1,5 @@
 { pkgs, statix, ... }: {
   environment.systemPackages = with pkgs; [
-    atuin
     bat
     calc
     cliphist
