@@ -10,6 +10,7 @@
     mpv
     obs-studio
     obsidian
+    vesktop
     zoom-us
   ];
 
