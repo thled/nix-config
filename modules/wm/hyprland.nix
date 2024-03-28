@@ -48,16 +48,26 @@
     etc."config/waybar/config".source = ./waybar.jsonc;
     etc."config/waybar/style.css".source = ./waybar.css;
     systemPackages = with pkgs; [ 
-      fuzzel
+      # fuzzel
       hypridle
+      kdePackages.qtwayland
+      kdePackages.qt6ct
+      libsForQt5.qt5.qtwayland
+      libsForQt5.qt5ct
       waybar
       waylock
       wl-clipboard
       wlr-randr
+      wofi
       xdg-desktop-portal-gtk
     ];
   };
 
-  security.pam.services.waylock = {};
+  security = {
+    # make waylock work
+    pam.services.waylock = {};
+    # authentication agent
+    polkit.enable = true;
+  };  
 }
 
