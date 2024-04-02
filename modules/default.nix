@@ -4,7 +4,6 @@
     ./system/common.nix
     ./network/networkmanager.nix
     ./network/mail.nix
-    # ./wm/eww.nix
     ./wm/hyprland.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
