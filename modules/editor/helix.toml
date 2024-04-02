@@ -11,6 +11,7 @@ mouse = false
 rulers = [120]
 text-width = 120
 true-color = true
+jump-label-alphabet = "shtarenicpdoluwfmxbgyzvk"
 
 [editor.lsp]
 display-inlay-hints = true
@@ -60,6 +61,8 @@ esc = ["collapse_selection", "keep_primary_selection"]
 down = "move_line_down"
 up = "move_line_up"
 G = "goto_last_line"
+
+h = "goto_word"
 
 A-F = "extend_prev_char"
 A-f = "find_prev_char"
