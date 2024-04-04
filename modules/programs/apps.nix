@@ -11,6 +11,7 @@
     obs-studio
     obsidian
     vesktop
+    (vivaldi.override {proprietaryCodecs = true; enableWidevine = true;})
     zoom-us
   ];
 
