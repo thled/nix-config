@@ -94,5 +94,5 @@ m = ["collapse_selection", "select_mode", "match_brackets", "exit_select_mode"]
 space = "flip_selections"
 
 [keys.normal.z]
-c = ":set gutters.line-numbers.min-width 36"
+c = ":set gutters.line-numbers.min-width 56"
 C = ":set gutters.line-numbers.min-width 3"
