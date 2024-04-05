@@ -23,6 +23,7 @@
       # "lmhkpmbekcpmknklioeibfkpmmfibljd" # redux dev tools
       "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
     ];
     extraOpts = {
       "BrowserSignin" = 0;
