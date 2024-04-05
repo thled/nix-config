@@ -18,10 +18,11 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      "bnjjngeaknajbdcgpfkgnonkmififhfo" # fake filler
-      "fmkadmapgofadopljbjfkapdkoienihi" # react dev tools
-      "lmhkpmbekcpmknklioeibfkpmmfibljd" # redux dev tools
+      # "bnjjngeaknajbdcgpfkgnonkmififhfo" # fake filler
+      # "fmkadmapgofadopljbjfkapdkoienihi" # react dev tools
+      # "lmhkpmbekcpmknklioeibfkpmmfibljd" # redux dev tools
       "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
+      "nngceckbapebfimnlniiiahkandclblb" # bitwarden
     ];
     extraOpts = {
       "BrowserSignin" = 0;
