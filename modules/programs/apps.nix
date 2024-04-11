@@ -24,6 +24,7 @@
       "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
       "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
     ];
     extraOpts = {
       "BrowserSignin" = 0;
