@@ -23,6 +23,7 @@
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
       "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+      "bcjindcccaagfpapjjmafapmmgkkhgoa" # JSON formatter
     ];
     extraOpts = {
       "BrowserSignin" = 0;
