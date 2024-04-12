@@ -2,9 +2,7 @@
   environment.systemPackages = with pkgs; [
     dbeaver
     chromium
-    discord
     firefox
-    floorp
     gimp
     meld
     mpv
