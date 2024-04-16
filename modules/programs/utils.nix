@@ -15,7 +15,6 @@
     just
     libnotify
     lsof
-    mako
     neofetch
     nmap
     mycli

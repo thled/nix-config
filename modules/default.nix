@@ -20,6 +20,7 @@
     ./programs/atuin.nix
     ./programs/git.nix
     ./programs/kubernetes.nix
+    ./programs/mako.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
     ./programs/satty.nix
