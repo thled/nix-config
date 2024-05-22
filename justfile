@@ -28,3 +28,6 @@ lint:
 add: fix
     git add .
     git status
+
+optimise:
+    nix store optimise
