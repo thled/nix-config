@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    dbeaver
+    dbeaver-bin
     chromium
     gimp
     meld
