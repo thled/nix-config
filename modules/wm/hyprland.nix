@@ -44,6 +44,7 @@
   environment = {
     etc."config/hypr/hyprland.conf".source = ./hyprland.conf;
     etc."config/hypr/hypridle.conf".source = ./hypridle.conf;
+    etc."config/hypr/hyprlock.conf".source = ./hyprlock.conf;
     etc."config/waybar/config".source = ./waybar.jsonc;
     etc."config/waybar/style.css".source = ./waybar.css;
     systemPackages = with pkgs; [ 
@@ -62,8 +63,6 @@
   };
 
   security = {
-    # make waylock work
-    # pam.services.waylock = {};
     # authentication agent
     polkit.enable = true;
   };  
