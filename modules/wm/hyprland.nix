@@ -49,12 +49,12 @@
     systemPackages = with pkgs; [ 
       fuzzel
       hypridle
+      hyprlock
       kdePackages.qtwayland
       kdePackages.qt6ct
       libsForQt5.qt5.qtwayland
       libsForQt5.qt5ct
       waybar
-      waylock
       wl-clipboard
       wlr-randr
       xdg-desktop-portal-gtk
@@ -63,7 +63,7 @@
 
   security = {
     # make waylock work
-    pam.services.waylock = {};
+    # pam.services.waylock = {};
     # authentication agent
     polkit.enable = true;
   };  
