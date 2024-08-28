@@ -50,9 +50,8 @@
 - Add SSH keys to `~/.ssh/`.
 - Create `~/dev` and `~/work` folder for personal and work related projects, respectively.
 - Create `~/screenshots` folder for taking screenshots with <kbd>Win</kbd>+<kbd>s</kbd>.
-- For fast capture to inbox with the `i` function (see [fish alias][fish]) write recipient email into `~/.inbox_email` and password for SMTP into `~/.inbox_pass`.
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
-- Obsidian Vault: `git clone git@github.com:thled/references.git`
+- Clone Obsidian Vault `git clone git@github.com:thled/references.git` into `~/dev/references`.
 - Put OpenVPN configuration for office into `~/office.ovpn`.
 - Put encryption key for atuin into `~/.atuin-key`.
 - Put licence key for intelephense into `~/intelephense/licence.txt`.
@@ -60,12 +59,12 @@
 
 ## Usage
 
-- Start terminal with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd>.
+- Start terminal with <kbd>Win</kbd>+<kbd>Return</kbd>.
 - Start any application with <kbd>Win</kbd>+<kbd>p</kbd>.
-- Use VPN with `sudo systemctl start openvpn-protonVPN.service`.
+- Use VPN with `sudo systemctl start openvpn-officeVPN.service`.
 - Manage NixOS configuration in `~/dev/nix-config`.
-- Update with `nix flake update`.
+- Update with `just update`.
+- Apply updates with `just build`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
-[fish]: terminal/fish.nix
 

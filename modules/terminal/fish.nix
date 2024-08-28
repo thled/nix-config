@@ -21,9 +21,6 @@ _: {
       l   = "eza -la --git";
       t   = "eza -T --git-ignore";
     };
-    shellAliases = {
-      i = "echo \"Subject: $argv\" | sendmail (cat ~/.inbox_email) && echo \"Send to inbox:\"";
-    };
   };
 
   systemd.tmpfiles.rules = [
