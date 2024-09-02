@@ -8,28 +8,23 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot = {
-    initrd = {
-      availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-      kernelModules = [ ];
-      luks.devices."luks-2960059a-cd1a-431a-91bc-2114a863ca8c".device = "/dev/disk/by-uuid/2960059a-cd1a-431a-91bc-2114a863ca8c";
+  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/c7fb1d79-5821-45a5-9391-aa95f1e7b3f5";
+      fsType = "ext4";
     };
-    # kernelParams = [ "i915.force_probe=00:02.0" "ibt=off"];
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
-    extraModprobeConfig = "options kvm_intel nested=1";
-  };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/ff8f6117-101b-4d0c-88e3-a414515ad5a5";
-    fsType = "ext4";
-  };
+  boot.initrd.luks.devices."luks-b36ed176-ab20-438c-9438-3cc1f06399fe".device = "/dev/disk/by-uuid/b36ed176-ab20-438c-9438-3cc1f06399fe";
 
-  fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/B909-2F37";
-    fsType = "vfat";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/091E-3569";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
   swapDevices = [ ];
 
@@ -38,10 +33,9 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp10s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp9s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
