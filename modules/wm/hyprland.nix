@@ -11,6 +11,7 @@
     etc."config/waybar/config".source = ./waybar.jsonc;
     etc."config/waybar/style.css".source = ./waybar.css;
     systemPackages = with pkgs; [ 
+      bibata-cursors
       fuzzel
       hypridle
       hyprlock
