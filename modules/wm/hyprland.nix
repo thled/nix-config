@@ -20,7 +20,6 @@
       libsForQt5.qt5.qtwayland
       libsForQt5.qt5ct
       waybar
-      wl-clipboard
       wlr-randr
       xdg-desktop-portal-gtk
     ];
