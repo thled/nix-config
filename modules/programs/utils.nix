@@ -6,11 +6,11 @@
     difftastic
     eza
     fd
-    feh
     ffmpeg
     fzf
     gcc
     gnumake
+    imv
     jq
     just
     libnotify

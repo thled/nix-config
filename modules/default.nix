@@ -3,7 +3,8 @@
     ./system/user.nix
     ./system/common.nix
     ./network/networkmanager.nix
-    ./wm/hyprland.nix
+    # ./wm/hyprland.nix
+    ./wm/sway.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
     ./terminal/foot.nix
