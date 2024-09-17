@@ -1,12 +1,14 @@
 { pkgs, statix, ... }: {
   environment.systemPackages = with pkgs; [
     bat
+    bibata-cursors
     calc
     cliphist
     difftastic
     eza
     fd
     ffmpeg
+    fuzzel
     fzf
     gcc
     gnumake
