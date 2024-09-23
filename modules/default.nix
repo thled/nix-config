@@ -24,7 +24,7 @@
     ./programs/pwa.nix
     ./programs/ripgrep.nix
     ./programs/satty.nix
-    ./programs/syncthing.nix
+    # ./programs/syncthing.nix
     ./programs/apps.nix
   ];
 
