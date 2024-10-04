@@ -89,6 +89,11 @@ S = ["extend_to_first_nonwhitespace"]
 
 [keys.normal.m]
 m = ["collapse_selection", "select_mode", "match_brackets", "exit_select_mode"]
+'"' = '@f"<right>mi"'
+"'" = "@f'<right>mi'"
+"(" = "@f)<left>mi)"
+"[" = "@f]<left>mi]"
+"{" = "@f}<left>mi}"
 
 [keys.normal.space]
 space = "flip_selections"
