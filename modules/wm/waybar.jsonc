@@ -13,8 +13,8 @@
     "memory",
     "network",
     "pulseaudio",
-    "clock#date",
-    "clock"
+    "clock",
+    "clock#date"
   ],
   "modules-right": [
     "tray"
