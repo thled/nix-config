@@ -8,6 +8,7 @@
     eza
     fd
     ffmpeg
+    file
     fuzzel
     fzf
     gcc
