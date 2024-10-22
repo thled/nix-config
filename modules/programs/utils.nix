@@ -20,7 +20,7 @@
     lsof
     neofetch
     nmap
-    mycli
+    # mycli
     nodejs
     ntfs3g
     statix.packages."${pkgs.system}".statix
