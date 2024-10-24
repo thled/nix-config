@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   virtualisation.docker = {
     enable = true;
     daemon.settings = {
@@ -10,10 +10,6 @@
         }
       ];
     };
-  };
-
-  boot.kernel.sysctl = {
-    "vm.max_map_count" = 262144;
   };
 }
 

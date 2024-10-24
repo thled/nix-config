@@ -21,6 +21,9 @@
   };
 
   boot.loader.systemd-boot.configurationLimit = 8;
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 262144;
+  };
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
