@@ -9,6 +9,7 @@
     obsidian
     vesktop
     zoom-us
+    (callPackage ./smartcat.nix { })
   ];
 
   programs.firefox = {
