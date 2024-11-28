@@ -8,6 +8,7 @@
     obs-studio
     obsidian
     vesktop
+    zed-editor
     zoom-us
     (callPackage ./smartcat.nix { })
   ];
