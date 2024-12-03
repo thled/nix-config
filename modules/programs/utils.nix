@@ -24,6 +24,7 @@
     neofetch
     nmap
     nodejs
+    nushell
     ntfs3g
     statix.packages."${pkgs.system}".statix
     tldr
