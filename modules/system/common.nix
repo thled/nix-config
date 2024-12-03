@@ -10,7 +10,8 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       (iosevka-bin.override { variant = "SGr-IosevkaTerm"; })
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
       noto-fonts-color-emoji
     ];
     fontconfig = {
