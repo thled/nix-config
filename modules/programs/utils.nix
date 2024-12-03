@@ -14,6 +14,7 @@
     gcc
     gnumake
     imv
+    jless
     jq
     just
     libnotify
