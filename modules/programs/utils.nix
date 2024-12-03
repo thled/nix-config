@@ -5,6 +5,7 @@
     calc
     cliphist
     difftastic
+    dig
     eza
     fd
     ffmpeg
@@ -19,9 +20,9 @@
     just
     libnotify
     lsof
+    mycli
     neofetch
     nmap
-    mycli
     nodejs
     ntfs3g
     statix.packages."${pkgs.system}".statix
