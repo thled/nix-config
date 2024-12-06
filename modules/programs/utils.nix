@@ -16,7 +16,8 @@
     gcc
     gnumake
     imv
-    jless
+    # jless
+    (callPackage ./jless.nix { })
     jq
     just
     libnotify
