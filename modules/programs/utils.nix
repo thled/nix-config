@@ -3,7 +3,8 @@
     bat
     bibata-cursors
     calc
-    cliphist
+    #cliphist
+    clipse
     difftastic
     dig
     eza
