@@ -36,6 +36,15 @@ function i --description 'Manage todo list: add, show, delete, or clear'
         set -l line_to_delete (sed -n "$argv[1]p" $todo_file)
         echo "Deleted: $line_to_delete"
         sed -i "$argv[1] d" $todo_file
+
+        # Show updated list
+        echo -e "\nCurrent list:"
+        if not test -s $todo_file
+            echo "Todo list is empty"
+            return
+        end
+
+        cat -n $todo_file
         return
     end
 
