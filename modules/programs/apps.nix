@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, zen-browser, ... }: {
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     chromium
@@ -9,6 +9,7 @@
     obsidian
     vesktop
     zed-editor
+    zen-browser.packages.${pkgs.system}.default
     zoom-us
     (callPackage ./smartcat.nix { })
   ];
