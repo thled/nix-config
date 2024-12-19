@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  users.defaultUserShell = pkgs.fish;
+  # users.defaultUserShell = pkgs.fish;
 
   users.users.thled = {
     isNormalUser = true;

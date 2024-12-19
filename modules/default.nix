@@ -8,6 +8,7 @@
     ./audio/pipewire.nix
     ./terminal/fish.nix
     ./terminal/foot.nix
+    ./terminal/nushell.nix
     ./terminal/starship.nix
     ./terminal/direnv.nix
     ./editor/lsp.nix
