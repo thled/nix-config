@@ -1,3 +1,5 @@
+command = /run/current-system/sw/bin/nu
 font-family = Iosevka Term
 window-decoration = false
-command = /run/current-system/sw/bin/nu
+window-padding-balance = true
+window-padding-color = extend
