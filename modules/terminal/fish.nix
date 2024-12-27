@@ -18,8 +18,6 @@ _: {
       k   = "kubectl";
       ks  = "kubens";
       kx  = "kubectx";
-      l   = "eza -la --git";
-      t   = "eza -T --git-ignore";
     };
   };
 

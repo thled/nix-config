@@ -3,11 +3,9 @@
     bat
     bibata-cursors
     calc
-    #cliphist
     clipse
     difftastic
     dig
-    eza
     fd
     ffmpeg
     file
