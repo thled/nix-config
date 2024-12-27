@@ -11,7 +11,6 @@
     zed-editor
     zen-browser.packages.${pkgs.system}.default
     zoom-us
-    (callPackage ./smartcat.nix { })
   ];
 
   programs.firefox = {
