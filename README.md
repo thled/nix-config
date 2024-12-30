@@ -51,7 +51,6 @@
 - Create `~/dev` and `~/work` folder for personal and work related projects, respectively.
 - Create `~/screenshots` folder for taking screenshots with <kbd>Win</kbd>+<kbd>s</kbd>.
 - Connect bluetooth devices (e.g. headset) with `bluetoothctl`.
-- Login to atuin with `atuin login`.
 - Clone Obsidian Vault `git clone git@github.com:thled/references.git` into `~/dev/references`.
 - Put OpenVPN configuration for office into `~/office.ovpn`.
 - Put licence key for intelephense into `~/intelephense/licence.txt`.
