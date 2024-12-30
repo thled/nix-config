@@ -31,9 +31,9 @@ in
     wlr.enable = true;
   };
 
-  environment = {
-    etc."config/sway/config".source = ./sway.conf;
-    etc."config/waybar/config".source = ./waybar.jsonc;
-    etc."config/waybar/style.css".source = ./waybar.css;
+  environment.etc = {
+    "config/sway/config".source = ./sway.conf;
+    "config/waybar/config".source = ./waybar.jsonc;
+    "config/waybar/style.css".source = ./waybar.css;
   };
 }
