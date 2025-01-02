@@ -1,5 +1,9 @@
-command = /run/current-system/sw/bin/nu
-font-family = Iosevka Term
-window-decoration = false
+command                = /run/current-system/sw/bin/nu
+font-family            = Iosevka Term
+font-feature           = -calt
+font-feature           = -liga
+font-feature           = -dlig
+theme                  = GruvboxDark
+window-decoration      = false
 window-padding-balance = true
-window-padding-color = extend
+window-padding-color   = extend
