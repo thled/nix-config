@@ -12,6 +12,10 @@ rulers = [120]
 text-width = 120
 true-color = true
 jump-label-alphabet = "shtarenicpdoluwfmxbgyzvk"
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [editor.lsp]
 display-inlay-hints = true
