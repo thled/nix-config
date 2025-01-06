@@ -1,5 +1,3 @@
-source ~/.zoxide.nu
-
 alias d   = docker
 alias dc  = docker compose
 alias g   = git
@@ -66,3 +64,4 @@ $env.config = {
   }
 }
 
+source ~/.zoxide.nu
