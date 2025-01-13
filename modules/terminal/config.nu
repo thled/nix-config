@@ -65,3 +65,4 @@ $env.config = {
 }
 
 source ~/.zoxide.nu
+source /etc/config/nushell/todo.nu
