@@ -14,8 +14,8 @@
     ./editor/lsp.nix
     ./editor/vim.nix
     ./editor/helix.nix
-    # ./virtualisation/docker.nix
-    ./virtualisation/podman.nix
+    ./virtualisation/docker.nix
+    # ./virtualisation/podman.nix
     ./virtualisation/virt_manager.nix
     ./network/vpn.nix
     ./programs/utils.nix
