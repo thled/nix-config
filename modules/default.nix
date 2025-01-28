@@ -3,6 +3,7 @@
     ./system/user.nix
     ./system/common.nix
     ./network/networkmanager.nix
+    ./wm/ddcutil.nix
     ./wm/sway.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
