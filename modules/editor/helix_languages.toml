@@ -1,7 +1,2 @@
-[language-server.phpactor]
-command = "phpactor"
-args = [ "language-server" ]
-
-[[language]]
-name = "php"
-language-servers = [ "intelephense", "phpactor" ]
+[language-server.intelephense.config]
+intelephense.files.exclude = [ "**/.direnv/**" ]
