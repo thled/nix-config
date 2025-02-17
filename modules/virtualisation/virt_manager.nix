@@ -1,5 +1,5 @@
-_: {
-  # virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true;
-  # environment.systemPackages = with pkgs; [ virt-manager ];
+{ pkgs, ... }: {
+  virtualisation.libvirtd.enable = true;
+  environment.systemPackages = with pkgs; [ virt-manager ];
+  # programs.dconf.enable = true;
 }

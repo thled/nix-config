@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, lib, ... }: 
 let
   # run at the end of sway config
   # see https://github.com/emersion/xdg-desktop-portal-wlr/wiki/"It-doesn't-work"-Troubleshooting-Checklist
@@ -35,5 +35,19 @@ in
     "config/sway/config".source = ./sway.conf;
     "config/waybar/config".source = ./waybar.jsonc;
     "config/waybar/style.css".source = ./waybar.css;
+  };
+
+  programs.dconf = {
+    enable = true;
+    profiles.user.databases = [
+      {
+        settings = {
+          "org/gnome/desktop/interface" = {
+            cursor-theme = "Bibata-Modern-Classic";
+            cursor-size = lib.gvariant.mkInt32 16;
+          };
+        };
+      }
+    ];
   };
 }
