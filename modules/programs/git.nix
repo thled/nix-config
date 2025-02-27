@@ -4,19 +4,33 @@
     package = pkgs.gitFull;
     config = {
       alias.dt = "difftool";
-      init.defaultBranch = "main";
+      branch.sort = "-committerdate";
+      column.ui = "auto";
+      diff.algorithm = "histogram";
+      diff.colorMoved = "plain";
+      diff.mnemonicPrefix = true;
+      diff.renames = true;
       diff.tool = "difftastic";
       difftool = {
         prompt = "false";
         meld.cmd = "meld \"$LOCAL\" \"$REMOTE\"";
         difftastic.cmd = "difft \"$LOCAL\" \"$REMOTE\"";
       };
+      fetch.all = true;
+      fetch.pruneTags = true;
+      fetch.prune = true;
+      help.autocorrect = "prompt";
+      includeIf."gitdir:~/dev/".path = "/etc/gitconfig.private";
+      includeIf."gitdir:~/work/".path = "/etc/gitconfig.work";
+      init.defaultBranch = "main";
       merge.tool = "meld";
       mergetool.meld.cmd = "meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"";
       pager.difftool = "true";
+      push.autosetupremote = true;
+      rebase.autoStash = true;
+      rebase.updateRefs = true;
+      tag.sort = "version:refname";
       user.name = "Thomas Le Duc";
-      includeIf."gitdir:~/dev/".path = "/etc/gitconfig.private";
-      includeIf."gitdir:~/work/".path = "/etc/gitconfig.work";
     };
   };
 
