@@ -8,7 +8,7 @@
     obs-studio
     obsidian
     vesktop
-    # zed-editor
+    zed-editor
     zen-browser.packages.${pkgs.system}.default
     zoom-us
   ];
