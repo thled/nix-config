@@ -11,7 +11,7 @@
   "modules-center": [
     "cpu",
     "memory",
-    "network",
+    // "network",
     "pulseaudio",
     "clock",
     "clock#date"
