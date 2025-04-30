@@ -4,7 +4,7 @@ alias g   = git
 alias gc  = git commit
 alias gd  = git diff
 alias gdt = git difftool
-alias gf  = git fetch
+alias gf  = git fetch; git status
 alias gg  = git gui
 alias gl  = git log --pretty='tformat:%C(always,yellow)%h%C(always,reset) %C(always,green)%ar%C(always,reset) %C(always,bold blue)%an%C(always,reset) %C(always,red)%d%C(always,reset) %s'
 alias gp  = git push
