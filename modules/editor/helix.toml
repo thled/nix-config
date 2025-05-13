@@ -101,6 +101,7 @@ m = ["collapse_selection", "select_mode", "match_brackets", "exit_select_mode"]
 
 [keys.normal.space]
 space = "flip_selections"
+B = ":sh git log -n 5 --format='format:%%h (%%an: %%ar) %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}"
 
 [keys.normal.z]
 c = ":set gutters.line-numbers.min-width 75"
