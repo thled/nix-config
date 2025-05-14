@@ -3,7 +3,6 @@
     dbeaver-bin
     chromium
     gimp
-    jujutsu
     meld
     mpv
     obs-studio

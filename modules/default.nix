@@ -22,6 +22,7 @@
     ./network/vpn.nix
     ./programs/utils.nix
     ./programs/git.nix
+    ./programs/jj.nix
     ./programs/kubernetes.nix
     ./programs/mako.nix
     ./programs/pwa.nix
