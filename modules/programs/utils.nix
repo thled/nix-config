@@ -32,6 +32,7 @@
     unzip
     watchexec
     wl-clipboard
+    yek
     zoxide
   ];
 }
