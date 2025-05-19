@@ -1,7 +1,8 @@
 { pkgs, ... }: {
   environment = {
     systemPackages = [ pkgs.jujutsu ];
-    etc."config/jj/config.toml".text = ''
+    etc."config/jj/config.toml".text = #toml
+    ''
       [user]
       name = "Thomas Le Duc"
       email = "dev@tleduc.de"

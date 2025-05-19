@@ -9,22 +9,38 @@ let
   '';
 in
 {
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [ 
-      autotiling
-      dbus-sway-environment
-      swaylock
-      swayidle
-    ];
-    extraSessionCommands = ''
-      export NIXOS_OZONE_WL=1;
-    '';
+  programs = {
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraPackages = with pkgs; [ 
+        autotiling
+        dbus-sway-environment
+        swaylock
+        swayidle
+      ];
+      extraSessionCommands = ''
+        export NIXOS_OZONE_WL=1;
+      '';
+    };
+
+    waybar.enable = true;
+
+    dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/interface" = {
+              cursor-theme = "Bibata-Modern-Classic";
+              cursor-size = lib.gvariant.mkInt32 16;
+            };
+          };
+        }
+      ];
+    };
   };
-
-  programs.waybar.enable = true;
-
+  
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
@@ -35,19 +51,5 @@ in
     "config/sway/config".source = ./sway.conf;
     "config/waybar/config".source = ./waybar.jsonc;
     "config/waybar/style.css".source = ./waybar.css;
-  };
-
-  programs.dconf = {
-    enable = true;
-    profiles.user.databases = [
-      {
-        settings = {
-          "org/gnome/desktop/interface" = {
-            cursor-theme = "Bibata-Modern-Classic";
-            cursor-size = lib.gvariant.mkInt32 16;
-          };
-        };
-      }
-    ];
   };
 }

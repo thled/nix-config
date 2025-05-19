@@ -1,9 +1,11 @@
 { pkgs, ... }: {
   environment = {
     systemPackages = with pkgs; [ nushell ];
-    etc."config/nushell/env.nu".source = ./env.nu;
-    etc."config/nushell/config.nu".source = ./config.nu;
-    etc."config/nushell/todo.nu".source = ./todo.nu;
+    etc = {
+      "config/nushell/env.nu".source = ./env.nu;
+      "config/nushell/config.nu".source = ./config.nu;
+      "config/nushell/todo.nu".source = ./todo.nu;
+    };
   };
 }
 

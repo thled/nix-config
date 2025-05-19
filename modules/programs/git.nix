@@ -6,19 +6,23 @@
       alias.dt = "difftool";
       branch.sort = "-committerdate";
       column.ui = "auto";
-      diff.algorithm = "histogram";
-      diff.colorMoved = "plain";
-      diff.mnemonicPrefix = true;
-      diff.renames = true;
-      diff.tool = "difftastic";
+      diff = {
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = true;
+        tool = "difftastic";
+      };
       difftool = {
         prompt = "false";
         meld.cmd = "meld \"$LOCAL\" \"$REMOTE\"";
         difftastic.cmd = "difft \"$LOCAL\" \"$REMOTE\"";
       };
-      fetch.all = true;
-      fetch.pruneTags = true;
-      fetch.prune = true;
+      fetch = {
+        all = true;
+        pruneTags = true;
+        prune = true;
+      };
       help.autocorrect = "prompt";
       includeIf."gitdir:~/dev/".path = "/etc/gitconfig.private";
       includeIf."gitdir:~/work/".path = "/etc/gitconfig.work";
