@@ -13,8 +13,7 @@
       email = "leduc@publicplan.de"
 
       [ui]
-      default-command = "log"
-      paginate = "never"
+      default-command = ["log", "--no-pager", "--reversed"]
     '';
   };
 }
