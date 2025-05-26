@@ -14,6 +14,7 @@
 
       [ui]
       default-command = ["log", "--no-pager", "--reversed"]
+      pager = ":builtin"
     '';
   };
 }
