@@ -15,6 +15,11 @@
       [ui]
       default-command = ["log", "--no-pager", "--reversed"]
       pager = ":builtin"
+
+      [aliases]
+      fetch = ["git", "fetch"]
+      push = ["git", "push"]
+      update = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
     '';
   };
 }
