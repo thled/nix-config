@@ -1,4 +1,8 @@
-{ pkgs, zen-browser, ... }: {
+{
+  pkgs,
+  zen-browser,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     chromium
@@ -42,4 +46,3 @@
     };
   };
 }
-

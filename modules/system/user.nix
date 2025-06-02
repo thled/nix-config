@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # users.defaultUserShell = pkgs.fish;
 
   users.users.thled = {
@@ -13,4 +13,3 @@
     initialPassword = "123";
   };
 }
-

@@ -12,7 +12,11 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       "NBL0112" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

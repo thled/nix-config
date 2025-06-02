@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -10,7 +10,7 @@
       "50-bluez" = {
         "monitor.bluez.rules" = [
           {
-            matches = [ { "device.name" = "~bluez_card.*"; } ];
+            matches = [{"device.name" = "~bluez_card.*";}];
             actions = {
               update-props = {
                 "bluez5.auto-connect" = [
@@ -55,7 +55,6 @@
   };
 
   hardware.bluetooth.enable = true;
-  
-  environment.systemPackages = [ pkgs.pavucontrol ];
-}
 
+  environment.systemPackages = [pkgs.pavucontrol];
+}

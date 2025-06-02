@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment = {
-    systemPackages = [ pkgs.mako ];
+    systemPackages = [pkgs.mako];
     etc."config/mako/config".source = ./mako.config;
   };
 }

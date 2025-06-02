@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   brightness = pkgs.writeShellScriptBin "brightness-toggle" ''
     #!/usr/bin/env bash
     BUS=5
@@ -13,9 +11,8 @@ let
     ddcutil --bus=$BUS setvcp 10 "$new_value"
     notify-send "Brightness: $new_value"
   '';
-
 in {
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     brightness
   ];
 }

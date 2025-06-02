@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./system/user.nix
     ./system/common.nix
@@ -34,4 +34,3 @@
 
   nix.settings.accept-flake-config = true;
 }
-

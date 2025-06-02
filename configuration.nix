@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   # disabledModules = [ "services/networking/syncthing.nix" ];
   imports = [
     ./hardware-configuration.nix
@@ -16,7 +15,7 @@
     };
 
     #initrd.secrets = {
-      #"/crypto_keyfile.bin" = null;
+    #"/crypto_keyfile.bin" = null;
     #};
   };
 

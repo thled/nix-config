@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     alejandra
     bat
@@ -36,4 +36,3 @@
     zoxide
   ];
 }
-

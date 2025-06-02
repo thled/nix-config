@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.variables = {
     XDG_CONFIG_HOME = "/etc/config";
     EDITOR = "hx";
@@ -9,13 +9,13 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      (iosevka-bin.override { variant = "SGr-IosevkaTerm"; })
+      (iosevka-bin.override {variant = "SGr-IosevkaTerm";})
       nerd-fonts.symbols-only
       noto-fonts-color-emoji
     ];
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Iosevka Term" ];
+        monospace = ["Iosevka Term"];
       };
     };
   };
@@ -55,4 +55,3 @@
     "d /etc/config 0755 thled root -"
   ];
 }
-

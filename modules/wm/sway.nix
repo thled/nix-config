@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }: 
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   # run at the end of sway config
   # see https://github.com/emersion/xdg-desktop-portal-wlr/wiki/"It-doesn't-work"-Troubleshooting-Checklist
   dbus-sway-environment = pkgs.writeScriptBin "dbus-sway-environment" ''
@@ -7,13 +10,12 @@ let
     systemctl --user stop pipewire wireplumber pipewire-pulse xdg-desktop-portal xdg-desktop-portal-wlr
     systemctl --user start pipewire wireplumber pipewire-pulse xdg-desktop-portal xdg-desktop-portal-wlr
   '';
-in
-{
+in {
   programs = {
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;
-      extraPackages = with pkgs; [ 
+      extraPackages = with pkgs; [
         autotiling
         dbus-sway-environment
         swaylock
@@ -40,7 +42,7 @@ in
       ];
     };
   };
-  
+
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;

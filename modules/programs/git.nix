@@ -40,13 +40,10 @@
 
   environment.etc = {
     "config/git/ignore".source = ./gitignore_global;
-    "gitconfig.private".text =
-      "[user]
+    "gitconfig.private".text = "[user]
       email = dev@tleduc.de";
 
-    "gitconfig.work".text =
-      "[user]
+    "gitconfig.work".text = "[user]
       email = leduc@publicplan.de";
   };
 }
-

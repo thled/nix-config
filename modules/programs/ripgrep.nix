@@ -1,10 +1,9 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment = {
-    systemPackages = [ pkgs.ripgrep ];
+    systemPackages = [pkgs.ripgrep];
     etc."config/ripgreprc".source = ./ripgreprc;
     variables = {
       RIPGREP_CONFIG_PATH = "/etc/config/ripgreprc";
     };
   };
 }
-

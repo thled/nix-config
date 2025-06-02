@@ -1,5 +1,10 @@
-{ lib, fetchFromGitHub, rustPlatform, stdenv, python3 }:
-
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  stdenv,
+  python3,
+}:
 rustPlatform.buildRustPackage rec {
   pname = "jless";
   version = "0.9.0";
@@ -13,7 +18,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-+5MgocX/Wur1yVNcYFwMcJq37cdIZRsVuHE+4GHiQqo=";
 
-  nativeBuildInputs = lib.optionals stdenv.hostPlatform.isLinux [ python3 ];
+  nativeBuildInputs = lib.optionals stdenv.hostPlatform.isLinux [python3];
 
   meta = with lib; {
     description = "Command-line pager for JSON data";
@@ -21,6 +26,6 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://jless.io";
     changelog = "https://github.com/thled/jless/blob/${src.rev}/CHANGELOG.md";
     license = licenses.mit;
-    maintainers = with maintainers; [ thled ];
+    maintainers = with maintainers; [thled];
   };
 }
