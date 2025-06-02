@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    alejandra
     bat
     bibata-cursors
     calc

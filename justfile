@@ -19,9 +19,11 @@ build:
 
 fix:
     just --fmt --unstable
+    alejandra ./
 
 lint:
     just --fmt --check --unstable
+    alejandra --check ./
 
 add: fix
     git add .
