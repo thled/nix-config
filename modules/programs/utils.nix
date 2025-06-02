@@ -1,4 +1,4 @@
-{ pkgs, statix, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     bat
     bibata-cursors
@@ -25,7 +25,6 @@
     nmap
     nodejs
     ntfs3g
-    statix.packages."${pkgs.system}".statix
     tldr
     tree
     unar

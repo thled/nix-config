@@ -7,7 +7,6 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
     helix.url = "github:helix-editor/helix/master";
-    statix.url = "github:NerdyPepper/statix/master";
     zen-browser.url = "github:youwen5/zen-browser-flake";
 
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
