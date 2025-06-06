@@ -5,7 +5,8 @@
     ./network/networkmanager.nix
     ./wm/ddcutil.nix
     ./wm/brightness-toggle.nix
-    ./wm/sway.nix
+    ./wm/niri.nix
+    # ./wm/sway.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
     # ./terminal/foot.nix
