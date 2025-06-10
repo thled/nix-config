@@ -89,6 +89,10 @@
             // slowdown 3.0
           }
 
+          overview {
+            zoom 0.25
+          }
+
           environment {
             ELECTRON_OZONE_PLATFORM_HINT "auto"
             NIXOS_OZONE_WL "1"
