@@ -21,8 +21,8 @@
             scale 2
           }
 
-          spawn-at-startup "swaybg" "-i" "~/wallpaper.png" "-m" "fill"
-          spawn-at-startup "waybar"
+          // spawn-at-startup "waybar"
+          spawn-at-startup "swaybg" "-i" "/home/thled/wallpaper.png" "-m" "fill"
           spawn-at-startup "sh" "-c" "pkill mako; mako"
           spawn-at-startup "sh" "-c" "pkill wl-paste; wl-paste --type text --watch cliphist store"
           spawn-at-startup "sh" "-c" "swayidle -w timeout 600 'swaylock -f -c 000000' timeout 800 'niri msg action power-off-monitors' resume 'niri msg action power-off-monitors' before-sleep 'swaylock -f -c 000000'"
@@ -45,6 +45,41 @@
           cursor {
             xcursor-theme "Bibata-Modern-Classic"
             xcursor-size 16
+          }
+
+          layout {
+            gaps 0
+
+            center-focused-column "never"
+            always-center-single-column
+            empty-workspace-above-first
+
+            preset-column-widths {
+                proportion 0.33333
+                proportion 0.5
+                proportion 0.66667
+            }
+
+            default-column-width { proportion 1.0; }
+
+            focus-ring {
+                width 2
+
+                active-color "#7fc8ff"
+                inactive-color "#505050"
+            }
+
+            border {
+                off
+
+                width 2
+                active-color "#ffc87f"
+                inactive-color "#505050"
+                urgent-color "#9b0000"
+
+                // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view"
+                // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+            }
           }
 
           animations {
