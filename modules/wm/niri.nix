@@ -56,8 +56,8 @@
             empty-workspace-above-first
 
             preset-column-widths {
-              proportion 0.33333
               proportion 0.5
+              proportion 0.33333
               proportion 0.66667
             }
 
@@ -75,12 +75,12 @@
               // off
 
               width 2
-              active-color "#ffc87f"
+              // active-color "#ffc87f"
               inactive-color "#505050"
               urgent-color "#9b0000"
 
-              active-gradient from="#e5989b" to="#ffb4a2" angle=135 relative-to="workspace-view"
-              inactive-gradient from="#505050" to="#808080" angle=135 relative-to="workspace-view"
+              active-gradient from="#33ccffee" to="#00ff99ee" angle=135 relative-to="workspace-view"
+              // inactive-gradient from="#505050" to="#808080" angle=135 relative-to="workspace-view"
             }
           }
 
@@ -91,7 +91,7 @@
 
           environment {
             ELECTRON_OZONE_PLATFORM_HINT "auto"
-            NIXOS_OZONE_WL 1
+            NIXOS_OZONE_WL "1"
           }
 
           screenshot-path "~/screenshots/%Y-%m-%d_%H-%M-%S.png"
