@@ -55,30 +55,31 @@
             empty-workspace-above-first
 
             preset-column-widths {
-                proportion 0.33333
-                proportion 0.5
-                proportion 0.66667
+              proportion 0.33333
+              proportion 0.5
+              proportion 0.66667
             }
 
             default-column-width { proportion 1.0; }
 
             focus-ring {
-                width 2
+              off
+              width 2
 
-                active-color "#7fc8ff"
-                inactive-color "#505050"
+              active-color "#7fc8ff"
+              inactive-color "#505050"
             }
 
             border {
-                off
+              // off
 
-                width 2
-                active-color "#ffc87f"
-                inactive-color "#505050"
-                urgent-color "#9b0000"
+              width 2
+              active-color "#ffc87f"
+              inactive-color "#505050"
+              urgent-color "#9b0000"
 
-                // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view"
-                // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+              active-gradient from="#e5989b" to="#ffb4a2" angle=135 relative-to="workspace-view"
+              inactive-gradient from="#505050" to="#808080" angle=135 relative-to="workspace-view"
             }
           }
 
@@ -87,7 +88,13 @@
             // slowdown 3.0
           }
 
+          environment {
+            ELECTRON_OZONE_PLATFORM_HINT "auto"
+            NIXOS_OZONE_WL 1
+          }
+
           screenshot-path "~/screenshots/%Y-%m-%d_%H-%M-%S.png"
+          prefer-no-csd
 
           // TODO block out windows from screencapture
 
