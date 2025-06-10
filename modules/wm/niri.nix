@@ -74,7 +74,7 @@
             border {
               // off
 
-              width 2
+              width 1
               // active-color "#ffc87f"
               inactive-color "#505050"
               urgent-color "#9b0000"
