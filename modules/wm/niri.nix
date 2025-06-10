@@ -9,6 +9,7 @@
       swaylock
       swayidle
       swaybg
+      xwayland-satellite
     ];
     etc = {
       "config/waybar/config".source = ./waybar.jsonc;
