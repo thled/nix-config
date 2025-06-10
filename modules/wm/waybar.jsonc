@@ -28,12 +28,15 @@
   "clock#date": {
     "format": "{:%Y-%m-%d} ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "locale": "de_DE.UTF-8",
     "calendar": {
       "mode": "year",
       "mode-mon-col": 3,
       "weeks-pos": "left",
       "format": {
-        "today": "<span color='#dd532e'><u>{}</u></span>"
+        "today": "<span color='#dd532e'><u>{}</u></span>",
+        "weeks": "<span color='#35b9ab'>{:%V}</span>",
+        "months": "<span color='#99ffdd'><b>{}</b></span>"
       }
     }
   },
