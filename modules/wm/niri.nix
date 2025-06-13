@@ -52,7 +52,7 @@
           layout {
             gaps 0
 
-            center-focused-column "never"
+            center-focused-column "on-overflow"
             always-center-single-column
             empty-workspace-above-first
 
