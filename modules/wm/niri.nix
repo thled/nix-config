@@ -23,7 +23,6 @@
             scale 2
           }
 
-          // spawn-at-startup "waybar"
           spawn-at-startup "swaybg" "-i" "/home/thled/wallpaper.png" "-m" "fill"
           spawn-at-startup "sh" "-c" "pkill mako; mako"
           spawn-at-startup "sh" "-c" "pkill wl-paste; wl-paste --type text --watch cliphist store"
@@ -211,7 +210,7 @@
             Mod+I hotkey-overlay-title="Toggle Monitor brightness" { spawn "brightness-toggle"; }
 
             // Mod+S { spawn "sh" "-c" "slurp | grim -g - - | satty --filename - --fullscreen --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
-            Mod+S            { spawn "screenshot"; }
+            Mod+S            { screenshot; }
             Mod+T            { toggle-window-floating; }
             Mod+Shift+T      { switch-focus-between-floating-and-tiling; }
           }
