@@ -6,6 +6,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      nautilus
       swaylock
       swayidle
       swaybg
