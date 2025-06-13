@@ -72,15 +72,11 @@
             }
 
             border {
-              // off
-
               width 1
-              // active-color "#ffc87f"
               inactive-color "#505050"
               urgent-color "#9b0000"
 
               active-gradient from="#33ccffee" to="#00ff99ee" angle=135 relative-to="workspace-view"
-              // inactive-gradient from="#505050" to="#808080" angle=135 relative-to="workspace-view"
             }
           }
 
@@ -101,7 +97,21 @@
           screenshot-path "~/screenshots/%Y-%m-%d_%H-%M-%S.png"
           prefer-no-csd
 
-          // TODO block out windows from screencapture
+          layer-rule {
+            match namespace="^notifications$"
+            block-out-from "screencast"
+          }
+
+          window-rule {
+            match app-id="obsidian"
+            match app-id="org.kde.dolphin"
+            match app-id="com.obsproject.Studio"
+            match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
+            match app-id="zen" title="- TickTick "
+            match app-id="zen" title="- Gmail "
+
+            block-out-from "screencast"
+          }
 
           binds {
             // Default bindings
