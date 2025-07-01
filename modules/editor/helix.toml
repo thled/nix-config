@@ -5,14 +5,15 @@ auto-format = true
 auto-pairs = true
 auto-save = false
 completion-trigger-len = 1
+cursorline = true
+end-of-line-diagnostics = "hint"
+jump-label-alphabet = "shtarenicpdoluwfmxbgyzvk"
 line-number = "relative"
 middle-click-paste = false
 mouse = false
 rulers = [120]
 text-width = 120
 true-color = true
-jump-label-alphabet = "shtarenicpdoluwfmxbgyzvk"
-end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
@@ -27,8 +28,8 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "file-modification-indicator", "file-type", "total-line-numbers", "file-encoding"]
 center = ["diagnostics", "workspace-diagnostics"]
+left = ["mode", "spinner", "file-name", "file-modification-indicator", "file-type", "total-line-numbers", "file-encoding"]
 right = ["selections", "primary-selection-length", "position", "position-percentage"]
 
 [editor.file-picker]
