@@ -1,10 +1,11 @@
 {
   pkgs,
+  master,
   zen-browser,
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    dbeaver-bin
+    master.dbeaver-bin
     chromium
     gimp
     meld
