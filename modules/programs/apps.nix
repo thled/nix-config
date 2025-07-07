@@ -1,11 +1,11 @@
 {
   pkgs,
-  master,
+  # master,
   zen-browser,
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    master.dbeaver-bin
+    dbeaver-bin
     chromium
     gimp
     meld
@@ -13,7 +13,7 @@
     obs-studio
     obsidian
     vesktop
-    zed-editor
+    # zed-editor
     zen-browser.packages.${pkgs.system}.default
     zoom-us
   ];
