@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     chromium
+    claude-code
     gimp
     meld
     mpv
