@@ -8,3 +8,4 @@ window-decoration       = false
 window-padding-balance  = true
 window-padding-color    = extend
 mouse-hide-while-typing = true
+keybind                 = shift+enter=text:"\n"
