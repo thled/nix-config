@@ -119,8 +119,6 @@
             Mod+O repeat=false { toggle-overview; } // or top-left hot corner
             Mod+Q              { close-window; }
 
-            Mod+Left       { focus-column-left; }
-            Mod+Right      { focus-column-right; }
             Mod+Ctrl+Left  { move-column-left; }
             Mod+Ctrl+Right { move-column-right; }
             Mod+Home       { focus-column-first; }
@@ -205,6 +203,8 @@
             Mod+Shift+P     { power-off-monitors; }
 
             // Custom bindings
+            Mod+Left       { focus-column-left-or-last; }
+            Mod+Right      { focus-column-right-or-first; }
             Mod+Down        { focus-workspace-down; }
             Mod+Up          { focus-workspace-up; }
             Mod+Ctrl+Down   { move-column-to-workspace-down; }
