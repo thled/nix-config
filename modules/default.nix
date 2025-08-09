@@ -9,7 +9,7 @@
     # ./wm/sway.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
-    # ./terminal/foot.nix
+    ./terminal/foot.nix
     ./terminal/ghostty.nix
     ./terminal/nushell.nix
     ./terminal/starship.nix
