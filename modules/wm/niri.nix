@@ -103,14 +103,19 @@
           }
 
           window-rule {
+            match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
+            match app-id="com.obsproject.Studio"
             match app-id="obsidian"
             match app-id="org.kde.dolphin"
-            match app-id="com.obsproject.Studio"
-            match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
-            match app-id="zen" title="- TickTick "
+            match app-id="vesktop"
             match app-id="zen" title="- Gmail "
+            match app-id="zen" title="- TickTick "
 
             block-out-from "screencast"
+          }
+
+          hotkey-overlay {
+            skip-at-startup
           }
 
           binds {
