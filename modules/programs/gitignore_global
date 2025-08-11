@@ -36,6 +36,9 @@
 ### custom folder
 zthled/
 
+###justfile
+.user.justfile
+
 ### AI
 .claude/
 CLAUDE.local.md
