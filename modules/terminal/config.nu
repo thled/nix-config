@@ -14,6 +14,12 @@ alias k   = kubectl
 alias ks  = kubens
 alias kx  = kubectx
 
+def open-repo [] {
+  let url = (git remote get-url origin | str replace --regex '^(git@|ssh:\/\/git@)([^:\/]+)(?::\d+)?[:\/](.+?)(\.git)?$' 'https://$2/$3')
+
+  ^xdg-open $url
+}
+
 let fish_completer = {|spans|
   fish --command $'complete "--do-complete=($spans | str join " ")"'
   | from tsv --flexible --noheaders --no-infer
