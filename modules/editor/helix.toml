@@ -83,6 +83,7 @@ A-x = "extend_line_up"
 A-X = "extend_line_down"
 
 Y = ":yank-join"
+C-y = ':! echo -e "\e]52;;$(echo -n %{buffer_name} | base64)\007" > /dev/tty'
 
 [keys.normal.g]
 h = ["collapse_selection", "extend_to_line_start"]
