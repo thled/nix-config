@@ -15,7 +15,7 @@ alias ks  = kubens
 alias kx  = kubectx
 
 def open-repo [] {
-  let url = (git remote get-url origin | str replace --regex '^(git@|ssh:\/\/git@)([^:\/]+)(?::\d+)?[:\/](.+?)(\.git)?$' 'https://$2/$3')
+  let url = (git remote get-url origin | str replace --regex '^(git@|ssh:\/\/git@)([^:\/]+?)(?:-work)?(?::\d+)?[:\/](.+?)(\.git)?$' 'https://$2/$3')
 
   ^xdg-open $url
 }
