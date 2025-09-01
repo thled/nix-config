@@ -20,7 +20,10 @@
         merge-editor = ":builtin"
 
         [aliases]
+        f = ["git", "fetch"]
         fetch = ["git", "fetch"]
+        l = ["log", "-r", "::"]
+        p = ["git", "push"]
         push = ["git", "push"]
         retrunk = ["rebase", "-d", "trunk()"]
         tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
