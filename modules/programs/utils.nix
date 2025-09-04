@@ -30,7 +30,6 @@
     tree
     unar
     unzip
-    watchexec
     wl-clipboard
     zoxide
   ];
