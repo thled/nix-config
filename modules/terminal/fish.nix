@@ -24,6 +24,4 @@ _: {
   systemd.tmpfiles.rules = [
     "d /etc/config/fish 0755 thled root -"
   ];
-  environment.etc."config/fish/config.fish".source = ./config.fish;
-  environment.etc."config/fish/functions/i.fish".source = ./i.fish;
 }
