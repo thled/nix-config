@@ -11,8 +11,8 @@ jump-label-alphabet = "shtarenicpdoluwfmxbgyzvk"
 line-number = "relative"
 middle-click-paste = false
 mouse = false
-rulers = [120]
-text-width = 120
+rulers = [88]
+text-width = 88
 true-color = true
 
 [editor.inline-diagnostics]
