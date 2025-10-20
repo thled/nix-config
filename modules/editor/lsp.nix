@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [
     nodePackages.bash-language-server # bash
     nodePackages.vscode-langservers-extracted # css/html/json
-    nodePackages.dockerfile-language-server # docker
+    dockerfile-language-server # docker
     go # go
     gopls # go
     jdt-language-server # java

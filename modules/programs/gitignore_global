@@ -42,3 +42,4 @@ zthled/
 ### AI
 .claude/
 CLAUDE.local.md
+AGENTS.override.md
