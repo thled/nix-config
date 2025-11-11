@@ -16,7 +16,7 @@
     obsidian
     vesktop
     # zed-editor
-    zen-browser.packages.${pkgs.system}.default
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zoom-us
   ];
 
