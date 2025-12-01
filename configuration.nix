@@ -19,5 +19,7 @@
     #};
   };
 
+  nix.settings.trusted-users = [ "root" "thled" ];
+
   system.stateVersion = "22.11";
 }
