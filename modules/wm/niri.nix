@@ -104,6 +104,12 @@
 
           window-rule {
             match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
+            match app-id="com.mitchellh.ghostty"
+            default-column-width { proportion 0.5; }
+          }
+
+          window-rule {
+            match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
             match app-id="com.obsproject.Studio"
             match app-id="obsidian"
             match app-id="org.gnome.Nautilus"
