@@ -105,7 +105,7 @@
             match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
             match app-id="com.obsproject.Studio"
             match app-id="obsidian"
-            match app-id="org.kde.dolphin"
+            match app-id="org.gnome.Nautilus"
             match app-id="vesktop"
             match app-id="zen" title="- Gmail "
             match app-id="zen" title="- TickTick "
