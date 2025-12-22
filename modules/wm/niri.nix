@@ -124,12 +124,10 @@
             Mod+O repeat=false { toggle-overview; } // or top-left hot corner
             Mod+Q              { close-window; }
 
-            Mod+Ctrl+Left  { move-column-left; }
-            Mod+Ctrl+Right { move-column-right; }
-            Mod+Home       { focus-column-first; }
-            Mod+End        { focus-column-last; }
-            Mod+Ctrl+Home  { move-column-to-first; }
-            Mod+Ctrl+End   { move-column-to-last; }
+            Mod+Home      { focus-column-first; }
+            Mod+End       { focus-column-last; }
+            Mod+Ctrl+Home { move-column-to-first; }
+            Mod+Ctrl+End  { move-column-to-last; }
 
             Mod+Shift+Left  { focus-monitor-left; }
             Mod+Shift+Right { focus-monitor-right; }
@@ -203,31 +201,43 @@
 
             Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-            Mod+Shift+E     { quit; }
             Ctrl+Alt+Delete { quit; }
             Mod+Shift+P     { power-off-monitors; }
 
             // Custom bindings
             Mod+Left       { focus-column-left-or-last; }
             Mod+Right      { focus-column-right-or-first; }
-            Mod+Down        { focus-workspace-down; }
-            Mod+Up          { focus-workspace-up; }
-            Mod+Ctrl+Down   { move-column-to-workspace-down; }
-            Mod+Ctrl+Up     { move-column-to-workspace-up; }
-            Mod+Shift+Down  { move-workspace-down; }
-            Mod+Shift+Up    { move-workspace-up; }
+            Mod+Down       { focus-window-or-workspace-down; }
+            Mod+Up         { focus-window-or-workspace-up; }
+            Mod+Ctrl+Left  { move-column-left; }
+            Mod+Ctrl+Right { move-column-right; }
+            Mod+Ctrl+Down  { move-window-down-or-to-workspace-down; }
+            Mod+Ctrl+Up    { move-window-up-or-to-workspace-up; }
+            Mod+Shift+Down { move-workspace-down; }
+            Mod+Shift+Up   { move-workspace-up; }
+
+            Mod+H       { focus-column-left-or-last; }
+            Mod+I       { focus-column-right-or-first; }
+            Mod+A       { focus-window-or-workspace-down; }
+            Mod+E       { focus-window-or-workspace-up; }
+            Mod+Ctrl+H  { move-column-left; }
+            Mod+Ctrl+I  { move-column-right; }
+            Mod+Ctrl+A  { move-window-down-or-to-workspace-down; }
+            Mod+Ctrl+E  { move-window-up-or-to-workspace-up; }
+            Mod+Shift+A { move-workspace-down; }
+            Mod+Shift+E { move-workspace-up; }
 
             Mod+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
             Mod+P hotkey-overlay-title="Open Launcher"      { spawn "fuzzel"; }
             Mod+L hotkey-overlay-title="Lock"               { spawn "swaylock" "-f" "-c" "000000"; }
 
             Mod+V hotkey-overlay-title="Open Clipboard history"    { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
-            Mod+I hotkey-overlay-title="Toggle Monitor brightness" { spawn "brightness-toggle"; }
+            Mod+U hotkey-overlay-title="Toggle Monitor brightness" { spawn "brightness-toggle"; }
 
             // Mod+S { spawn "sh" "-c" "slurp | grim -g - - | satty --filename - --fullscreen --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
-            Mod+S            { screenshot; }
-            Mod+T            { toggle-window-floating; }
-            Mod+Shift+T      { switch-focus-between-floating-and-tiling; }
+            Mod+S       { screenshot; }
+            Mod+T       { toggle-window-floating; }
+            Mod+Shift+T { switch-focus-between-floating-and-tiling; }
           }
         '';
     };
