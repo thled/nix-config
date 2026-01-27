@@ -12,10 +12,10 @@
     gimp
     meld
     mpv
-    obs-studio
     obsidian
+    obs-studio
+    (pkgs.callPackage ./mindwtr.nix {})
     vesktop
-    # zed-editor
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zoom-us
   ];
