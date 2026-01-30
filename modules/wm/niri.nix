@@ -99,7 +99,7 @@
 
           layer-rule {
             match namespace="^notifications$"
-            match namespace="launcher"
+            match namespace="^launcher$"
 
             block-out-from "screencast"
           }
@@ -116,8 +116,6 @@
             match app-id="org.gnome.Nautilus"
 
             open-floating true
-            default-floating-width "50%"
-            default-floating-height "50%"
           }
 
           window-rule {

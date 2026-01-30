@@ -1,5 +1,6 @@
 #!/usr/bin/env -S just --justfile
 
+alias r := run
 alias t := test
 
 default:
