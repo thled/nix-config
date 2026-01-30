@@ -99,13 +99,25 @@
 
           layer-rule {
             match namespace="^notifications$"
+            match namespace="launcher"
+
             block-out-from "screencast"
           }
 
           window-rule {
             match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
             match app-id="com.mitchellh.ghostty"
+            match app-id=".mindwtr-wrapped_"
+
             default-column-width { proportion 0.5; }
+          }
+
+          window-rule {
+            match app-id="org.gnome.Nautilus"
+
+            open-floating true
+            default-floating-width "50%"
+            default-floating-height "50%"
           }
 
           window-rule {
@@ -116,6 +128,7 @@
             match app-id="vesktop"
             match app-id="zen" title="- Gmail "
             match app-id="zen" title="- TickTick "
+            match app-id=".mindwtr-wrapped_"
 
             block-out-from "screencast"
           }
