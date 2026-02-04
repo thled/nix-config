@@ -3,5 +3,6 @@
     kubectl
     kubectx
     kubelogin-oidc
+    kubernetes-helm
   ];
 }
