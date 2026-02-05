@@ -25,6 +25,7 @@
     ./programs/jj.nix
     ./programs/kubernetes.nix
     ./programs/mako.nix
+    ./programs/mindwtr-capture.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
     # ./programs/satty.nix

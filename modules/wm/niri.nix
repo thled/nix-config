@@ -248,6 +248,7 @@
             Mod+P hotkey-overlay-title="Open Launcher"      { spawn "fuzzel"; }
             Mod+L hotkey-overlay-title="Lock"               { spawn "swaylock" "-f" "-c" "000000"; }
 
+            Mod+Space hotkey-overlay-title="Mindwtr Capture"       { spawn "mindwtr-capture"; }
             Mod+V hotkey-overlay-title="Open Clipboard history"    { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
             Mod+U hotkey-overlay-title="Toggle Monitor brightness" { spawn "brightness-toggle"; }
 
