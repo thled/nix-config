@@ -18,7 +18,7 @@
     ./editor/helix.nix
     ./virtualisation/docker.nix
     # ./virtualisation/podman.nix
-    # ./virtualisation/virt_manager.nix
+    ./virtualisation/virt_manager.nix
     ./network/vpn.nix
     ./programs/utils.nix
     ./programs/git.nix
