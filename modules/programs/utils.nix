@@ -21,7 +21,6 @@
     just
     libnotify
     lsof
-    mycli
     neofetch
     nmap
     nodejs
