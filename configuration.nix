@@ -1,22 +1,13 @@
 {...}: {
-  # disabledModules = [ "services/networking/syncthing.nix" ];
   imports = [
-    ./hardware-configuration.nix
-    # (master + "/nixos/modules/services/networking/syncthing.nix")
     ./modules
   ];
 
   boot = {
     loader = {
       systemd-boot.enable = true;
-      efi = {
-        canTouchEfiVariables = true;
-      };
+      efi.canTouchEfiVariables = true;
     };
-
-    #initrd.secrets = {
-    #"/crypto_keyfile.bin" = null;
-    #};
   };
 
   nix.settings.trusted-users = ["root" "thled"];

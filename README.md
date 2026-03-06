@@ -4,6 +4,11 @@
 
 - Download [NixOS ISO][nixos]
 
+## Hosts
+
+- `NBL0112`: laptop profile with laptop-specific boot and NVIDIA settings
+- `desktop_pc`: desktop profile
+
 ## NixOS Installation
 
 1. Use GUI installer
@@ -22,8 +27,16 @@
 
 1. Deploy configuration
 
+    Laptop:
+
     ```shell
     nix-shell -p git --run "sudo nixos-rebuild switch --flake /etc/nixos#NBL0112"
+    ```
+
+    Desktop:
+
+    ```shell
+    nix-shell -p git --run "sudo nixos-rebuild switch --flake /etc/nixos#desktop_pc"
     ```
 
 1. Reboot
@@ -63,7 +76,7 @@
 - Use VPN with `sudo systemctl start openvpn-officeVPN.service`.
 - Manage NixOS configuration in `~/dev/nix-config`.
 - Update with `just update`.
-- Apply updates with `just build`.
+- Apply laptop updates with `just build` or `just build NBL0112`.
+- Apply desktop updates with `just build desktop_pc`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
-

@@ -4,8 +4,6 @@
     EDITOR = "hx";
   };
 
-  networking.hostName = "NBL0112";
-
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [

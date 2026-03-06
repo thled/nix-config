@@ -9,14 +9,14 @@ default:
 update:
     nix flake update
 
-test:
-    sudo nixos-rebuild test --upgrade
+test host:
+    sudo nixos-rebuild test --upgrade --flake .#{{host}}
 
-run:
-    sudo nixos-rebuild switch --upgrade
+run host:
+    sudo nixos-rebuild switch --upgrade --flake .#{{host}}
 
-build:
-    sudo nixos-rebuild boot --upgrade
+build host:
+    sudo nixos-rebuild boot --upgrade --flake .#{{host}}
 
 fix:
     just --fmt --unstable

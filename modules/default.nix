@@ -3,10 +3,7 @@
     ./system/user.nix
     ./system/common.nix
     ./network/networkmanager.nix
-    ./wm/ddcutil.nix
-    ./wm/brightness-toggle.nix
     ./wm/niri.nix
-    # ./wm/sway.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
     ./terminal/foot.nix
@@ -28,8 +25,6 @@
     ./programs/mindwtr-capture.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
-    # ./programs/satty.nix
-    # ./programs/syncthing.nix
     ./programs/apps.nix
   ];
 

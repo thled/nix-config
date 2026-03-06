@@ -23,24 +23,18 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    # master,
-    ...
-  } @ inputs: let
+  outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
-    # pkgs-master = import master {inherit system;};
+    mkHost = module:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = inputs; # // {master = pkgs-master;};
+        modules = [module];
+      };
   in {
     nixosConfigurations = {
-      "NBL0112" = nixpkgs.lib.nixosSystem {
-        inherit system;
-
-        specialArgs = inputs; #// {master = pkgs-master;};
-        modules = [
-          ./configuration.nix
-        ];
-      };
+      NBL0112 = mkHost ./hosts/NBL0112;
+      desktop_pc = mkHost ./hosts/desktop_pc;
     };
   };
 }
