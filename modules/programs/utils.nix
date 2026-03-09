@@ -21,7 +21,7 @@
     just
     libnotify
     lsof
-    neofetch
+    fastfetch
     nmap
     nodejs
     ntfs3g
