@@ -7,4 +7,8 @@
       "config/nushell/todo.nu".source = ./todo.nu;
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /etc/config/nushell 0755 thled users -"
+  ];
 }
