@@ -5,7 +5,7 @@
     ./nvidia.nix
   ];
 
-  networking.hostName = "NBL0112";
+  networking.hostName = "work-laptop";
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;

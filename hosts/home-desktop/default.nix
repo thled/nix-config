@@ -6,7 +6,7 @@
     ../../modules/wm/brightness-toggle.nix
   ];
 
-  networking.hostName = "desktop_pc";
+  networking.hostName = "home-desktop";
   boot.blacklistedKernelModules = ["mt7921e"];
 
   thled.niri.extraConfig = ''

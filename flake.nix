@@ -33,8 +33,8 @@
       };
   in {
     nixosConfigurations = {
-      NBL0112 = mkHost ./hosts/NBL0112;
-      desktop_pc = mkHost ./hosts/desktop_pc;
+      work-laptop = mkHost ./hosts/work-laptop;
+      home-desktop = mkHost ./hosts/home-desktop;
     };
   };
 }

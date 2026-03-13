@@ -6,8 +6,8 @@
 
 ## Hosts
 
-- `NBL0112`: laptop profile with laptop-specific boot and NVIDIA settings
-- `desktop_pc`: desktop profile
+- `work-laptop`
+- `home-desktop`
 
 ## NixOS Installation
 
@@ -30,13 +30,13 @@
     Laptop:
 
     ```shell
-    nix-shell -p git --run "sudo nixos-rebuild switch --flake /etc/nixos#NBL0112"
+    nix-shell -p git --run "sudo nixos-rebuild switch --flake /etc/nixos#work-laptop"
     ```
 
     Desktop:
 
     ```shell
-    nix-shell -p git --run "sudo nixos-rebuild switch --flake /etc/nixos#desktop_pc"
+    nix-shell -p git --run "sudo nixos-rebuild switch --flake /etc/nixos#home-desktop"
     ```
 
 1. Reboot
@@ -76,7 +76,7 @@
 - Use VPN with `sudo systemctl start openvpn-officeVPN.service`.
 - Manage NixOS configuration in `~/dev/nix-config`.
 - Update with `just update`.
-- Apply laptop updates with `just build` or `just build NBL0112`.
-- Apply desktop updates with `just build desktop_pc`.
+- Apply laptop updates with `just build work-laptop`.
+- Apply desktop updates with `just build home-desktop`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso
