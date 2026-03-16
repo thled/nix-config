@@ -132,6 +132,7 @@ in {
 
             window-rule {
               match app-id="org.gnome.Nautilus"
+              match app-id="com.gabm.satty"
 
               open-floating true
             }
@@ -271,6 +272,7 @@ in {
 
               // Mod+S { spawn "sh" "-c" "slurp | grim -g - - | satty --filename - --fullscreen --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
               Mod+S       { screenshot; }
+              Mod+Shift+S { spawn "sh" "-c" "wl-paste | satty --filename - --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
               Mod+T       { toggle-window-floating; }
               Mod+Shift+T { switch-focus-between-floating-and-tiling; }
 

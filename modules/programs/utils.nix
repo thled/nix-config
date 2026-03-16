@@ -25,6 +25,7 @@
     nmap
     nodejs
     ntfs3g
+    satty
     tldr
     tree
     unar
