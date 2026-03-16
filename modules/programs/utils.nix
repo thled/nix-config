@@ -13,6 +13,7 @@
     fuzzel
     fzf
     gcc
+    gh
     gnumake
     imv
     # jless
