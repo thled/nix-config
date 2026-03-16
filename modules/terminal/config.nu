@@ -1,19 +1,10 @@
-alias c   = claude
 alias d   = docker
 alias dc  = docker compose
-alias g   = git
-alias gc  = git commit
-alias gd  = git diff
-alias gdt = git difftool
-alias gf  = git fetch
-alias gg  = git gui
-alias gl  = git log --pretty='tformat:%C(always,yellow)%h%C(always,reset) %C(always,green)%ar%C(always,reset) %C(always,bold blue)%an%C(always,reset) %C(always,red)%d%C(always,reset) %s'
-alias gp  = git push
-alias gs  = git status
 alias j   = just
 alias k   = kubectl
 alias ks  = kubens
 alias kx  = kubectx
+alias o   = opencode
 
 def open-repo [] {
   let url = (git remote get-url origin | str replace --regex '^(git@|ssh:\/\/git@)([^:\/]+?)(?:-work)?(?::\d+)?[:\/](.+?)(\.git)?$' 'https://$2/$3')
