@@ -12,12 +12,6 @@ in {
       default = "";
       description = "Host-specific additions to the shared Niri configuration.";
     };
-
-    extraBinds = lib.mkOption {
-      type = lib.types.lines;
-      default = "";
-      description = "Host-specific keybindings appended to the shared Niri binds block.";
-    };
   };
 
   config = {
@@ -275,8 +269,6 @@ in {
               Mod+Shift+S { spawn "sh" "-c" "wl-paste | satty --filename - --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
               Mod+T       { toggle-window-floating; }
               Mod+Shift+T { switch-focus-between-floating-and-tiling; }
-
-              ${cfg.extraBinds}
             }
           '';
       };
