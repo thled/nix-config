@@ -26,7 +26,7 @@
         p = ["git", "push"]
         push = ["git", "push"]
         retrunk = ["rebase", "-d", "trunk()"]
-        tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+        tug = ["bookmark", "advance", "--to", "@-"]
       '';
   };
 }
