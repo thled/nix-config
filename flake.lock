@@ -21,15 +21,16 @@
         "flake-compat": "flake-compat",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "systems": "systems",
         "zig": "zig",
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1773662493,
-        "narHash": "sha256-xxRH18eRNN6IK9SsOH1UIGboYzS3wi9ZQVBX2rI1sFc=",
+        "lastModified": 1774211330,
+        "narHash": "sha256-MkCzRVhO7ZF2uRgmqz6HG+o+GWSF1sBLTkhb0/BlkKw=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "925992abd98d83f08dc367f6b6c6265ee0510e60",
+        "rev": "1d54a94cedd4405584d2dcdde948262a33110018",
         "type": "github"
       },
       "original": {
@@ -44,11 +45,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1773676465,
-        "narHash": "sha256-RNMGLQCpmSWfbkuswvLVyu5XxOfckKX33pSaCF8Y4sY=",
+        "lastModified": 1774028838,
+        "narHash": "sha256-1zylMvReaWs4ICEq773PvJFXglsEq5BC2YKv0fNa81k=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "e2932b47f8306c2c4538e8755e246d3ec1de491c",
+        "rev": "3d68e0a32617d1844543219f6790a2b3fa169170",
         "type": "github"
       },
       "original": {
@@ -110,11 +111,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1773646010,
-        "narHash": "sha256-iYrs97hS7p5u4lQzuNWzuALGIOdkPXvjz7bviiBjUu8=",
+        "lastModified": 1774106199,
+        "narHash": "sha256-US5Tda2sKmjrg2lNHQL3jRQ6p96cgfWh3J1QBliQ8Ws=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5b2c2d84341b2afb5647081c1386a80d7a8d8605",
+        "rev": "6c9a78c09ff4d6c21d0319114873508a6ec01655",
         "type": "github"
       },
       "original": {
@@ -176,11 +177,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773290160,
-        "narHash": "sha256-u09eF4Oafi+OIbTtKe/EWil26q1glcTATiSA7dF1oCI=",
+        "lastModified": 1773722260,
+        "narHash": "sha256-U8MsSiqqYZHR3oKE+cCZ2AJt3b4LcXs+oQuNLipaO78=",
         "owner": "youwen5",
         "repo": "zen-browser-flake",
-        "rev": "c7cb51b30960757ed9fb8eb28567b32585d0a688",
+        "rev": "0e6e43342fb3e9a3439fafa777d8cdf98e4ffc49",
         "type": "github"
       },
       "original": {
@@ -199,7 +200,10 @@
           "ghostty",
           "nixpkgs"
         ],
-        "systems": "systems"
+        "systems": [
+          "ghostty",
+          "systems"
+        ]
       },
       "locked": {
         "lastModified": 1773145353,
