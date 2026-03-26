@@ -15,7 +15,6 @@
     obsidian
     obs-studio
     (pkgs.callPackage ./mindwtr.nix {})
-    opencode
     vesktop
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zoom-us

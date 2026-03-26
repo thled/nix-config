@@ -23,6 +23,7 @@
     ./programs/kubernetes.nix
     ./programs/mako.nix
     ./programs/mindwtr-capture.nix
+    ./programs/opencode.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
     ./programs/apps.nix
