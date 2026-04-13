@@ -1,17 +1,17 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    nodePackages.bash-language-server # bash
-    nodePackages.vscode-langservers-extracted # css/html/json
+    bash-language-server # bash
+    vscode-langservers-extracted # css/html/json
     dockerfile-language-server # docker
     go # go
     gopls # go
     jdt-language-server # java
     nil # nix
-    nodePackages.intelephense # php
+    intelephense # php
     python312Packages.python-lsp-server # python
     cargo # rust
     rust-analyzer # rust
-    nodePackages.typescript # typescript
-    nodePackages.typescript-language-server # typescript
+    typescript # typescript
+    typescript-language-server # typescript
   ];
 }
