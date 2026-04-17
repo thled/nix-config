@@ -24,6 +24,7 @@
     ./programs/mako.nix
     ./programs/mindwtr-capture.nix
     ./programs/opencode.nix
+    ./programs/pi.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
     ./programs/apps.nix
