@@ -27,6 +27,7 @@
     ./programs/pi.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
+    ./programs/voxtype.nix
     ./programs/apps.nix
   ];
 
