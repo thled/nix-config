@@ -51,7 +51,8 @@
     };
     inputMethod = {
       enable = true;
-      type = "ibus";
+      type = "fcitx5";
+      fcitx5.waylandFrontend = true;
     };
   };
 
