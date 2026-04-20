@@ -10,5 +10,7 @@ window-padding-color            = extend
 mouse-hide-while-typing         = true
 notify-on-command-finish        = unfocused
 notify-on-command-finish-action = bell,notify
+scrollbar                       = never
+scroll-to-bottom                = no-keystroke, no-output
 keybind                         = ctrl+shift+arrow_down=scroll_page_fractional:0.5
 keybind                         = ctrl+shift+arrow_up=scroll_page_fractional:-0.5
