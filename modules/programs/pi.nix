@@ -54,7 +54,8 @@
             "bashMode": "orange"
           }
         }
-      '';  };
+      '';
+  };
 
   systemd.tmpfiles.rules = [
     "d /etc/config/pi 0755 thled root -"
