@@ -52,7 +52,12 @@
     inputMethod = {
       enable = true;
       type = "fcitx5";
-      fcitx5.waylandFrontend = true;
+      fcitx5 = {
+        waylandFrontend = true;
+        settings.globalOptions = {
+          "Behavior/DisabledAddons"."0" = "notificationitem";
+        };
+      };
     };
   };
 
