@@ -55,10 +55,91 @@
           }
         }
       '';
+
+    etc."config/pi/agent/extensions/notify.ts".text =
+      #ts
+      ''
+        import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+        import { spawn } from "node:child_process";
+        import { accessSync, constants } from "node:fs";
+        import { homedir } from "node:os";
+        import { delimiter, isAbsolute, join } from "node:path";
+
+        const SOUND_PATH = "~/completed.mp3";
+        const NOTIFICATION_TITLE = "Pi";
+        const NOTIFICATION_BODY = "Agent finished";
+
+        function expandPath(input: string): string {
+          if (input.startsWith("~/")) return join(homedir(), input.slice(2));
+          return input;
+        }
+
+        function findExecutable(name: string): string | undefined {
+          if (isAbsolute(name)) {
+            try {
+              accessSync(name, constants.X_OK);
+              return name;
+            } catch {
+              return undefined;
+            }
+          }
+
+          for (const dir of (process.env.PATH ?? "").split(delimiter)) {
+            if (!dir) continue;
+            const candidate = join(dir, name);
+            try {
+              accessSync(candidate, constants.X_OK);
+              return candidate;
+            } catch {
+              // try next PATH entry
+            }
+          }
+
+          return undefined;
+        }
+
+        function spawnDetached(command: string, args: string[]): void {
+          const child = spawn(command, args, {
+            detached: true,
+            stdio: "ignore",
+            env: process.env,
+          });
+          child.unref();
+        }
+
+        function sendNotification(): void {
+          const notifySend = findExecutable("notify-send");
+          if (!notifySend) return;
+
+          spawnDetached(notifySend, [
+            "--app-name=pi",
+            "--urgency=low",
+            NOTIFICATION_TITLE,
+            NOTIFICATION_BODY,
+          ]);
+        }
+
+        function playSound(): void {
+          const soundPath = expandPath(SOUND_PATH);
+          const mpv = findExecutable("mpv");
+          if (!mpv) return;
+
+          spawnDetached(mpv, ["--no-video", "--really-quiet", soundPath]);
+          return;
+        }
+
+        export default function notify(pi: ExtensionAPI) {
+          pi.on("agent_end", async () => {
+            sendNotification();
+            playSound();
+          });
+        }
+      '';
   };
 
   systemd.tmpfiles.rules = [
     "d /etc/config/pi 0755 thled root -"
     "d /etc/config/pi/agent 0755 thled root -"
+    "d /etc/config/pi/agent/extensions 0755 thled root -"
   ];
 }
