@@ -26,6 +26,7 @@
     nmap
     nodejs
     ntfs3g
+    python3
     satty
     tldr
     tree
