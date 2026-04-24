@@ -17,7 +17,7 @@
 
         [hotkey]
         enabled = true
-        key = "F13"
+        key = "RECORD"
 
         [output.notification]
         on_recording_start = false
