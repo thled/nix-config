@@ -11,11 +11,16 @@
       #json
       ''
         {
-          "defaultModel": "gpt-5.4",
+          "defaultModel": "github-copilot/gpt-5.4",
           "defaultProvider": "github-copilot",
           "defaultThinkingLevel": "high",
           "editorPaddingX": 1,
-          "enabledModels": ["gpt-5.4", "gpt-5-mini"],
+          "enabledModels": [
+            "github-copilot/gpt-5.4",
+            "github-copilot/gpt-5-mini",
+            "openai-codex/gpt-5.4",
+            "openai-codex/gpt-5.4-mini"
+          ],
           "enableInstallTelemetry": false,
           "hideThinkingBlock": false,
           "theme": "gruvbox-dark"
