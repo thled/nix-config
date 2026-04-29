@@ -141,8 +141,18 @@ in {
               match app-id="zen" title="- Gmail "
               match app-id="zen" title="- TickTick "
               match app-id=".mindwtr-wrapped_"
+              exclude is-window-cast-target=true
 
               block-out-from "screencast"
+            }
+
+            window-rule {
+                match is-window-cast-target=true
+
+                border {
+                    active-color "#f38ba8"
+                    inactive-color "#7d0d2d"
+                }
             }
 
             hotkey-overlay {
@@ -265,11 +275,14 @@ in {
               Mod+Space hotkey-overlay-title="Mindwtr Capture"    { spawn "mindwtr-capture"; }
               Mod+V hotkey-overlay-title="Open Clipboard history" { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
 
-              // Mod+S { spawn "sh" "-c" "slurp | grim -g - - | satty --filename - --fullscreen --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
               Mod+S       { screenshot; }
               Mod+Shift+S { spawn "sh" "-c" "wl-paste | satty --filename - --output-filename ~/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; }
+
               Mod+T       { toggle-window-floating; }
               Mod+Shift+T { switch-focus-between-floating-and-tiling; }
+
+              Mod+G       { set-dynamic-cast-window; }
+              Mod+Shift+G { clear-dynamic-cast-target; }
             }
           '';
       };
