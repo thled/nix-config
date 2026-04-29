@@ -58,6 +58,7 @@ in {
             cursor {
               xcursor-theme "Bibata-Modern-Classic"
               xcursor-size 16
+              hide-after-inactive-ms 10000
             }
 
             layout {
