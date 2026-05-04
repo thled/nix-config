@@ -17,9 +17,6 @@
 *~
 *.sw[a-p]
 
-### VSCode
-.vscode/
-
 ## Misc
 
 ### direnv
@@ -43,3 +40,4 @@ zthled/
 .claude/
 CLAUDE.local.md
 AGENTS.override.md
+AGENTS.md
