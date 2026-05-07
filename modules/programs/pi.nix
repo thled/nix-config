@@ -114,23 +114,15 @@
         }
 
         function sendNotification(): void {
-          const notifySend = findExecutable("notify-send");
-          if (!notifySend) return;
-
-          spawnDetached(notifySend, [
-            "--app-name=pi",
-            "--urgency=low",
-            NOTIFICATION_TITLE,
-            NOTIFICATION_BODY,
-          ]);
+            process.stdout.write(`\x1b]777;notify;''${NOTIFICATION_TITLE};''${NOTIFICATION_BODY}\x07`);
         }
 
         function playSound(): void {
           const soundPath = expandPath(SOUND_PATH);
-          const mpv = findExecutable("mpv");
-          if (!mpv) return;
+          const player = findExecutable("ffplay");
+          if (!player) return;
 
-          spawnDetached(mpv, ["--no-video", "--really-quiet", soundPath]);
+          spawnDetached(player, ["-nodisp", "-autoexit", soundPath]);
           return;
         }
 
