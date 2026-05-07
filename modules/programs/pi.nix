@@ -23,7 +23,8 @@
           ],
           "enableInstallTelemetry": false,
           "hideThinkingBlock": false,
-          "theme": "gruvbox-dark"
+          "theme": "gruvbox-dark",
+          "treeFilterMode": "no-tools"
         }
       '';
 
