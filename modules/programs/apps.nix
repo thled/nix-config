@@ -10,6 +10,7 @@
     codex
     dbeaver-bin
     gimp
+    (pkgs.callPackage ./heidisql.nix {})
     meld
     mpv
     obsidian
