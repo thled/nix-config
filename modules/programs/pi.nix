@@ -17,7 +17,7 @@
           "editorPaddingX": 1,
           "enabledModels": [
             "github-copilot/gpt-5.4",
-            "openai-codex/gpt-5.5",
+            "openai-codex/gpt-5.5"
           ],
           "enableInstallTelemetry": false,
           "hideThinkingBlock": false,
