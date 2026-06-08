@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.thled.niri;
+  qtColorSchemePath = "/etc/xdg/qt6ct/colors/KvDark.colors";
 in {
   options.thled.niri = {
     extraConfig = lib.mkOption {
@@ -21,14 +22,32 @@ in {
     };
 
     environment = {
+      sessionVariables = {
+        QT_QPA_PLATFORMTHEME = "qt6ct";
+      };
       systemPackages = with pkgs; [
+        adwaita-icon-theme
         nautilus
+        qt6Packages.qt6ct
+        qt6Packages.qtstyleplugin-kvantum
         swaylock
         swayidle
         swaybg
         xwayland-satellite
       ];
       etc = {
+        "xdg/qt6ct/colors/KvDark.colors".source =
+          "${pkgs.qt6Packages.qtstyleplugin-kvantum}/share/color-schemes/KvDark.colors";
+        "xdg/qt6ct/qt6ct.conf".text = ''
+          [Appearance]
+          color_scheme_path=${qtColorSchemePath}
+          custom_palette=true
+          icon_theme=Adwaita
+          style=Fusion
+
+          [Troubleshooting]
+          ignored_applications=@Invalid()
+        '';
         "config/waybar/config".source = ./waybar.jsonc;
         "config/waybar/style.css".source = ./waybar.css;
         "config/niri/config.kdl".text =

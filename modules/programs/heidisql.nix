@@ -152,11 +152,7 @@ EOF
 
     makeQtWrapper $out/share/heidisql/heidisql $out/bin/heidisql \
       --prefix LD_LIBRARY_PATH : ${dbLibPath} \
-      --prefix PATH : ${lib.makeBinPath [ openssh sshpass ]} \
-      --set QT_STYLE_OVERRIDE fusion \
-      --set QT_QPA_PLATFORMTHEME "" \
-      --set GTK_THEME Adwaita:dark \
-      --add-flags "-style fusion"
+      --prefix PATH : ${lib.makeBinPath [ openssh sshpass ]}
 
     runHook postInstall
   '';
