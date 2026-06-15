@@ -13,11 +13,11 @@
 }:
 stdenv.mkDerivation rec {
   pname = "mindwtr";
-  version = "0.7.7";
+  version = "1.0.0";
 
   src = fetchurl {
     url = "https://github.com/dongdongbh/Mindwtr/releases/download/v${version}/Mindwtr_${version}_amd64.deb";
-    hash = "sha256-DjF/4cfpLQ/vwqhz799de6VOfFnLCc0Nt+Jv4eE92mw=";
+    hash = "sha256-TV7MSt47ZLziWeXt5tv/tn+CrQcBgxd5qRSJv1MBJ0M=";
   };
 
   nativeBuildInputs = [
