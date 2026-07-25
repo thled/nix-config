@@ -8,7 +8,7 @@
     jdt-language-server # java
     nil # nix
     intelephense # php
-    python312Packages.python-lsp-server # python
+    python314Packages.python-lsp-server # python
     cargo # rust
     rust-analyzer # rust
     typescript # typescript
