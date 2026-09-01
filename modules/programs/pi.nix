@@ -11,13 +11,14 @@
       #json
       ''
         {
-          "defaultModel": "github-copilot/gpt-5.4",
+          "defaultModel": "github-copilot/gpt-5.6-luna",
           "defaultProvider": "github-copilot",
-          "defaultThinkingLevel": "high",
+          "defaultThinkingLevel": "max",
           "editorPaddingX": 1,
           "enabledModels": [
-            "github-copilot/gpt-5.4",
-            "openai-codex/gpt-5.5"
+            "github-copilot/gpt-5.6-luna",
+            "github-copilot/gpt-5.6-sol",
+            "opencode/gpt-5.6-luna"
           ],
           "enableInstallTelemetry": false,
           "hideThinkingBlock": false,
