@@ -27,6 +27,7 @@
     ./programs/pi.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
+    ./programs/wl-kbptr.nix
     ./programs/apps.nix
   ];
 
