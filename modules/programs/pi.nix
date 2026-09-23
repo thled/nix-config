@@ -17,8 +17,7 @@
           "editorPaddingX": 1,
           "enabledModels": [
             "github-copilot/gpt-5.6-luna",
-            "github-copilot/gpt-5.6-sol",
-            "opencode/gpt-5.6-luna"
+            "opencode/gpt-6-luna"
           ],
           "enableInstallTelemetry": false,
           "hideThinkingBlock": false,
