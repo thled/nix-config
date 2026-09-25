@@ -13,6 +13,7 @@
     ./editor/lsp.nix
     ./editor/vim.nix
     ./editor/helix.nix
+    ./editor/zed.nix
     ./virtualisation/docker.nix
     # ./virtualisation/podman.nix
     ./virtualisation/virt_manager.nix
