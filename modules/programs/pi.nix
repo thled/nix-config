@@ -131,11 +131,69 @@
           });
         }
       '';
+
+    etc."config/pi/agent/skills/tempo-worklog-description/SKILL.md".text =
+      #md
+      ''
+        ---
+        name: tempo-worklog-description
+        description: Creates a customer-facing, Tempo-ready worklog description from a Git commit while applying the organization's Leistungserfassung guideline. Use when a concise description is needed for a Tempo booking based on commit work.
+        ---
+
+        # Tempo worklog description
+
+        Create one description that can be pasted into a Tempo worklog. This skill produces text only; it must not create, edit, or submit a Tempo booking.
+
+        ## Input
+
+        The text after `/skill:tempo-worklog-description` is the Git commit reference, such as a hash, tag, branch-relative ref, or `HEAD`:
+
+        ```text
+        /skill:tempo-worklog-description <commit>
+        ```
+
+        If no commit reference is provided, ask the user for one. If the reference cannot be resolved, report that clearly and ask for a valid reference.
+
+        ## Required procedure
+
+        1. Before drafting anything, read the complete guideline at:
+           `~/references/Leistungserfassung.md`
+           Do not rely on memory or on this skill as a substitute for the guideline. If the file cannot be read, say so and do not invent a description.
+        2. Identify the Git repository and verify the commit reference resolves to a commit.
+        3. Inspect the commit message, changed paths, summary, and relevant diff. Use Git commands with the supplied reference quoted safely. At minimum, use the equivalent of:
+           - `git rev-parse --show-toplevel`
+           - `git rev-parse --verify '<ref>^{commit}'`
+           - `git show --no-ext-diff --format=fuller --stat --summary '<ref>'`
+           - `git show --no-ext-diff --format= --find-renames '<ref>'`
+        4. Infer only what the commit actually supports: the concrete activity, what it concerned, and—when evident—the result or purpose. Never fabricate a ticket context, business purpose, customer, or outcome.
+        5. Draft the result in German by default. Follow an explicitly requested output language instead.
+        6. Check the draft against the guideline before returning it.
+
+        ## Writing requirements
+
+        The final description must:
+
+        - be one clear, customer-facing sentence, ideally 40–200 characters;
+        - state the concrete activity and what it concerned or supported, so it is understandable without knowing the ticket;
+        - use a factual, neutral nominal style, for example `Analyse`, `Abstimmung`, `Erstellung`, `Implementierung`, `Anpassung`, or `Fehlerbehebung`;
+        - use customer-understandable terms and name the result or goal when the evidence supports doing so;
+        - be specific rather than using empty phrases such as `Meeting`, `Bugfix`, `Doku`, `Testing`, `Weiterarbeit`, or `siehe Ticket`;
+        - avoid internal abbreviations, project slang, implementation details that are not useful to the customer, internal calculations, names of third parties, other customers, confidential information, criticism, emotions, and unsupported claims;
+        - not use the commit hash or a ticket number as a substitute for describing the work; and
+        - not copy the same generic wording merely because several commits are related.
+
+        A commit is evidence of a change, not automatically a complete worklog entry. If the commit is ambiguous, contains only internal maintenance, is a merge with no useful diff, or does not provide enough information to say what was done and for what, ask a concise follow-up question rather than guessing.
+
+        ## Output
+
+        When the evidence is sufficient, return exactly one ready-to-paste description in a code block, followed by its character count. Do not provide several alternatives or a long explanation. If essential context is missing, ask for that context instead of returning a speculative description.
+      '';
   };
 
   systemd.tmpfiles.rules = [
     "d /etc/config/pi 0755 thled root -"
     "d /etc/config/pi/agent 0755 thled root -"
     "d /etc/config/pi/agent/extensions 0755 thled root -"
+    "d /etc/config/pi/agent/skills 0755 thled root -"
   ];
 }
