@@ -12,33 +12,21 @@ def open-repo [] {
   ^xdg-open $url
 }
 
-let fish_completer = {|spans|
-  fish --command $'complete "--do-complete=($spans | str join " ")"'
+let fish_completer = {|place|
+  fish --command $'complete "--do-complete=($place.command | str join " ")"'
   | from tsv --flexible --noheaders --no-infer
   | rename value description
 }
 
-let zoxide_completer = {|spans|
-  $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
+let zoxide_completer = {|place|
+  $place.command | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
 }
 
-let external_completer = {|spans|
-  let expanded_alias = scope aliases
-  | where name == $spans.0
-  | get --optional 0.expansion
-
-  let spans = if $expanded_alias != null {
-    $spans
-    | skip 1
-    | prepend ($expanded_alias | split row ' ' | take 1)
-  } else {
-    $spans
-  }
-
-  match $spans.0 {
+let external_completer = {|place|
+  match $place.command.0 {
     __zoxide_z | __zoxide_zi => $zoxide_completer
     _ => $fish_completer
-  } | do $in $spans
+  } | do $in $place
 }
 
 $env.config = {
