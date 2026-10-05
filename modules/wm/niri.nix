@@ -273,7 +273,7 @@ in {
               Mod+L hotkey-overlay-title="Lock"               { spawn "swaylock" "-f" "-c" "000000"; }
               Mod+N hotkey-overlay-title="Keyboard Pointer"   { spawn "wl-kbptr"; }
 
-              Mod+Space hotkey-overlay-title="Mindwtr Capture"    { spawn "mindwtr-capture"; }
+              Mod+Space hotkey-overlay-title="TickTick Capture" { spawn "ticktick-capture"; }
               Mod+V hotkey-overlay-title="Open Clipboard history" { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
 
               Mod+S       { screenshot; }

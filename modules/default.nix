@@ -23,7 +23,7 @@
     ./programs/jj.nix
     ./programs/kubernetes.nix
     ./programs/mako.nix
-    ./programs/mindwtr-capture.nix
+    ./programs/ticktick-capture.nix
     ./programs/opencode.nix
     ./programs/pi.nix
     ./programs/pwa.nix
