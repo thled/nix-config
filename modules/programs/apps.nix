@@ -14,7 +14,6 @@
     mpv
     obsidian
     obs-studio
-    (pkgs.callPackage ./mindwtr.nix {})
     vesktop
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zoom-us

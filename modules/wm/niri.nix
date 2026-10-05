@@ -120,7 +120,6 @@ in {
             window-rule {
               match app-id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default" // Teams
               match app-id="com.mitchellh.ghostty"
-              match app-id=".mindwtr-wrapped_"
 
               default-column-width { proportion 0.5; }
             }
@@ -140,7 +139,6 @@ in {
               match app-id="vesktop"
               match app-id="zen" title="- Gmail "
               match app-id="zen" title="- TickTick "
-              match app-id=".mindwtr-wrapped_"
               exclude is-window-cast-target=true
 
               block-out-from "screencast"
