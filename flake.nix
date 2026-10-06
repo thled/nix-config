@@ -15,7 +15,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # master.url = "github:NixOS/nixpkgs/master";
-    ghostty.url = "github:ghostty-org/ghostty";
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     helix.url = "github:helix-editor/helix/master";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
