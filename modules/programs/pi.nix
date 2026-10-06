@@ -16,6 +16,7 @@
           "defaultThinkingLevel": "max",
           "editorPaddingX": 1,
           "outputPad": 0,
+          "tuiMode": "fullscreen",
           "enabledModels": [
             "github-copilot/gpt-5.6-luna",
             "opencode/gpt-6-luna"
@@ -24,6 +25,17 @@
           "hideThinkingBlock": false,
           "theme": "gruvbox-dark",
           "treeFilterMode": "no-tools"
+        }
+      '';
+
+    etc."config/pi/agent/keybindings.json".text =
+      #json
+      ''
+        {
+          "tui.altScreen.halfPageUp": "shift+up",
+          "tui.altScreen.halfPageDown": "shift+down",
+          "tui.altScreen.previousPrompt": "ctrl+up",
+          "tui.altScreen.nextPrompt": "ctrl+down"
         }
       '';
 
