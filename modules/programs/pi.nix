@@ -14,6 +14,8 @@
           "defaultModel": "github-copilot/gpt-5.6-luna",
           "defaultProvider": "github-copilot",
           "defaultThinkingLevel": "max",
+          "editorPaddingX": 1,
+          "outputPad": 0,
           "enabledModels": [
             "github-copilot/gpt-5.6-luna",
             "opencode/gpt-6-luna"
