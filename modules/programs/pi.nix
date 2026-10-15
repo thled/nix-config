@@ -150,37 +150,38 @@
       ''
         ---
         name: tempo-worklog-description
-        description: Creates a customer-facing, Tempo-ready worklog description from a Git commit while applying the organization's Leistungserfassung guideline. Use when a concise description is needed for a Tempo booking based on commit work.
+        description: Creates a customer-facing, Tempo-ready worklog description from the current session context, optionally using Git evidence, while applying the organization's Leistungserfassung guideline and always estimating effort in hours. Use when a concise description and effort estimate are needed for a Tempo booking.
         ---
 
         # Tempo worklog description
 
-        Create one description that can be pasted into a Tempo worklog. This skill produces text only; it must not create, edit, or submit a Tempo booking.
+        Create one description that can be pasted into a Tempo worklog and an estimated effort in hours. This skill produces text only; it must not create, edit, or submit a Tempo booking.
 
         ## Input
 
-        The text after `/skill:tempo-worklog-description` is the Git commit reference, such as a hash, tag, branch-relative ref, or `HEAD`:
+        Use the complete current session context as the primary input: the user's request, conversation, work performed, inspected files or changes, commands and results, decisions, and outcomes. A Git commit reference may be supplied after the skill name as optional supporting evidence, but a commit is not required:
 
         ```text
-        /skill:tempo-worklog-description <commit>
+        /skill:tempo-worklog-description [optional commit or additional context]
         ```
 
-        If no commit reference is provided, ask the user for one. If the reference cannot be resolved, report that clearly and ask for a valid reference.
+        If an optional commit reference is supplied, resolve and inspect it when useful. If it cannot be resolved, report that clearly but continue with the session context when it contains sufficient evidence. If the session context does not provide enough information for a reliable description or effort estimate, ask a concise follow-up question rather than requiring a commit.
 
         ## Required procedure
 
         1. Before drafting anything, read the complete guideline at:
            `~/references/Leistungserfassung.md`
            Do not rely on memory or on this skill as a substitute for the guideline. If the file cannot be read, say so and do not invent a description.
-        2. Identify the Git repository and verify the commit reference resolves to a commit.
-        3. Inspect the commit message, changed paths, summary, and relevant diff. Use Git commands with the supplied reference quoted safely. At minimum, use the equivalent of:
+        2. Review the session context and identify the concrete activities performed, what they concerned or supported, and—when evident—the result or purpose. A commit is optional, not a prerequisite.
+        3. If a commit reference is available and useful, identify the Git repository, verify that it resolves to a commit, and inspect its message, changed paths, summary, and relevant diff. Use Git commands with the supplied reference quoted safely. At minimum, use the equivalent of:
            - `git rev-parse --show-toplevel`
            - `git rev-parse --verify '<ref>^{commit}'`
            - `git show --no-ext-diff --format=fuller --stat --summary '<ref>'`
            - `git show --no-ext-diff --format= --find-renames '<ref>'`
-        4. Infer only what the commit actually supports: the concrete activity, what it concerned, and—when evident—the result or purpose. Never fabricate a ticket context, business purpose, customer, or outcome.
-        5. Draft the result in German by default. Follow an explicitly requested output language instead.
-        6. Check the draft against the guideline before returning it.
+        4. Infer only what the session context and any supporting evidence actually support. Never fabricate a ticket context, business purpose, customer, outcome, or work that is not evident.
+        5. Estimate the effort represented by the session's work in hours. Use a sensible level of precision and do not present unsupported precision. The successful output must always contain this estimate; if the context is too sparse to estimate it responsibly, ask for the missing information instead.
+        6. Draft the result in German by default. Follow an explicitly requested output language instead.
+        7. Check the description and effort estimate against the guideline before returning them.
 
         ## Writing requirements
 
@@ -192,14 +193,23 @@
         - use customer-understandable terms and name the result or goal when the evidence supports doing so;
         - be specific rather than using empty phrases such as `Meeting`, `Bugfix`, `Doku`, `Testing`, `Weiterarbeit`, or `siehe Ticket`;
         - avoid internal abbreviations, project slang, implementation details that are not useful to the customer, internal calculations, names of third parties, other customers, confidential information, criticism, emotions, and unsupported claims;
-        - not use the commit hash or a ticket number as a substitute for describing the work; and
-        - not copy the same generic wording merely because several commits are related.
+        - not use the commit hash or a ticket number as a substitute for describing the work;
+        - not copy the same generic wording merely because several commits are related; and
+        - always include a separate estimated effort in hours, based on the work evident in the session context rather than implying that it is tracked time;
 
-        A commit is evidence of a change, not automatically a complete worklog entry. If the commit is ambiguous, contains only internal maintenance, is a merge with no useful diff, or does not provide enough information to say what was done and for what, ask a concise follow-up question rather than guessing.
+        The session context is evidence of work, not automatically a complete worklog entry. If the context—or an optional commit—is ambiguous, contains only internal maintenance, or does not provide enough information to say what was done and for what, ask a concise follow-up question rather than guessing.
 
         ## Output
 
-        When the evidence is sufficient, return exactly one ready-to-paste description in a code block, followed by its character count. Do not provide several alternatives or a long explanation. If essential context is missing, ask for that context instead of returning a speculative description.
+        When the evidence is sufficient, return exactly one ready-to-paste description in a code block, followed by its character count and the estimated effort in hours:
+
+        ```text
+        <description>
+        ```
+        Zeichen: <count>
+        Geschätzter Aufwand: <number> Stunden
+
+        Do not provide several alternatives or a long explanation. Never return a successful result without the effort estimate. If essential context is missing, ask for that context instead of returning a speculative description.
       '';
   };
 
