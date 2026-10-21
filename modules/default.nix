@@ -29,6 +29,7 @@
     ./programs/pwa.nix
     ./programs/ripgrep.nix
     ./programs/wl-kbptr.nix
+    ./programs/zen-browser.nix
     ./programs/apps.nix
   ];
 
