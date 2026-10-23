@@ -4,6 +4,7 @@
     ./system/common.nix
     ./network/networkmanager.nix
     ./wm/niri.nix
+    ./wm/cgm.nix
     ./audio/pipewire.nix
     ./terminal/fish.nix
     ./terminal/foot.nix

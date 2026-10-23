@@ -14,7 +14,8 @@
     // "network",
     "pulseaudio",
     "clock",
-    "clock#date"
+    "clock#date",
+    "custom/cgm"
   ],
   "modules-right": [
     "tray"
@@ -24,6 +25,12 @@
   },
   "clock": {
     "format": "<b>{:%I:%M}</b>  "
+  },
+  "custom/cgm": {
+    "exec": "/run/current-system/sw/bin/cgm-waybar",
+    "return-type": "json",
+    "interval": 60,
+    "format": "{}"
   },
   "clock#date": {
     "format": "{:%Y-%m-%d} ",

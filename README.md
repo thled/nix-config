@@ -59,7 +59,6 @@
 
 ## After installation (optional)
 
-- Sync Firefox config and addons by logging in.
 - Add SSH keys to `~/.ssh/`.
 - Create `~/dev` and `~/work` folder for personal and work related projects, respectively.
 - Create `~/screenshots` folder for taking screenshots with <kbd>Win</kbd>+<kbd>s</kbd>.
@@ -68,6 +67,8 @@
 - Put OpenVPN configuration for office into `~/office.ovpn`.
 - Put licence key for intelephense into `~/intelephense/licence.txt`.
 - Configure k8s in `~/.kube/config`.
+- Configure TickTick capture in `$HOME/.ticktick-config` with `TICKTICK_ACCESS_TOKEN` and `TICKTICK_INBOX_PROJECT_ID`.
+- Configure CGM Waybar in `$HOME/.cgm-waybar-config` with `CGM_API_URL` and `CGM_API_TOKEN`.
 
 ## Usage
 
@@ -75,8 +76,6 @@
 - Start any application with <kbd>Win</kbd>+<kbd>p</kbd>.
 - Use VPN with `sudo systemctl start openvpn-officeVPN.service`.
 - Manage NixOS configuration in `~/dev/nix-config`.
-- Update with `just update`.
-- Apply laptop updates with `just build work-laptop`.
-- Apply desktop updates with `just build home-desktop`.
+- Update with `just update; just build (hostname)`.
 
 [nixos]: https://nixos.org/download.html#nixos-iso

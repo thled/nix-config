@@ -39,8 +39,25 @@ tooltip label {
 #disk,
 #network,
 #pulseaudio,
+#custom-cgm,
 #tray {
   padding: 0 10px;
+}
+
+#custom-cgm.low {
+  color: #ff5555;
+}
+
+#custom-cgm.high {
+  color: #ffb86c;
+}
+
+#custom-cgm.falling {
+  color: #ffffa5;
+}
+
+#custom-cgm.unavailable {
+  color: #aaaaaa;
 }
 
 @keyframes blink {
