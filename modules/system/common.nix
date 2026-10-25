@@ -4,6 +4,11 @@
     EDITOR = "hx";
   };
 
+  users.groups.input = {};
+  services.udev.extraRules = ''
+    KERNEL=="uinput", GROUP="input", MODE="0660"
+  '';
+
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [

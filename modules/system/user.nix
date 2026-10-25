@@ -3,6 +3,7 @@
     isNormalUser = true;
     extraGroups = [
       "audio"
+      "input"
       "docker"
       "libvirtd"
       "video"
