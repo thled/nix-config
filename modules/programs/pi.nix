@@ -35,7 +35,8 @@
           "tui.altScreen.halfPageUp": "shift+up",
           "tui.altScreen.halfPageDown": "shift+down",
           "tui.altScreen.previousPrompt": "ctrl+up",
-          "tui.altScreen.nextPrompt": "ctrl+down"
+          "tui.altScreen.nextPrompt": "ctrl+down",
+          "tui.altScreen.search": "ctrl+alt+f"
         }
       '';
 
