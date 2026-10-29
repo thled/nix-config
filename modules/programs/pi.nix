@@ -212,6 +212,43 @@
 
         Do not provide several alternatives or a long explanation. Never return a successful result without the effort estimate. If essential context is missing, ask for that context instead of returning a speculative description.
       '';
+
+    etc."config/pi/agent/skills/ai-review-comments/SKILL.md".text =
+      #md
+      ''
+        ---
+        name: ai-review-comments
+        description: "Address code review comments marked with // AI: in source files; use this when reviewing or implementing feedback from an external review tool."
+        ---
+
+        # AI review comments
+
+        Comments beginning with `// AI:` are review feedback from an external
+        tool or reviewer. When the user asks to address them, inspect and act
+        on the comments rather than treating them as permanent source comments.
+
+        These comments are rarely bare, definitive instructions. They usually
+        express a concern, suggestion, or question. Do not blindly apply their
+        literal wording. Read the surrounding code, related references, the
+        current diff, and relevant tests first, then implement the underlying
+        intent when it is clear and appropriate.
+
+        If a comment is ambiguous, contradictory, risky, or does not make
+        sense in the current code, ask the user for clarification instead of
+        guessing or silently deleting it. Explain briefly what is unclear and
+        identify the affected comment or file.
+
+        For a clear comment:
+
+        1. Make the smallest appropriate change that addresses the review
+           concern.
+        2. Update all affected references, types, tests, and documentation.
+        3. Remove the `// AI:` comment after it has been addressed.
+        4. Search the relevant workspace again for remaining `// AI:` comments.
+
+        Do not remove a comment merely to make the search clean. A comment that
+        still needs clarification should remain until the user has answered.
+      '';
   };
 
   systemd.tmpfiles.rules = [
