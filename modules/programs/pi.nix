@@ -151,7 +151,8 @@
       ''
         ---
         name: tempo-worklog-description
-        description: Creates a customer-facing, Tempo-ready worklog description from the current session context, optionally using Git evidence, while applying the organization's Leistungserfassung guideline and always estimating effort in hours. Use when a concise description and effort estimate are needed for a Tempo booking.
+        description: Creates a customer-facing, Tempo-ready worklog description from the current session context, optionally using Git evidence, while applying the organization's Leistungserfassung guideline and always estimating effort in hours. Invoke only explicitly with /skill:tempo-worklog-description.
+        disable-model-invocation: true
         ---
 
         # Tempo worklog description
@@ -218,7 +219,8 @@
       ''
         ---
         name: ai-review-comments
-        description: "Address code review comments marked with // AI: in source files; use this when reviewing or implementing feedback from an external review tool."
+        description: "Address code review comments marked with // AI: in source files. Invoke only explicitly with /skill:ai-review-comments."
+        disable-model-invocation: true
         ---
 
         # AI review comments
