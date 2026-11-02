@@ -49,11 +49,11 @@ tooltip label {
 }
 
 #custom-cgm.high {
-  color: #ffb86c;
+  color: #ffd700;
 }
 
 #custom-cgm.falling {
-  color: #ffffa5;
+  color: #ffb86c;
 }
 
 #custom-cgm.unavailable {
