@@ -4,7 +4,7 @@ alias j   = just
 alias k   = kubectl
 alias ks  = kubens
 alias kx  = kubectx
-alias o   = opencode
+alias zed  = zeditor
 
 def open-repo [] {
   let url = (git remote get-url origin | str replace --regex '^(git@|ssh:\/\/git@)([^:\/]+?)(?:-work)?(?::\d+)?[:\/](.+?)(\.git)?$' 'https://$2/$3')

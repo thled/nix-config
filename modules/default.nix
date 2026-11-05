@@ -25,7 +25,6 @@
     ./programs/kubernetes.nix
     ./programs/mako.nix
     ./programs/ticktick-capture.nix
-    ./programs/opencode.nix
     ./programs/pi.nix
     ./programs/pwa.nix
     ./programs/ripgrep.nix
