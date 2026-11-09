@@ -226,8 +226,7 @@
         # AI review comments
 
         Comments beginning with `// AI:` are review feedback from an external
-        tool or reviewer. When the user asks to address them, inspect and act
-        on the comments rather than treating them as permanent source comments.
+        tool or reviewer. Inspect and act on the comments.
 
         These comments are rarely bare, definitive instructions. They usually
         express a concern, suggestion, or question. Do not blindly apply their
