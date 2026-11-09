@@ -5,8 +5,6 @@
 }: {
   environment.systemPackages = with pkgs; [
     chromium
-    claude-code
-    codex
     dbeaver-bin
     gimp
     meld
