@@ -249,6 +249,15 @@
 
         Do not remove a comment merely to make the search clean. A comment that
         still needs clarification should remain until the user has answered.
+
+        ## Final response
+
+        After making the edits, report every `// AI:` comment you reviewed. For
+        each comment, repeat its complete original text and state what you did
+        about it. Include comments that were removed, using the text captured
+        before editing, and comments that remain because they need clarification.
+        Do not replace this per-comment account with only a summary of the
+        overall changes. If no `// AI:` comments were found, say so explicitly.
       '';
   };
 
